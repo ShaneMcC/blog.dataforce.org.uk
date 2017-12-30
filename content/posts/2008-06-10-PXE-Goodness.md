@@ -8,9 +8,9 @@ category:
   - General
 
 ---
-So as you may or may not know from time to time I have the joy of fixing computers for various people. Alot of these fixes result in a reinstall of windows and away.
+So as you may or may not know from time to time I have the joy of fixing computers for various people. A lot of these fixes result in a reinstall of windows and away.
 
-This is a rather easy enough job, I have a KVM switch that I attach to the machine, pop a windows CD in (I used to have an unattended CD but don't anymore), answer a few questions and then occasionally switch the KVM over to see if the install died or so.
+This is a rather easy enough job, I have a KVM switch that I attach to the machine, pop a windows CD in (I used to have an unattended CD but don't any more), answer a few questions and then occasionally switch the KVM over to see if the install died or so.
 
 Now this is all well and good except for 2 problems:
 
@@ -36,7 +36,7 @@ Neither of these were appealing (Floppies suck, I probably don't have a spare fl
 
 However there was an alternative, network booting. Quickly check the back of the laptop, bingo! a network port!
 
-So, I quickly (I say quickly, but my server was still Redhat 9 at the time, so rather slowly and painfully) I installed the tftp server (`apt-get install tftp-hda` on ubuntu), configured xinet.d (see below) and my dhcp server (see below).
+So, I quickly (I say quickly, but my server was still Redhat 9 at the time, so rather slowly and painfully) I installed the tftp server (`apt-get install tftp-hda` on Ubuntu), configured xinet.d (see below) and my dhcp server (see below).
 
 xinet.d/tftp:
 
@@ -77,7 +77,7 @@ pxelinux.0 and its config directory can be found in bootdisk/tftpboot in the una
 
 I also configured my internal DNS server as required by unattended to provide the ntinstall host.
 
-This allowed me to boot up the machine using the network and install windows as normal (There are a few issues with this, namely that the windows xp installer sucks and requires a fat32 partition for swap space, so you can't use unattended to upgrade an existing ntfs install, it has to format the drive as fat32, install, convert it to ntfs, and defrag it)
+This allowed me to boot up the machine using the network and install windows as normal (There are a few issues with this, namely that the windows XP installer sucks and requires a FAT32 partition for swap space, so you can't use unattended to upgrade an existing NTFS install, it has to format the drive as FAT32, install, convert it to NTFS, and defrag it)
 
 This made me quite pleased, I copied my windows disks into the install/os directory, and my office disk into the appropriate directory (see the unattended site for all related configuration etc) and left it be.
 
@@ -192,8 +192,8 @@ LABEL 64rescue
         APPEND vga=normal initrd=ubuntu-installer/amd64/initrd.gz rescue/enable=true --
 {{< /prettify >}}
 
-I can now boot the local hdd (default, incase I don't want any of the network boot options), securely wipe drives, install windows (via unattended), or use any of the features from the ubuntu disks (both 64bit and 32bit).
+I can now boot the local HDD (default, in case I don't want any of the network boot options), securely wipe drives, install windows (via unattended), or use any of the features from the ubuntu disks (both 64bit and 32bit).
 
-I would like to add some other options at a later date such as BSD/Solaris Installers or knoppix network boot as the main use for this are for fixing PCs for people (hense windows and knoppix) and a side benefit of making installing OSs in VMs easier (VM network boots to the boot menu for me to install from)
+I would like to add some other options at a later date such as BSD/Solaris Installers or knoppix network boot as the main use for this are for fixing PCs for people (hence windows and knoppix) and a side benefit of making installing OSs in VMs easier (VM network boots to the boot menu for me to install from)
 
 If anyone wants to know more about the setup or has any questions, just use the comment form.

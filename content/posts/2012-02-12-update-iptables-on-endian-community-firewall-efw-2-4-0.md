@@ -12,9 +12,9 @@ category:
 ---
 Compiling ip6tables on Endian Community Firewall (EFW) 2.4.0
 
-Unfortunately the version of ip6tables available at the time of fedora core 3 doesn't support the 'state' or 'comment' modules for use with firewall rules. So in order to get these, I decided to compile iptables 1.4.12.2 for endian.
+Unfortunately the version of ip6tables available at the time of fedora core 3 doesn't support the 'state' or 'comment' modules for use with firewall rules. So in order to get these, I decided to compile iptables 1.4.12.2 for Endian.
 
-To do this, we'll need a build environment on the endian box, we'll also install wget.
+To do this, we'll need a build environment on the Endian box, we'll also install wget.
 
 {{< prettify shell >}}
 cd /root
@@ -64,7 +64,7 @@ wget http://www.linuximq.net/patchs/iptables-1.4.12-IMQ-test4.diff -O /usr/src/e
 rpm --nomd5 -i iptables-1.4.12-2.fc16.src.rpm
 {{< /prettify >}}
 
-And modify the spec file to make it compile on endian:
+And modify the spec file to make it compile on Endian:
 
 {{< prettify shell >}}
 egrep -vi "(SOURCE[12]|ip6?tables-config|ip6?tables.init|ip6?tables.service)" /usr/src/endian/SPECS/iptables.spec > /usr/src/endian/SPECS/iptables.spec.temp
@@ -84,4 +84,4 @@ rpm --nodeps -Uvh /usr/src/endian/RPMS/i386/iptables-1.4.12.2-1.i386.rpm
 
 now iptables and ip6tables will be version 1.4.12.2, and ip6tables will have the extra missing modules.
 
-If anyone wants a copy of the generated RPM just leave a message here and I'll get them uploaded somwhere.
+If anyone wants a copy of the generated RPM just leave a message here and I'll get them uploaded somewhere.

@@ -10,11 +10,11 @@ category:
 ---
 Today I decided to play with an old Huawei E220 I have lying around.
 
-After getting it setup and recognised in linux by following the first 5 steps from http://ubuntuforums.org/showthread.php?p=3656717
+After getting it setup and recognised in Linux by following the first 5 steps from http://ubuntuforums.org/showthread.php?p=3656717
 
 After this, restarting udev (`restart udev`) and replugging the device makes it ready to use.
 
-Part of the testing I was doing, was to send text-messages using the device (as a way of sending status messages out-of-band if an internet connection isn&#8217;t available.) and threw together this quick script that relies on `expect` and `kermit`:
+Part of the testing I was doing, was to send text-messages using the device (as a way of sending status messages out-of-band if an internet connection isn't available.) and threw together this quick script that relies on `expect` and `kermit`:
 
 {{< prettify tcl >}}
 #!/usr/bin/expect -f

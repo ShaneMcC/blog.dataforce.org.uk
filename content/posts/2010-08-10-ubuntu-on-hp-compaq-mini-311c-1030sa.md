@@ -9,17 +9,17 @@ category:
   - General
 
 ---
-I recently purchased a HP Compaq Mini 311c-1030SA with nvidia ION and built in 3G, unfortunately the 3G card is a "UN2400" which isn't supported right out of the box as it requires proprietary firmware.
+I recently purchased a HP Compaq Mini 311c-1030SA with Nvidia ION and built in 3G, unfortunately the 3G card is a "UN2400" which isn't supported right out of the box as it requires proprietary firmware.
 
 This post is mostly notes for myself on getting the UN2400 3G card inside it working enough to use.
 
-This post assumes that the netbook is running ubuntu maverick <del datetime="2010-12-13T13:18:39+00:00">(which is currently in alpha but seems to work just fine)</del> as it has gobi_loader as a package and a kernel which supports it.
+This post assumes that the netbook is running Ubuntu maverick <del datetime="2010-12-13T13:18:39+00:00">(which is currently in alpha but seems to work just fine)</del> as it has gobi_loader as a package and a kernel which supports it.
 
-When I installed ubuntu on here, I kept the original windows partition in case it was needed. I'm glad I did otherwise this would have been more awkward as some files from the windows installation are needed to get this working.
+When I installed Ubuntu on here, I kept the original windows partition in case it was needed. I'm glad I did otherwise this would have been more awkward as some files from the windows installation are needed to get this working.
 
 Before doing anything, boot the windows partition and connect to 3G from the HP Connection manager (This generates some log files which we need). Also change the settings on the 3G card not to turn off on shutdown. (Not sure if the last bit is needed but I did it anyway from reading other posts online about this card.)
 
-Now back in ubuntu, lets make this work:
+Now back in Ubuntu, lets make this work:
 
 {{< prettify shell >}}
 # Install gobi-loader
@@ -79,13 +79,13 @@ pon hpcm
 
 In maverick network-manager understands that this card is a mobile broadband card, so it should be possible to configure it rather than using the ppp/chat scripts from hpcm but using the scripts is a good way to test if it works, and they have in them the information required by network-manager.
 
-<del datetime="2010-12-13T13:18:39+00:00">I just stick with pon/poff however as NetworkManager on KDE doesn't seem to even bother to try and connect (I've had success with nm-applet tho so I might just use that).</del> In KDE, I've found that KNetworkManager isn't the best at using this device (or my work VPN), so I use nm-applet to configure and use this device unless I don't have a working X session (a common occurrence when using beta versions of ubuntu!).
+<del datetime="2010-12-13T13:18:39+00:00">I just stick with pon/poff however as NetworkManager on KDE doesn't seem to even bother to try and connect (I've had success with nm-applet though so I might just use that).</del> In KDE, I've found that KNetworkManager isn't the best at using this device (or my work VPN), so I use nm-applet to configure and use this device unless I don't have a working X session (a common occurrence when using beta versions of Ubuntu!).
 
 * * *
 
 Now, for the ION chip.
 
-Firstly install the nvidia driver from jockey (also install the broadcom STA driver for wireless) and restart.
+Firstly install the Nvidia driver from jockey (also install the Broadcom STA driver for wireless) and restart.
 
 Now:
 
@@ -95,7 +95,7 @@ nvidia-xconfig
 shutdown -r now
 {{< /prettify >}}
 
-<del datetime="2010-10-24T03:48:49+00:00">Now this should be all thats needed, but it doesn't appear to work right now, VLC video playback of h264 is still unwatchable, I shall keep trying.</del>
+<del datetime="2010-10-24T03:48:49+00:00">Now this should be all that's needed, but it doesn't appear to work right now, VLC video playback of h264 is still un-watchable, I shall keep trying.</del>
 
 **Update:** Using the final-release version of Maverick I have got this working in VLC. Open VLC, go to Tools > Preferences and go to "Input & Codecs" and enable "GPU Acceleration".
 

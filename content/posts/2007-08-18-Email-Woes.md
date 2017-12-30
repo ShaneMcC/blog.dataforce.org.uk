@@ -12,7 +12,7 @@ category:
 ---
 On a daily basis, I get around 800 emails to my email accounts, of which most of it is spam.
 
-Now as good as thunderbird is at detecting spam, even it fails at a lot of the spam I recieve, leaving me with arround 100-200 spam per day that gets into my inbox.
+Now as good as thunderbird is at detecting spam, even it fails at a lot of the spam I receive, leaving me with around 100-200 spam per day that gets into my inbox.
 
 I've dealt with and accepted this for over a year now, before a discussion on IRC made me decide to do something about it. (When I say discussion, I mean [Chris](http://www.md87.co.uk) pasted one line showing how good the [UTD-Hosting](http://utd-hosting.com) mail server was at preventing junk getting to him)
 
@@ -76,7 +76,7 @@ policy  unix  -       n       n       -       -       spawn
 
 (One can apt-get install postfix-policyd-spf-perl or download it from http://www.openspf.org/Software)
 
-Currently I use catch-all on all my domains (yes this is stupid I know) and as a result, I get alot of spam to 1) Addresses that don't exist and never have 2) Addresses that used to exist for others but now don't.
+Currently I use catch-all on all my domains (yes this is stupid I know) and as a result, I get a lot of spam to 1) Addresses that don't exist and never have 2) Addresses that used to exist for others but now don't.
 
 To combat this, I added this line to smtpd\_recipient\_restrictions:
 
@@ -103,10 +103,10 @@ Total Rejections: 7194 (Unknown Reason: 0 | Pretended to be me: 114)
 
 The "Forwarded to shinobu" entry is a server for which I am the backup MX for, this accounts for 152 mails (about 2%)
 
-The delivered count of 306 mails is about 4%, meaning that 94% of all the junk mail I recieve is now dropped by postfix and not delivered to my mailbox!
+The delivered count of 306 mails is about 4%, meaning that 94% of all the junk mail I receive is now dropped by postfix and not delivered to my mailbox!
 
-These simple additions have made a huge difference! I have a 10day holiday coming up, and now rather than coming home to 8000 mails, I'll only come home to 320!
+These simple additions have made a huge difference! I have a 10 day holiday coming up, and now rather than coming home to 8000 mails, I'll only come home to 320!
 
-As a further line of defense, prior to being sent to my mailbox, those 4% of mails get filtered thorugh spamassassin (which I have configured to only run for certain domains, with different scores for different domains/users as needed) which does a good job of catching the spam that thunderbird misses, configuring a mail filter on thunderbird to filter these mails (Which get subject tagged with {Spam?}) into my junk folder (aswell as configuring thunderbird to trust what the spamassassin headers say) means very little, if any, spam now reaches my inbox!
+As a further line of defence, prior to being sent to my mailbox, those 4% of mails get filtered through spamassassin (which I have configured to only run for certain domains, with different scores for different domains/users as needed) which does a good job of catching the spam that thunderbird misses, configuring a mail filter on thunderbird to filter these mails (Which get subject tagged with {Spam?}) into my junk folder (as well as configuring thunderbird to trust what the spamassassin headers say) means very little, if any, spam now reaches my inbox!
 
 Brilliant!

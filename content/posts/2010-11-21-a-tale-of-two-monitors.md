@@ -34,7 +34,7 @@ As you can see one of them has an RTC control, for TN or IPS panels, as its not 
 
 So now I have 2 monitors, which previously were able to show images identically, that now show everything (subtly) differently - which isn't what I wanted. (I bought 2 at the same time from the same place in order to get them the same)
 
-I've invested in a colour calibrator to try and bring them closer together, but I know I own't be able to get them the same. The PVA monitor also has no ability to change the colour values on the monitor itself when using DVI and not in service mode ([Video](http://www.youtube.com/watch?v=jswBeG3pKW4)).
+I've invested in a colour calibrator to try and bring them closer together, but I know I won't be able to get them the same. The PVA monitor also has no ability to change the colour values on the monitor itself when using DVI and not in service mode ([Video](http://www.youtube.com/watch?v=jswBeG3pKW4)).
 
 For most people, there wouldn't be any problem with this - not everyone cares about panel technology, or that 2 monitors side by side are the same (not everyone even has 2 of the same model side-by-side anyway), but now I find myself with a dilemma, that needs to be resolved quickly. (The warranty period on the IPS monitor runs out on 2nd December)
 

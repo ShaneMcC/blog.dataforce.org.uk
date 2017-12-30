@@ -30,12 +30,12 @@ Hopefully this will be useful to someone else, I'm not sure how well it works in
  This script will login to gmail, and add labels to messages for contact groups.
 
  By default the script will only check items from the past 2 days where email
- was recieved.
+ was received.
 
  Loop mode can be enabled to save logging in repeatedly from cron.
- Loop mode may fail after some time if google kills the session, or gmail
+ Loop mode may fail after some time if Google kills the session, or gmail
  becomes unavailable or so. (Untested in these situations). On the other hand
- it may also just keep running indefinetly as if no problem occured, loop mode
+ it may also just keep running indefinitely as if no problem occurred, loop mode
  is relatively untested and was added as an after thought.
 
  When running in loop mode, it is best to have a crontab entry also that checks

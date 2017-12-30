@@ -8,9 +8,9 @@ category:
   - General
 
 ---
-For a while now (pretty much since I've been using linux) I've been using [yakuake](http://en.wikipedia.org/wiki/Yakuake), and I've been looking for something similar for OS X (at the moment I tend to ssh from my desktop to my OS X machine to do anything console like).
+For a while now (pretty much since I've been using Linux) I've been using [yakuake](http://en.wikipedia.org/wiki/Yakuake), and I've been looking for something similar for OS X (at the moment I tend to ssh from my desktop to my OS X machine to do anything console like).
 
-I found [visor](http://docs.blacktree.com/visor/visor) which wraps terminal.app, but overall this is a poor replacement primarily for the lack of tab support (I use tabs alot in yakuake, at the moment on my desktop I have ~15 open)
+I found [visor](http://docs.blacktree.com/visor/visor) which wraps terminal.app, but overall this is a poor replacement primarily for the lack of tab support (I use tabs a lot in yakuake, at the moment on my desktop I have ~15 open)
 
 I tried to get yakuake working on OS X a while ago and failed (it wouldn't compile) so gave up, recently however I decided to try again and have made better progress.
 

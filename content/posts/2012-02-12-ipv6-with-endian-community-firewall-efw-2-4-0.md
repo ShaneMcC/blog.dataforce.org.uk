@@ -13,7 +13,7 @@ category:
 ---
 First post in over a year! Oops.
 
-For a while now, my home ADSL provider (EntaNET) has provided me with an IPv6 allocation, but I've never really used it (Its been on my todo list for some time) primarily due to the fact that it is unsupported by Endian which I use for my home router/firewall.
+For a while now, my home ADSL provider (EntaNET) has provided me with an IPv6 allocation, but I've never really used it (Its been on my to-do list for some time) primarily due to the fact that it is unsupported by Endian which I use for my home router/firewall.
 
 However the other day after being asked about IPv6 at my day job, I decided I wanted to get this working, and decided to document it here in case it can assist anyone else in future. (I also finally got round to completing the [Hurricane Electric IPv6 Certification](http://ipv6.he.net/certification) up to sage level)
 
