@@ -4,7 +4,8 @@ author: Dataforce
 type: post
 date: 2012-04-20T11:55:26+00:00
 url: /2012/04/microsoft-lync-on-linux/
-featured_image: /wp-content/uploads/2012/04/TuxLync.png
+image: /wp-content/uploads/2012/04/TuxLync.png
+description: How to get chatting on Lync when using Linux.
 category:
   - General
 

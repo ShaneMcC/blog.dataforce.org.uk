@@ -18,6 +18,11 @@
 
 	<!-- Article content -->
 	<div class="entry-content">
+		{{ if isset .Params "image" }}
+			<figure class="entry-image {{ if isset .Params "imageposition" }}{{ .Params.imageposition }}{{ else }}right{{ end }}">
+				<img alt="Post thumbnail" src="{{ .Params.image }}">
+			</figure>
+		{{ end }}
 		{{ .Content }}
 	</div> <!-- end entry-content -->
 

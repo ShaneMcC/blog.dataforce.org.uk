@@ -2,6 +2,7 @@ baseURL = "https://blog.dataforce.org.uk/"
 languageCode = "en-gb"
 title = "blog.dataforce.org.uk"
 theme = "material"
+disablePathToLower = "true"
 
 [params]
   subtitle = "Dataforce's Blog"
