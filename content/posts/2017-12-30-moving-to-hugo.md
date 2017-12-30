@@ -4,7 +4,6 @@ author: Dataforce
 url:  /2017/12/moving-to-hugo/
 image: /res/postimg/blog-screenshot.png
 description: I recently moved this blog to Hugo, this is how I did it. Kind of.
-draft: true
 type: post
 date: 2017-12-30T04:56:26Z
 category:
