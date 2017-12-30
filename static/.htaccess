@@ -1,1 +1,20 @@
+# 404 Page
 ErrorDocument 404 /404.html
+
+# Make old RSS URLs work
+Redirect 301 /rss.php /index.xml
+RedirectMatch 301 /feed(/.*)? /index.xml
+
+# Block access to .htaccess
+<Files .htaccess>
+	order allow,deny
+	deny from all
+</Files>
+
+# Disable directory indexing
+Options All -Indexes
+
+# Cache basically everything.
+# <FilesMatch "\.(ico|jpg|png|css|js|html|xml|txt)$">
+# 	Header set Cache-Control "public, must-revalidate, max-age=3600"
+# </FilesMatch>
