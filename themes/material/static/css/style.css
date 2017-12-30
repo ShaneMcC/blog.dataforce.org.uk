@@ -8669,3 +8669,37 @@ tr {
 .fa-meanpath:before {
   content: "\f20c";
 }
+
+.likeawidget {
+  margin: 0 0 10px 0;
+  overflow: hidden;
+  padding: 1px;
+}
+
+.entry-image, .entry-thumbnail img {
+  border-radius: 0.35em;
+  border: 0;
+  display: inline-block;
+  position: relative;
+}
+
+.entry-image img {
+  border-radius: 0.35em;
+  display: block;
+}
+
+.entry-image.left {
+  float: left;
+  margin: 0 1.5em 1em 0;
+  top: 0.25em;
+}
+
+.entry-image.right {
+  float: right;
+  margin: 0 0 1em 1.5em;
+  top: 0.25em;
+}
+
+.entry-image.left, .entry-image.right {
+  max-width: 40%;
+}

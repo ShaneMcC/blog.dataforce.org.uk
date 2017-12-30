@@ -3,19 +3,7 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>
-      {{ if $.IsPage }}
-        {{ .Title }}
-        |
-        {{ .Site.Title }}
-      {{ else }}
-        {{ .Title }}
-        {{ if not $.IsHome }}
-		 |
-          {{ .Site.Title }}
-        {{ end }}
-      {{ end }}
-	</title>
+	<title>{{ if $.IsPage }}{{ .Title }} | {{ .Site.Title }}{{ else }}{{ .Title }}{{ if not $.IsHome }} | {{ .Site.Title }}{{ end }}{{ end }}</title>
 	<meta name="description" content="{{ .Site.Title }}">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 

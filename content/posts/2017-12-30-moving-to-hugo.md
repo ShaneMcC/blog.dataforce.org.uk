@@ -57,3 +57,5 @@ To automate the deployments process, there is also a script in there (`github-we
  - The new blog no longer has comments. I don't think this is a big loss, there are plenty of ways for people to contact me. I may look into something like disqus or so in future.
 
  - I don't know if this will actually make me more likely to update the site or write more, but it's worth a try.
+
+ - Sorry to RSS Readers, the change is likely going to spam you about all the posts again.
