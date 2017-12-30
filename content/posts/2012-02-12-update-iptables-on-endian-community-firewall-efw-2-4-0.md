@@ -4,7 +4,7 @@ author: Dataforce
 type: post
 date: 2012-02-12T09:37:18+00:00
 url: /2012/02/update-iptables-on-endian-community-firewall-efw-2-4-0/
-categories:
+category:
   - Endian
   - General
   - IPv6

@@ -4,7 +4,7 @@ author: Dataforce
 type: post
 date: 2008-12-11T01:56:12+00:00
 url: /2008/12/New-Phone-TMobile-G1/
-categories:
+category:
   - Code
   - General
 

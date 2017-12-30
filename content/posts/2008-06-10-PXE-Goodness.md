@@ -4,7 +4,7 @@ author: Dataforce
 type: post
 date: 2008-06-10T01:52:22+00:00
 url: /2008/06/PXE-Goodness/
-categories:
+category:
   - General
 
 ---

@@ -4,7 +4,7 @@ author: Dataforce
 type: post
 date: 2016-05-28T19:59:22+00:00
 url: /2016/05/its-been-a-while/
-categories:
+category:
   - General
 
 ---

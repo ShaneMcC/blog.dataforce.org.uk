@@ -4,7 +4,7 @@ author: Dataforce
 type: post
 date: 2007-06-11T03:32:24+00:00
 url: /2007/06/More-DMDirc/
-categories:
+category:
   - DMDirc
   - General
 

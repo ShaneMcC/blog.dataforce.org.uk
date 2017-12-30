@@ -4,7 +4,7 @@ author: Dataforce
 type: post
 date: 2010-09-24T12:23:51+00:00
 url: /2010/09/greasemonkey-script-for-hp-com-forums/
-categories:
+category:
   - General
 
 ---

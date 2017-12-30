@@ -4,7 +4,7 @@ author: Dataforce
 type: post
 date: 2008-07-17T07:18:03+00:00
 url: /2008/07/Yakuake-on-OS-X-Almost/
-categories:
+category:
   - General
 
 ---

@@ -4,7 +4,7 @@ author: Dataforce
 type: post
 date: 2008-08-09T03:46:49+00:00
 url: /2008/08/JDesktopPane-Replacement/
-categories:
+category:
   - Code
   - General
 

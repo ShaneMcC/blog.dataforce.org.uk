@@ -4,7 +4,7 @@ author: Dataforce
 type: post
 date: 2010-08-06T09:15:09+00:00
 url: /2010/08/sending-sms-with-a-huawei-e220/
-categories:
+category:
   - General
 
 ---

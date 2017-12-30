@@ -4,7 +4,7 @@ author: Dataforce
 type: post
 date: 2012-02-12T09:15:56+00:00
 url: /2012/02/ipv6-with-endian-community-firewall-efw-2-4-0/
-categories:
+category:
   - Code
   - Endian
   - General

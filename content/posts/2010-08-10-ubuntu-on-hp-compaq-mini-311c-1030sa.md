@@ -5,7 +5,7 @@ type: post
 date: 2010-08-10T01:41:53+00:00
 url: /2010/08/ubuntu-on-hp-compaq-mini-311c-1030sa/
 featured_image: /wp-content/uploads/2010/08/311c-1030SA.jpg
-categories:
+category:
   - General
 
 ---

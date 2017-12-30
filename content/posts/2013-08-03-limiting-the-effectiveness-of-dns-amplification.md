@@ -4,7 +4,7 @@ author: Dataforce
 type: post
 date: 2013-08-03T02:25:19+00:00
 url: /2013/08/limiting-the-effectiveness-of-dns-amplification/
-categories:
+category:
   - General
   - Networking
 

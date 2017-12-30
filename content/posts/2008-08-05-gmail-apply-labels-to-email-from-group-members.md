@@ -4,7 +4,7 @@ author: Dataforce
 type: post
 date: 2008-08-05T06:03:27+00:00
 url: /2008/08/gmail-apply-labels-to-email-from-group-members/
-categories:
+category:
   - Code
   - General
   - IRC

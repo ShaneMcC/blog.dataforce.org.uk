@@ -4,7 +4,7 @@ author: Dataforce
 type: post
 date: 2010-11-21T19:20:56+00:00
 url: /2010/11/a-tale-of-two-monitors/
-categories:
+category:
   - General
 
 ---

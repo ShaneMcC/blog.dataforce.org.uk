@@ -4,7 +4,7 @@ author: Dataforce
 type: post
 date: 2012-09-23T17:37:44+00:00
 url: /2012/09/website-reshuffle/
-categories:
+category:
   - General
 
 ---

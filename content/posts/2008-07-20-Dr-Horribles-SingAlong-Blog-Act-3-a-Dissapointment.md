@@ -4,7 +4,7 @@ author: Dataforce
 type: post
 date: 2008-07-20T14:26:23+00:00
 url: /2008/07/Dr-Horribles-SingAlong-Blog-Act-3-a-Dissapointment/
-categories:
+category:
   - General
 
 ---

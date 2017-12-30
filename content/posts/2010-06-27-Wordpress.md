@@ -4,7 +4,7 @@ author: Dataforce
 type: post
 date: 2010-06-27T19:13:10+00:00
 url: /2010/06/Wordpress/
-categories:
+category:
   - General
 
 ---

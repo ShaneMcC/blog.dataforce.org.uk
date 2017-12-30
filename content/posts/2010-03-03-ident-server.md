@@ -4,7 +4,7 @@ author: Dataforce
 type: post
 date: 2010-03-03T22:53:00+00:00
 url: /2010/03/ident-server/
-categories:
+category:
   - Code
   - General
   - IRC

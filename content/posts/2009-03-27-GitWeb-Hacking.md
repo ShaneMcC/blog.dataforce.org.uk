@@ -4,7 +4,7 @@ author: Dataforce
 type: post
 date: 2009-03-27T02:52:27+00:00
 url: /2009/03/GitWeb-Hacking/
-categories:
+category:
   - Code
   - General
 

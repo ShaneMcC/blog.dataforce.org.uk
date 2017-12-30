@@ -4,7 +4,7 @@ author: Dataforce
 type: post
 date: 2006-12-30T14:00:23+00:00
 url: /2006/12/DelphiFreePascal-MySQLpas/
-categories:
+category:
   - General
 
 ---

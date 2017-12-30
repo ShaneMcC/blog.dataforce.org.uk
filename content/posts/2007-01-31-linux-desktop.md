@@ -4,7 +4,7 @@ author: Dataforce
 type: post
 date: 2007-01-31T00:48:55+00:00
 url: /2007/01/linux-desktop/
-categories:
+category:
   - Code
   - General
   - IRC

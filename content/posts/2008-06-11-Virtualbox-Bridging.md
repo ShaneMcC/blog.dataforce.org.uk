@@ -4,7 +4,7 @@ author: Dataforce
 type: post
 date: 2008-06-11T10:56:17+00:00
 url: /2008/06/Virtualbox-Bridging/
-categories:
+category:
   - Code
   - General
 
