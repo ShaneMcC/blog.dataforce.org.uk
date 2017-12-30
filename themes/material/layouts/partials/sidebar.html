@@ -1,0 +1,95 @@
+			<aside class="sidebar col-md-3" role="complementary">
+				<div id="profile" class="likeawidget">
+					<div class="pwn-profile-widget-ninja-wrapper pwn-profile-widget-ninja-layout-center pwn-layout-style-style2 pwn-profile-widget-ninja-avatar-round">
+						<div class="pwn-container-bottom-wrapper" style="">
+							<img src="/wp-content/uploads/2016/05/ShaneNewColour.png" alt="Shane Mc Cormack" width="200" height="200" class="profile-avatar" style="margin-top: -0px;" />
+							<h4>Shane Mc Cormack</h4>
+							<div class="pwn-description-container">Linux using, open source programming, network engineer.</div>
+						</div>
+						<div class="pwn-container-social-links" style="">
+							<a href="mailto:shanemcc@gmail.com" target="_blank">
+								<img src="/profile-widget-ninja/icons/email-1-32x32.png" alt="Email" title="Email" width="32" height="32" />
+							</a>
+							<a href="https://www.github.com/shanemcc" target="_blank">
+								<img src="/profile-widget-ninja/icons/github-1-32x32.png" alt="GitHub" title="GitHub" width="32" height="32" />
+							</a>
+							<a href="https://www.twitter.com/Dataforce" target="_blank">
+								<img src="/profile-widget-ninja/icons/twitter-1-32x32.png" alt="Twitter" title="Twitter" width="32" height="32" />
+							</a>
+							<a href="https://www.facebook.com/Dataforce" target="_blank">
+								<img src="/profile-widget-ninja/icons/facebook-1-32x32.png" alt="Facebook" title="Facebook" width="32" height="32" />
+							</a>
+							<a href="https://www.linkedin.com/in/shanemccormack" target="_blank">
+								<img src="/profile-widget-ninja/icons/linkedin-1-32x32.png" alt="LinkedIn" title="LinkedIn" width="32" height="32" />
+							</a>
+						</div>
+					</div>
+				</div>
+
+				<div id="links" class="widget widget_links">
+					<h5 class="widget-title">Links</h5>
+					<ul class='xoxo blogroll'>
+						<li>
+							<a href="http://www.dmdirc.com/" rel="me" title="DMDirc &#8211; The intelligent IRC Client" target="_blank">DMDirc</a>
+							DMDirc &#8211; The intelligent IRC Client
+						</li>
+						<li>
+							<a href="http://www.melbourne.co.uk/" title="My current employer." target="_blank">Melbourne Server Hosting</a>
+							My current employer.
+						</li>
+					</ul>
+				</div>
+
+				<div id="recent-posts" class="widget widget_recent_entries">
+					<h5 class="widget-title">Recent Posts</h5>
+					<ul>
+						{{ range first 5 (where .Site.Pages "Type" "post") }}
+						<li>
+							<a href="{{ .RelPermalink }}">{{ .Title }}</a>
+						</li>
+						{{ end }}
+					</ul>
+				</div>
+
+				<div id="categories" class="widget widget_categories">
+					<h5 class="widget-title">Categories</h5>
+					<ul>
+						{{ range $key, $value := .Site.Taxonomies.category }}
+							<li class="cat-item">
+								<a rel="nofollow" href="/category/{{ $key | urlize }}/" title="{{ $key }}">{{ $key }}</a>
+							</li>
+						{{ end }}
+					</ul>
+				</div>
+
+<!--
+				<div id="archives-4" class="widget widget_archive">
+					<h5 class="widget-title">Archives</h5>
+					<ul>
+						<li><a rel="nofollow" href='/2017/05/'>May 2017</a></li>
+						<li><a rel="nofollow" href='/2016/05/'>May 2016</a></li>
+						<li><a rel="nofollow" href='/2013/08/'>August 2013</a></li>
+						<li><a rel="nofollow" href='/2012/09/'>September 2012</a></li>
+						<li><a rel="nofollow" href='/2012/04/'>April 2012</a></li>
+						<li><a rel="nofollow" href='/2012/02/'>February 2012</a></li>
+						<li><a rel="nofollow" href='/2011/01/'>January 2011</a></li>
+						<li><a rel="nofollow" href='/2010/11/'>November 2010</a></li>
+						<li><a rel="nofollow" href='/2010/09/'>September 2010</a></li>
+						<li><a rel="nofollow" href='/2010/08/'>August 2010</a></li>
+						<li><a rel="nofollow" href='/2010/06/'>June 2010</a></li>
+						<li><a rel="nofollow" href='/2010/03/'>March 2010</a></li>
+						<li><a rel="nofollow" href='/2009/03/'>March 2009</a></li>
+						<li><a rel="nofollow" href='/2008/12/'>December 2008</a></li>
+						<li><a rel="nofollow" href='/2008/08/'>August 2008</a></li>
+						<li><a rel="nofollow" href='/2008/07/'>July 2008</a></li>
+						<li><a rel="nofollow" href='/2008/06/'>June 2008</a></li>
+						<li><a rel="nofollow" href='/2008/03/'>March 2008</a></li>
+						<li><a rel="nofollow" href='/2007/08/'>August 2007</a></li>
+						<li><a rel="nofollow" href='/2007/06/'>June 2007</a></li>
+						<li><a rel="nofollow" href='/2007/03/'>March 2007</a></li>
+						<li><a rel="nofollow" href='/2007/01/'>January 2007</a></li>
+						<li><a rel="nofollow" href='/2006/12/'>December 2006</a></li>
+					</ul>
+				</div>
+-->
+			</aside>

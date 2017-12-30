@@ -1,0 +1,10 @@
+{{ partial "header.html" . }}
+
+{{ $paginator := .Paginate (where (where .Data.Pages "Type" "post") "Kind" "page") }}
+{{ range $paginator.Pages }}
+	{{ partial "post" . }}
+{{ end }}
+
+{{ partial "pagination" . }}
+
+{{ partial "footer.html" . }}

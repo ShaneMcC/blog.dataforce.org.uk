@@ -1,0 +1,16 @@
+name = "Material"
+license = "GPL"
+licenselink = "http://www.gnu.org/licenses/gpl-3.0.txt"
+description = "Port of wordpress 'Material' theme."
+homepage = "https://dataforce.org.uk/"
+min_version = "0.25.1"
+
+[author]
+  name = "Shane Mc Cormack"
+  homepage = "https://dataforce.org.uk/"
+
+# If porting an existing theme
+[original]
+  name = "Material"
+  homepage = ""
+  repo = ""

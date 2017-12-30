@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	<meta charset="UTF-8">
+	<title>{{ .Site.Title }}</title>
+	<meta name="description" content="{{ .Site.Title }}">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link rel='stylesheet' href='/css/style.css' type='text/css' media='all' />
+	<link rel='stylesheet' href='/css/override.css' type='text/css' media='all' />
+
+	<link rel='stylesheet' id='profile-widget-ninja-frontend-css'  href='/profile-widget-ninja/css/profile_widget_ninja.css' type='text/css' media='all' />
+	<link href="/code-block-enabler/prettify.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="/code-block-enabler/prettify.js"></script>
+
+    <!--[if lt IE 9]><script src="/js/html5shiv.js"></script><![endif]-->
+</head>
+
+<body>
+	<header class="site-header" role="banner">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-xs-12 banner">
+					<img class="site-banner" src="/wp-content/uploads/2016/05/header.png" width="1920"  alt="" />
+				</div>
+			</div>
+		</div>
+		<div class="container header-contents">
+			<div class="row">
+				<div class="col-xs-9 sitelogo">
+					<div class="site-logo">
+						<a href="/" rel="home">{{ .Site.Title }}</a> <div class="tagline">{{ .Site.Params.subtitle }}</div>
+					</div>
+				</div>
+				<div class="col-xs-12">
+					<nav class="site-navigation navbar navbar-default navbar-mv-up" role="navigation">
+						<div class="menu-short-container container-fluid">
+							<div class="navbar-header">
+								<button type="button" class="navbar-toggle collapsed navbar-color-mod" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+									<span class="sr-only">Toggle navigation</span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+								</button>
+							</div>
+
+							<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+								<div class="menu-top-menu-container">
+									<ul id="menu-top-menu" class="site-menu">
+										<li id="menu-item-101122" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-101122"><a href="/">Home</a></li>
+										<li id="menu-item-288" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-288"><a href="/irc-musings/">IRC Musings</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<!-- MAIN CONTENT AREA -->
+	<div class="container">
+		<div class="row">
+			<div class="main-content col-md-9" role="main">
