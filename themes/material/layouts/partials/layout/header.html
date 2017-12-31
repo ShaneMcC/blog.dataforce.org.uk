@@ -34,7 +34,7 @@
       {{ end }}
     {{ end }}
 
-    {{ partial "header-override.html" . }}
+    {{ partial "layout/override/header" . }}
 </head>
 
 <body>
@@ -68,8 +68,12 @@
 							<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 								<div class="menu-top-menu-container">
 									<ul id="menu-top-menu" class="site-menu">
-										<li id="menu-item-101122" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-101122"><a href="/">Home</a></li>
-										<li id="menu-item-288" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-288"><a href="/irc-musings/">IRC Musings</a></li>
+										<li class="menu-item"><a href="/">Home</a></li>
+										{{ range (where .Site.Pages "Type" "page") }}
+											{{ if ne .RelPermalink "/" }}
+											<li class="menu-item"><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+											{{ end }}
+										{{ end }}
 									</ul>
 								</div>
 							</div>

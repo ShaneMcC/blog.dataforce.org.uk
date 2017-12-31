@@ -7,5 +7,20 @@ disablePathToLower = "true"
 [params]
   subtitle = "Dataforce's Blog"
 
+[[params.sidebar]]
+  link = "http://www.dfbnc.com/"
+  name = "DFBnc"
+  description = "– My IRC Bouncer"
+
+[[params.sidebar]]
+  link = "http://www.dmdirc.com/"
+  name = "DMDirc"
+  description = "– The intelligent IRC Client"
+
+[[params.sidebar]]
+  link = "http://www.melbourne.co.uk/"
+  name = "Melbourne Server Hosting"
+  description = "– My current employer."
+
 [taxonomies]
   category = "category"

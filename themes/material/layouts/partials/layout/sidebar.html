@@ -28,15 +28,13 @@
 
 				<div id="links" class="widget widget_links">
 					<h5 class="widget-title">Links</h5>
-					<ul class='xoxo blogroll'>
-						<li>
-							<a href="http://www.dmdirc.com/" rel="me" title="DMDirc &#8211; The intelligent IRC Client" target="_blank">DMDirc</a>
-							DMDirc &#8211; The intelligent IRC Client
-						</li>
-						<li>
-							<a href="http://www.melbourne.co.uk/" title="My current employer." target="_blank">Melbourne Server Hosting</a>
-							My current employer.
-						</li>
+					<ul>
+						{{ range .Site.Params.sidebar }}
+							<li>
+								<a href="{{ .link }}" rel="me" title="{{ .description }}" target="_blank">{{ .name }}</a>
+								{{ .description }}
+							</li>
+						{{ end }}
 					</ul>
 				</div>
 
@@ -55,8 +53,8 @@
 					<h5 class="widget-title">Categories</h5>
 					<ul>
 						{{ range $key, $value := .Site.Taxonomies.category }}
-							<li class="cat-item">
-								<a rel="nofollow" href="/category/{{ $key | urlize }}/" title="{{ $key }}">{{ $key }}</a>
+							<li>
+								<a rel="nofollow" href="/category/{{ $key | lower | urlize }}/" title="{{ $key }}">{{ $key }}</a>
 							</li>
 						{{ end }}
 					</ul>
@@ -92,4 +90,7 @@
 					</ul>
 				</div>
 -->
+
+			{{ partial "layout/override/sidebar" . }}
+
 			</aside>

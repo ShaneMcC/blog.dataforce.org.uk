@@ -1,6 +1,6 @@
 			</div>
 
-			{{ partial "sidebar.html" . }}
+			{{ partial "layout/sidebar" . }}
 
 			<script type="text/javascript">
 				window.onload = function(){prettyPrint();};
@@ -24,6 +24,6 @@
 	<script type='text/javascript' src='/js/bootstrap-3.3.1.min.js'></script>
 	<script type='text/javascript' src='/js/main.js'></script>
 	<script type='text/javascript' src='/js/override.js'></script>
-	{{ partial "footer-override.html" . }}
+	{{ partial "layout/override/footer" . }}
 	</body>
 </html>

@@ -1,0 +1,22 @@
+	<!-- Article footer -->
+	<footer class="entry-footer">
+		<ul class="list-inline entry-meta">
+			{{ if isset .Params "category" }}
+				<li class="meta-categories">
+					Categorized in
+
+					{{ with .Params.category }}
+					    {{ $sort := sort . }}
+					    {{ $links := apply $sort "partial" "post/categories" "." }}
+					    {{ $clean := apply $links "chomp" "." }}
+					    {{ delimit $clean ", " }}
+					{{ end }}
+				</li>
+			{{ end }}
+			{{ if eq .Params.comments true }}
+				<li class="pull-right clear-right">
+					<i class="fa fa-comments"></i><span class="meta-reply"><a href="{{ .RelPermalink }}#comments">Comments</a></span>
+				</li>
+			{{ end }}
+		</ul>
+	</footer> <!-- end entry-footer -->

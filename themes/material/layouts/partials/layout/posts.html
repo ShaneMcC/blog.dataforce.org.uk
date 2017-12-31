@@ -1,6 +1,6 @@
 {{ $paginator := .Paginate (where (where .Site.Pages "Type" "post") "Kind" "page") }}
 {{ range $paginator.Pages }}
-	{{ partial "post" . }}
+	{{ partial "post/post" . }}
 {{ end }}
 
-{{ partial "pagination" . }}
+{{ partial "layout/pagination" . }}

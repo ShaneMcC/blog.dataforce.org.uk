@@ -1,0 +1,16 @@
+	<header class="entry-header">
+		<h1>
+			<a href="{{ .RelPermalink }}" rel="bookmark">{{ .Title }}</a>
+		</h1>
+
+		<p class="entry-meta">
+			<ul class="list-inline entry-meta">
+				<li class="meta-date">
+					Posted on <a href="{{ .RelPermalink }}" rel="date">{{ .Date.Format "January 2, 2006" }}</a>
+				</li>
+				<li class="meta-author">
+					by {{ .Params.Author }}
+				</li>
+			</ul>
+		</p>
+	</header> <!-- end entry-header -->
