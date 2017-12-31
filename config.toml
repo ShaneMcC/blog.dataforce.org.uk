@@ -2,11 +2,22 @@ baseURL = "https://blog.dataforce.org.uk/"
 languageCode = "en-gb"
 title = "blog.dataforce.org.uk"
 theme = "material"
-disablePathToLower = "true"
+disablePathToLower = true
 
 [params]
   headerimg = "/wp-content/uploads/2016/05/header.png"
   subtitle = "Dataforce's Blog"
+
+[params.profile]
+  show = true
+  image = "/wp-content/uploads/2016/05/ShaneNewColour.png"
+  name = "Shane Mc Cormack"
+  description = "Linux using, open source programming, network engineer."
+  email = "shanemcc@gmail.com"
+  twitter = "Dataforce"
+  facebook = "Dataforce"
+  github = "ShaneMcC"
+  linkedin = "shanemccormack"
 
 [[params.sidebar]]
   link = "http://www.dfbnc.com/"

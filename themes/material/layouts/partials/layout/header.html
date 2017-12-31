@@ -7,34 +7,36 @@
 	<meta name="description" content="{{ .Site.Title }}">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    {{ if .RSSLink }}
-      <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
-    {{ end }}
+	{{ if .RSSLink }}
+		<link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+	{{ end }}
 
 	<link rel='stylesheet' href='/css/style.css' type='text/css' media='all' />
 	<link rel='stylesheet' href='/css/override.css' type='text/css' media='all' />
 
 	<link rel='stylesheet' id='profile-widget-ninja-frontend-css'  href='/profile-widget-ninja/css/profile_widget_ninja.css' type='text/css' media='all' />
 	<link href="/code-block-enabler/prettify.css" type="text/css" rel="stylesheet" />
-    <script type="text/javascript" src="/code-block-enabler/prettify.js"></script>
+	<script type="text/javascript" src="/code-block-enabler/prettify.js"></script>
 
-    <!--[if lt IE 9]><script src="/js/html5shiv.js"></script><![endif]-->
+	<!--[if lt IE 9]><script src="/js/html5shiv.js"></script><![endif]-->
 
-    {{ if $.IsPage }}
-      <meta name="twitter:card" content="summary" />
-      <meta name="twitter:site" content="@Dataforce" />
-      <meta name="twitter:creator" content="@Dataforce" />
-      <meta property="og:url" content="{{ .Permalink }}" />
-      <meta property="og:title" content="{{ .Title }}" />
-      {{ if $.Param "description" }}
-        <meta property="og:description" content="{{ $.Param "description" | htmlEscape }}" />
-      {{ end }}
-      {{ if $.Param "image" }}
-        <meta property="og:image" content="{{ $.Param "image" | absURL }}" />
-      {{ end }}
-    {{ end }}
+	{{ if $.IsPage }}
+		{{ if isset .Site.Params.profile "twitter" }}
+			<meta name="twitter:card" content="summary" />
+			<meta name="twitter:site" content="@{{ .Site.Params.profile.twitter }}" />
+			<meta name="twitter:creator" content="@{{ .Site.Params.profile.twitter }}" />
+		{{ end }}
+			<meta property="og:url" content="{{ .Permalink }}" />
+			<meta property="og:title" content="{{ .Title }}" />
+		{{ if $.Param "description" }}
+			<meta property="og:description" content="{{ $.Param "description" | htmlEscape }}" />
+		{{ end }}
+		{{ if $.Param "image" }}
+			<meta property="og:image" content="{{ $.Param "image" | absURL }}" />
+		{{ end }}
+	{{ end }}
 
-    {{ partial "layout/override/header" . }}
+	{{ partial "layout/override/header" . }}
 </head>
 
 <body>
