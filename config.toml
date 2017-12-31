@@ -5,34 +5,34 @@ theme = "material"
 disablePathToLower = true
 
 [params]
-  headerimg = "/wp-content/uploads/2016/05/header.png"
-  subtitle = "Dataforce's Blog"
+	headerimg = "/wp-content/uploads/2016/05/header.png"
+	subtitle = "Dataforce's Blog"
 
-[params.profile]
-  show = true
-  image = "/wp-content/uploads/2016/05/ShaneNewColour.png"
-  name = "Shane Mc Cormack"
-  description = "Linux using, open source programming, network engineer."
-  email = "shanemcc@gmail.com"
-  twitter = "Dataforce"
-  facebook = "Dataforce"
-  github = "ShaneMcC"
-  linkedin = "shanemccormack"
+	[params.profile]
+		show = true
+		image = "/wp-content/uploads/2016/05/ShaneNewColour.png"
+		name = "Shane Mc Cormack"
+		description = "Linux using, open source programming, network engineer."
+		email = "shanemcc@gmail.com"
+		twitter = "Dataforce"
+		facebook = "Dataforce"
+		github = "ShaneMcC"
+		linkedin = "shanemccormack"
 
-[[params.sidebar]]
-  link = "http://www.dfbnc.com/"
-  name = "DFBnc"
-  description = "– My IRC Bouncer"
+	[[params.sidebar]]
+		link = "http://www.dfbnc.com/"
+		name = "DFBnc"
+		description = "– My IRC Bouncer"
 
-[[params.sidebar]]
-  link = "http://www.dmdirc.com/"
-  name = "DMDirc"
-  description = "– The intelligent IRC Client"
+	[[params.sidebar]]
+		link = "http://www.dmdirc.com/"
+		name = "DMDirc"
+		description = "– The intelligent IRC Client"
 
-[[params.sidebar]]
-  link = "http://www.melbourne.co.uk/"
-  name = "Melbourne Server Hosting"
-  description = "– My current employer."
+	[[params.sidebar]]
+		link = "http://www.melbourne.co.uk/"
+		name = "Melbourne Server Hosting"
+		description = "– My current employer."
 
 [taxonomies]
-  category = "category"
+	category = "category"
