@@ -75,19 +75,19 @@ to which they get the following response back:
 :pratchett.freenode.net 368 DFTest #Channel :End of Channel Ban List
 ```
 
-There is no easy way to know which were set as mode d, and which were mode b as they come from the same numeric. (Of course you could statefully remember which modes you asked for in which order - but on dancer/hyperion using "bdq" not "bqd" returns the exact same - q and b are merged into one, which would still require some hard-coded knowledge. There is also still the problem that not all IRCDs use the same numeric for everthing)
+There is no easy way to know which were set as mode d, and which were mode b as they come from the same numeric. (Of course you could statefully remember which modes you asked for in which order - but on dancer/hyperion using "bdq" not "bqd" returns the exact same - q and b are merged into one, which would still require some hard-coded knowledge. There is also still the problem that not all IRCDs use the same numeric for everything)
 
-_RPL_ISUPPORT_ allows IRC parser/client developers to dynamically discover what modes are available on the IRCD, yet the raw numerics for each type of list mode _still_ need to be hardcoded.
+`RPL_ISUPPORT` allows IRC parser/client developers to dynamically discover what modes are available on the IRCD, yet the raw numerics for each type of list mode _still_ need to be hardcoded.
 
 ### My Proposal
 
-To aid in the design of IRC Parsers, I propose an addition to _RPL_ISUPPORT_ and a new command.
+To aid in the design of IRC Parsers, I propose an addition to `RPL_ISUPPORT` and a new command.
 
-The addition to _RPL_ISUPPORT_ is a "LISTMODE=997" option.
+The addition to `RPL_ISUPPORT` is a `LISTMODE=997` option.
 
-This new option would let clients know that there is an easy-to-parse/sensible way to get the current list modes on a channel, the "LISTMODE" command. (ie /LISTMODE #Channel bdq or (/LISTMODE #Channel * for all list modes))
+This new option would let clients know that there is an easy-to-parse/sensible way to get the current list modes on a channel, the `LISTMODE` command. (ie `/LISTMODE #Channel bdq` or (`/LISTMODE #Channel *` for all list modes))
 
-The LISTMODE commands given above would return the following:
+The `LISTMODE` commands given above would return the following:
 
 ```
 :pratchett.freenode.net 997 DFTest #Channel b modeb!user@host DFTest!i=shane@dataforce.org.uk 1173715309
@@ -97,19 +97,19 @@ The LISTMODE commands given above would return the following:
 :pratchett.freenode.net 998 DFTest #Channel :End of Channel List Modes
 ```
 
-The numeric used for the individual items is the same as specified in _RPL_ISUPPORT_ (in this case 997) and the "End of list modes" uses LISTMODE+1 for its numeric. This allows ircds to use what ever numeric they want that is free - without clients needing to know what numeric each IRCD uses in advance.
+The numeric used for the individual items is the same as specified in `RPL_ISUPPORT` (in this case 997) and the `End of list modes` uses `LISTMODE+1` for its numeric. This allows ircds to use what ever numeric they want that is free - without clients needing to know what numeric each IRCD uses in advance.
 
-The addition of the /LISTMODE command and not just altering the current /MODE command is to maintain backwards compatability with older clients.
+The addition of the `/LISTMODE` command and not just altering the current `/MODE` command is to maintain backwards compatibility with older clients.
 
 ### Error Handling
 
-Error handling is similar to that for the traditional /MODE request:
+Error handling is similar to that for the traditional `/MODE` request:
 
-* If a client requests modes for a channel they are not on, ERR_NOTONCHANNEL (Numeric 442) should be returned
-* If a client requests a mode that is not a list mode or not a mode at all, then ERR_UNKNOWNMODE (Numeric 472) should be given for each invalid mode.
-* If a client requests a mode that they do not have access to see (eg +e or +I on Hybrid-based ircds) then ERR_CHANOPRIVSNEEDED (Numeric 482) should be returned.
+* If a client requests modes for a channel they are not on, `ERR_NOTONCHANNEL` (Numeric 442) should be returned
+* If a client requests a mode that is not a list mode or not a mode at all, then `ERR_UNKNOWNMODE` (Numeric 472) should be given for each invalid mode.
+* If a client requests a mode that they do not have access to see (eg +e or +I on Hybrid-based ircds) then `ERR_CHANOPRIVSNEEDED` (Numeric 482) should be returned.
 
-If a request for "*" is given, then the only error permitted is ERR_NOTONCHANNEL.
+If a request for "*" is given, then the only error permitted is `ERR_NOTONCHANNEL`.
 
 ### Existing list mode information
 
@@ -117,7 +117,7 @@ To the best of my knowledge, the information [on the dmdirc wiki](http://wiki.dm
 
 ### Known Implementations
 
-At the moment as far as I am aware the only IRC Client/Parser that understands the LISTMODE option/command is [DMDirc](http://dmdirc.com/) (however [smuxi](http://smuxi.org) appears to be [considering it](http://projects.qnetp.net/issues/show/229), and the only server that allows its use is [WeIRCd](http://eloxoph.com/weircd/) (<irc://irc.eloxoph.com/>) and the only "bouncer" that allows its use is [DFBnc-Java](http://dfbnc.com/).
+At the moment as far as I am aware the only IRC Client/Parser that understands the `LISTMODE` option/command is [DMDirc](http://dmdirc.com/) (however [smuxi](http://smuxi.org) appears to be [considering it](http://projects.qnetp.net/issues/show/229), and the only server that allows its use is [WeIRCd](http://eloxoph.com/weircd/) (<irc://irc.eloxoph.com/>) and the only "bouncer" that allows its use is [DFBnc-Java](http://dfbnc.com/).
 
 ### Questions, Comments, Corrections
 
@@ -137,17 +137,19 @@ Unlike the previous proposal, this one is much less generic and has a somewhat s
 
 When a user reconnects to a bouncer, they often do so either in the midst of ongoing conversations or during a periods of downtime for channels. In the first case, the user may need to wait a while before jumping in, and in the latter case the user probably won't even know.
 
-Often the solution to the first case is to provide a "backbuffer" of conversation, the last X lines or so. This can be replayed as a series of notices (which then looks out of place) or as a series of **PRIVMSG**s as they arrived to the BNC. Both of these work well for the first case, but often provide no hint about _when_ these occured, unless a timestamp is hacked into the line either at the start or end which again looks out of place.
+Often the solution to the first case is to provide a "backbuffer" of conversation, the last X lines or so. This can be replayed as a series of notices (which then looks out of place) or as a series of `PRIVMSG`s as they arrived to the BNC. Both of these work well for the first case, but often provide no hint about _when_ these occurred, unless a timestamp is hacked into the line either at the start or end which again looks out of place.
+
+Since this was written, an alternative has been proposed by the IRCv3 working group, the [server-time extension](https://ircv3.net/specs/extensions/server-time-3.2.html) which covers the same use-cases as this proposal, but is implemented using server capabilities.
 
 ### My Proposal
 
-Therefore, a possible solution to both is to provide a timestamp _alongside_ the replayed **PRIVMSG**, and allow the IRC Client to display this however it sees fit.
+Therefore, a possible solution to both is to provide a timestamp _alongside_ the replayed `PRIVMSG`, and allow the IRC Client to display this however it sees fit.
 
-As before, I propose an addition to _RPL_ISUPPORT_ and a new command.
+As before, I propose an addition to `RPL_ISUPPORT` and a new command.
 
-The addition to _RPL_ISUPPORT_ is a "TIMESTAMPEDIRC" option.
+The addition to `RPL_ISUPPORT` is a `TIMESTAMPEDIRC` option.
 
-This new option would let clients know that the servers supports TimestampedIRC. The client could then enable it with a "TIMESTAMPEDIRC" command. (ie /TIMESTAMPEDIRC ON)
+This new option would let clients know that the servers supports TimestampedIRC. The client could then enable it with a `TIMESTAMPEDIRC` command. (ie `/TIMESTAMPEDIRC ON`)
 
 Once enabled, certain types of messages can include timestamp data. My suggestion is to add this at the very beginning of the line, as follows:
 
@@ -171,7 +173,7 @@ Once a client has signalled their desire to start using timestamps with `/TIMEST
 :my.server.name TSIRC 1 1316146177387 :Timestamped IRC Enabled
 ```
 
-The parameter of note here is the 4th parameter, this is the current time on the server and can be used by the client to determin the difference between timestamps which it can then use when processing any timestamped messages.
+The parameter of note here is the 4th parameter, this is the current time on the server and can be used by the client to determine the difference between timestamps which it can then use when processing any timestamped messages.
 
 Currently, the 3rd parameter is "1" if TimestampedIRC has been enabled, or "0" if it was disabled (`/TIMESTAMPEDIRC OFF`). A server can (if it so wishes) refuse to enable TimestampedIRC by always setting this to 0.
 
