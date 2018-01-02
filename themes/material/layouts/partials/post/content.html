@@ -1,8 +1,14 @@
 	<!-- Article content -->
 	<div class="entry-content">
 		{{ if isset .Params "image" }}
+			{{ $image := .Resources.GetByPrefix .Params.image }}
 			<figure class="entry-image {{ if isset .Params "imageposition" }}{{ .Params.imageposition }}{{ else }}right{{ end }}">
-				<img alt="Post thumbnail" src="{{ .Params.image }}">
+				<img alt="Post thumbnail" src="{{ $image.RelPermalink }}">
+			</figure>
+		{{ else if .Resources.GetByPrefix "postimg" }}
+			{{ $image := .Resources.GetByPrefix "postimg" }}
+			<figure class="entry-image {{ if isset .Params "imageposition" }}{{ .Params.imageposition }}{{ else }}right{{ end }}">
+				<img alt="Post thumbnail" src="{{ $image.RelPermalink }}">
 			</figure>
 		{{ end }}
 		{{ .Content }}
