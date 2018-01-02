@@ -31,8 +31,9 @@
 		{{ if $.Param "description" }}
 			<meta property="og:description" content="{{ $.Param "description" | htmlEscape }}" />
 		{{ end }}
+
 		{{ if $.Param "image" }}
-			{{ $image := $.Param "image" }}
+			{{ $image := .Resources.GetByPrefix ($.Param "image") }}
 			<meta property="og:image" content="{{ $image.RelPermalink | absURL }}" />
 		{{ else if .Resources.GetByPrefix "postimg" }}
 			{{ $image := .Resources.GetByPrefix "postimg" }}

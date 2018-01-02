@@ -2,7 +2,7 @@
 title: Moving to Hugo
 author: Dataforce
 url:  /2017/12/moving-to-hugo/
-simage: blog-screenshot.png
+image: blog-screenshot.png
 description: I recently moved this blog to Hugo, this is how I did it. Kind of.
 type: post
 date: 2017-12-30T04:56:26Z
