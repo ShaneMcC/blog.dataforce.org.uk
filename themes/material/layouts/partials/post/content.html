@@ -1,6 +1,6 @@
 	<!-- Article content -->
 	<div class="entry-content">
-		{{ if isset .Params "image" }}
+		{{ if and (isset .Params "image") (ne nil .Params.image) (ne "" .Params.image) }}
 			{{ $image := .Resources.GetByPrefix .Params.image }}
 			<figure class="entry-image {{ if isset .Params "imageposition" }}{{ .Params.imageposition }}{{ else }}right{{ end }}">
 				<img alt="Post thumbnail" src="{{ $image.RelPermalink }}">
