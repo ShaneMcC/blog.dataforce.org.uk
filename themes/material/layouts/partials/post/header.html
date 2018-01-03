@@ -5,11 +5,11 @@
 
 		<p class="entry-meta">
 			<ul class="list-inline entry-meta">
-				<li class="meta-date">
+				<li class="meta">
 					Posted on <a href="{{ .RelPermalink }}" rel="date">{{ .Date.Format "January 2, 2006" }}</a>
-				</li>
-				<li class="meta-author">
-					by {{ .Params.Author }}
+					{{ if .Params.Author }}
+						by {{ .Params.Author }}
+					{{ end }}
 				</li>
 			</ul>
 		</p>
