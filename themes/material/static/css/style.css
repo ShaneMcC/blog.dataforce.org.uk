@@ -8732,3 +8732,12 @@ tr {
 .entry-image.left, .entry-image.right {
   max-width: 40%;
 }
+
+img.site-banner {
+  width: 100%;
+  height: 150px;
+}
+
+div.sitelogo {
+  white-space: nowrap;
+}
