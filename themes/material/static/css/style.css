@@ -6,12 +6,20 @@ Stylesheets for all the front pages display.
 
 */
 
+div.widescreen aside.sidebar {
+  width: 290px;
+  float: left;
+  padding-left: 7.5px;
+  padding-right: 7.5px;
+}
+
 @media (min-width: 992px) {
-  aside.sidebar {
-    width: 290px;
-    float: left;
-    padding-left: 7.5px;
-    padding-right: 7.5px;
+  div.widescreen {
+    display: block;
+  }
+
+  div.smallscreen {
+    display: none;
   }
 
   div.main-content {
@@ -21,8 +29,12 @@ Stylesheets for all the front pages display.
 }
 
 @media (max-width: 992px) {
-  aside.sidebar {
+  div.widescreen {
     display: none;
+  }
+
+  div.smallscreen {
+    display: block;
   }
 
   div.main-content {
