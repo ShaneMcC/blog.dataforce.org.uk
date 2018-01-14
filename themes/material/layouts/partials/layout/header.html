@@ -53,7 +53,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="container header-contents">
+		<div class="container-fluid header-contents">
 			<div class="row">
 				<div class="col-xs-9 sitelogo">
 					<div class="site-logo">
@@ -92,6 +92,8 @@
 	</header>
 
 	<!-- MAIN CONTENT AREA -->
-	<div class="container">
+	<div class="container-fluid">
+		{{ partial "layout/sidebar" . }}
+
 		<div class="row">
-			<div class="main-content col-md-9" role="main">
+			<div class="main-content" role="main">

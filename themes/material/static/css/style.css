@@ -6,6 +6,33 @@ Stylesheets for all the front pages display.
 
 */
 
+@media (min-width: 992px) {
+  aside.sidebar {
+    width: 290px;
+    float: left;
+    padding-left: 7.5px;
+    padding-right: 7.5px;
+  }
+
+  div.main-content {
+    padding-left: 297.5px;
+    padding-right: 7.5px;
+  }
+}
+
+@media (max-width: 992px) {
+  aside.sidebar {
+    display: none;
+  }
+
+  div.main-content {
+    position: relative;
+    min-height: 1px;
+    padding-left: 7.5px;
+    padding-right: 7.5px;
+  }
+}
+
 @charset "UTF-8";
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 /* line 9, _normalize.scss */
