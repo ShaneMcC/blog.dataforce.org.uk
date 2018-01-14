@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 .pwn-profile-widget-ninja-wrapper {
-    background: #3a5795;
+    /* background: #3a5795;
     overflow: hidden;
     border: 0;
     -webkit-border-radius: 10px;
@@ -13,7 +13,7 @@
     -moz-box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.52);
     -ms-box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.52);
     -o-box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.52);
-    box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.52);
+    box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.52); */
 }
 .pwn-profile-widget-ninja-wrapper .pwn-profile-widget-ninja-cover-pic {
     height: 200px;
@@ -98,12 +98,12 @@
     background-color: #F5F5F5;
 }
 .pwn-profile-widget-ninja-wrapper.pwn-layout-style-style2 {
-    background: #ffffff;
+    /*background: #ffffff;
     -webkit-box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.22);
     -moz-box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.22);
     -ms-box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.22);
     -o-box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.22);
-    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.22);
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.22); */
 }
 
 /* Style 3 overrides*/
