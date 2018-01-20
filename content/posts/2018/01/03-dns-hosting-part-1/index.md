@@ -1,5 +1,5 @@
 ---
-title: DNS Hosting - Part 1
+title: "DNS Hosting - Part 1: History"
 author: Dataforce
 url:  /2018/01/dns-hosting-part-1/
 image: dns.png
