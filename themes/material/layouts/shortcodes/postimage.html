@@ -1,6 +1,11 @@
 {{ $image := .Page.Resources.GetByPrefix (.Get "src") }}
 {{ if $image }}
+	{{ if .Get "large" }}
+		{{ $largeimage := .Page.Resources.GetByPrefix (.Get "large") }}
+		<a href="{{ ($largeimage).RelPermalink }}">
+	{{ end }}
 	<figure class="entry-image {{ if .Get "side" }}{{ .Get "side" }}{{ else }}right{{ end }}">
 		<img alt="{{ if .Get "alt" }}{{ .Get "alt" }}{{ else }}Post thumbnail{{ end }}" src="{{ ($image).RelPermalink }}">
 	</figure>
+	{{ if .Get "large" }}</a>{{ end }}
 {{ end }}
