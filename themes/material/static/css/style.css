@@ -8753,3 +8753,7 @@ img.site-banner {
 div.sitelogo {
   white-space: nowrap;
 }
+
+div.pagewrapper {
+  width: 98%;
+}
