@@ -1,7 +1,7 @@
-{{ $image := .Page.Resources.GetByPrefix (.Get "src") }}
+{{ $image := .Page.Resources.GetMatch (.Get "src") }}
 {{ if $image }}
 	{{ if .Get "large" }}
-		{{ $largeimage := .Page.Resources.GetByPrefix (.Get "large") }}
+		{{ $largeimage := .Page.Resources.GetMatch (.Get "large") }}
 		<a href="{{ ($largeimage).RelPermalink }}">
 	{{ end }}
 	<figure class="entry-image {{ if .Get "side" }}{{ .Get "side" }}{{ else }}right{{ end }}">

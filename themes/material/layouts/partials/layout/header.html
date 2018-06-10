@@ -33,10 +33,10 @@
 		{{ end }}
 
 		{{ if and ($.Param "image") (ne nil ($.Param "image")) (ne "" ($.Param "image")) }}
-			{{ $image := .Resources.GetByPrefix ($.Param "image") }}
+			{{ $image := .Resources.GetMatch (printf "%s*" ($.Param "image")) }}
 			<meta property="og:image" content="{{ $image.RelPermalink | absURL }}" />
-		{{ else if .Resources.GetByPrefix "postimg" }}
-			{{ $image := .Resources.GetByPrefix "postimg" }}
+		{{ else if .Resources.GetMatch "postimg" }}
+			{{ $image := .Resources.GetMatch "postimg" }}
 			<meta property="og:image" content="{{ $image.RelPermalink | absURL }}" />
 		{{ end }}
 	{{ end }}
