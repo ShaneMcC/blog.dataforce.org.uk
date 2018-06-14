@@ -20,7 +20,7 @@ The system is split up into a number of containers (and could probably be split 
 
 To start with, I had the following containers:
 
- - API Container - Deals with all the backend interactions)
+ - API Container - Deals with all the backend interactions
  - WEB Container - Runs the main frontend that people see. Interacts with the API Container to actually do anything.
  - DB Container - Holds all the data used by the API
  - BIND Container - Runs an instance of bind to handle DNSSEC signing and distributing DNS Zones to the public-facing servers.
