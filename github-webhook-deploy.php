@@ -7,6 +7,9 @@
 	 * Based on https://gist.github.com/1809044
 	 */
 
+	$config['verbosechannel'] = '';
+	$config['reportchannel'] = '';
+
 	if (file_exists(dirname(__FILE__) . '/report.functions.php')) {
 		require_once(dirname(__FILE__) . '/report.functions.php');
 	}
@@ -17,7 +20,7 @@
 	$sitename = 'blog.dataforce.org.uk';
 
 	$hostname = `hostname -f`;
-	reportSoren("\002[$sitename]\002 Beginning deployment on $hostname");
+	reportSoren("\002[$sitename]\002 Beginning deployment on $hostname", [$config['verbosechannel']]);
 	chdir('/var/www/' . $sitename . '/');
 
 	$branch = 'master';
@@ -68,19 +71,20 @@
 	list($success, $output) = runCommands($commands);
 
 	if ($success) {
-		reportSoren("\002\0033[$sitename]\003\002 Successful deployment on $hostname");
+		reportSoren("\002\0033[$sitename]\003\002 Successful deployment on $hostname", [$config['verbosechannel']]);
 	} else {
-		reportSoren("\002\0034[$sitename]\003\002 Failed deployment on $hostname");
+		reportSoren("\002\0034[$sitename]\003\002 Failed deployment on $hostname", [$config['verbosechannel']]);
 	}
 	$state = `git log -1 --pretty=oneline`;
-	reportSoren("\002[$sitename]\002 Repo at: $state");
+	reportSoren("\002[$sitename]\002 Repo at: $state", [$config['verbosechannel']]);
 
 	list($success, $output) = runCommands($afterCommands, $output);
 
 	if ($success) {
-		reportSoren("\002\0033[$sitename]\003\002 Successful build on $hostname");
+		reportSoren("\002\0033[$sitename]\003\002 Successful build on $hostname", [$config['verbosechannel'], $config['reportchannel']]);
+		reportSoren("\002[$sitename]\002 Repo at: $state", [$config['reportchannel']]);
 	} else {
-		reportSoren("\002\0034[$sitename]\003\002 Failed build on $hostname");
+		reportSoren("\002\0034[$sitename]\003\002 Failed build on $hostname", [$config['verbosechannel'], $config['reportchannel']]);
 	}
 
 	// Make it pretty for manual user access (and why not?)
