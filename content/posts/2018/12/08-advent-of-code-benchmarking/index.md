@@ -13,7 +13,7 @@ category:
 
 For [a][1] [few][2] [years][3] [now][4] I've been enjoying [Eric Wastl][5]'s [Advent of Code][6]. For those unaware, [each][7] [year][8] [since][9] [2015][10] Advent of Code provides a 2-part coding challenge every day from December 1st to December 25th.
 
-In previous years, Myself and [Chris][1] have been fairly informally trying to see who was able to produce the fastest code (Me in PHP, Chris in Python). In the final week of last year to assist with this, [we][12] [both][13] made our repos run in `Docker` and produce `time` output for each day.
+In previous years, Myself and [Chris][11] have been fairly informally trying to see who was able to produce the fastest code (Me in PHP, Chris in Python). In the final week of last year to assist with this, [we][12] [both][13] made our repos run in `Docker` and produce `time` output for each day.
 
 This allowed us to run each other's code locally to compare fairly without needing to install the other's dev environment, and made the testing a bit fairer as it was no longer dependant on who had the faster CPU when running their own solution. For the rest of the year this was fine and we carried on as normal. As we got to the end I remarked it would be fun to have a web interface that automatically dealt with it and showed us the scores, but there was obviously no point in doing that once the year was over. Maybe in a future year...
 
