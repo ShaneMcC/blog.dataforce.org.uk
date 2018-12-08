@@ -62,9 +62,9 @@ Yes. It did. The extreme-variance went away entirely, without needing any change
 
 The next major change came about after Chris got annoyed by python (even under pypy) being unable to compete with the speed improvements that PHP7 has made, and switched to using Nim. Suddenly most of the competition was gone. The compiled code wins every time. every. time. (Obviously). So [Podium Mode][32] was added to allow for competing for the top 3 spaces on each day.
 
-Finally, after a lot of confusion around implementations for [Day 7][33] and how some inputs behaved differently than others in different ways in different code, the input matrix code was extended to allow feeding [custom inputs][34] to solutions to weed out miss-assumptions and see how they respond to input that isn't quite so carefully crafted.
+Finally, after a lot of confusion around implementations for [Day 7][33] and how some inputs behaved differently than others in different ways in different code, the input matrix code was [extended][34] to allow feeding [custom inputs][35] to solutions to weed out miss-assumptions and see how they respond to input that isn't quite so carefully crafted.
 
-If anyone wants to follow along, I have AoCBench running [here][35] - and I have also documented [here][36] the requirements for making a repo AoCBench compatible. The code for AoCBench is fully open source under the MIT License and available on [GitHub][20]
+If anyone wants to follow along, I have AoCBench running [here][36] - and I have also documented [here][37] the requirements for making a repo AoCBench compatible. The code for AoCBench is fully open source under the MIT License and available on [GitHub][20]
 
 Happy Advent of Code all!
 
@@ -102,5 +102,6 @@ Happy Advent of Code all!
   [32]: https://github.com/ShaneMcC/AoCBench/commit/6ffad663172465bcb4fc8a42367e2f871fc31b65
   [33]: https://adventofcode.com/2018/day/7
   [34]: https://github.com/ShaneMcC/AoCBench/commit/8206d2bd9f94da7a8363344f533767f5a5aa3d47
-  [35]: https://dataforce.org.uk/aocbench2018/
-  [36]: https://github.com/ShaneMcC/AoCBench#repo-requirements
+  [35]: https://github.com/ShaneMcC/aoc-custom-inputs
+  [36]: https://dataforce.org.uk/aocbench2018/
+  [37]: https://github.com/ShaneMcC/AoCBench#repo-requirements
