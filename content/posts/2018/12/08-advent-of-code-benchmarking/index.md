@@ -19,7 +19,7 @@ This allowed us to run each other's code locally to compare fairly without needi
 
 Fast forward to this year. Myself and Chris (and [ChrisN][14]) coded up our Day 1 solutions as normal and then some [other][15] [friends][16] started doing it for the first time. I remembered my plans from the previous year and suggested everyone should also docker-ify their repos... and [so][17] [they][18] [agreed][19]...
 
-Now, I'm not one who is lacking in side-projects, but with everyone making their code able to run with a reasonably-similar docker interface I set about writing what I now call [AoCBench][20].
+Now, I'm not one who is lacking in side-projects, but with everyone making their code able to run with a reasonably-similar docker interface, and the first couple of days not yet fully scratching the coding-itch, I set about writing what I now call [AoCBench][20].
 
 The idea was simple:
 
