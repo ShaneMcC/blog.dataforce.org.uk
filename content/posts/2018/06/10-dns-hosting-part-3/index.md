@@ -10,6 +10,7 @@ category:
   - General
   - DNS
   - Code
+  - Docker
 ---
 
 In my [previous](/2018/01/dns-hosting-part-1/) [posts](/2018/01/dns-hosting-part-2/) I discussed the history leading up to, and the eventual rewrite of my DNS hosting solution. So this post will (finally) talk briefly about how it all runs in production on [MyDNSHost](https://mydnshost.co.uk/).
