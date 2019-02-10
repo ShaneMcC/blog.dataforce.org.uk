@@ -41,7 +41,7 @@ So, I ran `./mddriver -s&pound;` and got the output `MD5 ("&pound;") = d99731d14
 
 I tested a few other things and got the following results:
 
-{{< prettify >}}
+```
         mddriver: d99731d14c7750048538404febb0e357
              PHP: d99731d14c7750048538404febb0e357
            mySQL: d99731d14c7750048538404febb0e357
@@ -55,7 +55,7 @@ I tested a few other things and got the following results:
    Java (custom): d527ca074d412d9d0ffc844872c4603c
 
  Java (built in): 6465dad1d31752be3f3283e8f70feef7
-{{< /prettify >}}
+```
 
  * JavaScript implementation from http://pajhome.org.uk/crypt/md5/
  * VisualBasic implementation from http://www.frez.co.uk/freecode.htm#md5;
@@ -69,15 +69,15 @@ The differences are primarily due to character encoding in the different languag
 
 Example:
 
-{{< prettify shell >}}
+```shell
 [07:14:55] [shane@Xion:~]$ php -r 'echo md5(utf8_encode("£"))."\n";'
 2ccf59396b3c0958eec4ba721e2d083f
 [07:15:01] [shane@Xion:~]$ php -r 'echo md5("£")."\n";'
 d99731d14c7750048538404febb0e357
-{{< /prettify >}}
+```
 
-{{< prettify >}}
+```
 Java: System.out.println((int)'£'); => "163"
 PHP: echo ord('£'); => "194"
 PHP: echo ord(utf8_encode('£')); => "195"
-{{< /prettify >}}
+```

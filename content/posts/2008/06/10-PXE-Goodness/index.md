@@ -40,7 +40,7 @@ So, I quickly (I say quickly, but my server was still Redhat 9 at the time, so r
 
 xinet.d/tftp:
 
-{{< prettify shell >}}
+```shell
 # default: off
 # description: The tftp server serves files using the trivial file transfer \
 #       protocol.  The tftp protocol is often used to boot diskless \
@@ -60,18 +60,18 @@ service tftp
         cps                     = 100 2
         flags                   = IPv4
 }
-{{< /prettify >}}
+```
 
 dhcpd.conf:
 
-{{< prettify shell >}}
+```shell
 # Not sure if this is needed, I added it anyway
 allow bootp;
 # My Servers IP
 next-server 192.168.0.5;
 # PXE Boot
 filename "pxelinux.0";
-{{< /prettify >}}
+```
 
 pxelinux.0 and its config directory can be found in bootdisk/tftpboot in the unattended distribution.
 
@@ -83,17 +83,17 @@ This made me quite pleased, I copied my windows disks into the install/os direct
 
 A few days later I after I restarded one of my machines, it managed to network boot itself into the unattended menu rather than the hard disk, I quickly googled to find out how to make it boot its main hard drive, it gets IP 192.168.0.10, so I created `/tftpboot/pxelinux.cfg/C0A8000A` with the contents:
 
-{{< prettify shell >}}
+```shell
 default local
 label local
 localboot 0
-{{< /prettify >}}
+```
 
 This then prompted me to look at the pxelinux config a bit more, Wouldn't it be awesome to be able to install ubuntu OR windows using network boot? Yes, it would. I also threw in network boot support for DBAN aswell.
 
 my `/tftpboot/pxelinux.cfg/default` now looks something like this:
 
-{{< prettify shell >}}
+```shell
 DEFAULT menu.c32
 PROMPT 0
 
@@ -190,7 +190,7 @@ LABEL 64rescue
         MENU INDENT 1
         KERNEL ubuntu-installer/amd64/linux
         APPEND vga=normal initrd=ubuntu-installer/amd64/initrd.gz rescue/enable=true --
-{{< /prettify >}}
+```
 
 I can now boot the local HDD (default, in case I don't want any of the network boot options), securely wipe drives, install windows (via unattended), or use any of the features from the ubuntu disks (both 64bit and 32bit).
 

@@ -39,9 +39,9 @@ For the purposes of this, we are going to assume the following:
 
 The first thing to do, is to have Endian actually ask for IPv6 from the upstream provider at PPP time. This is easy:
 
-{{< prettify shell >}}
+```shell
 echo "+ipv6" >> /etc/ppp/peers/defaults/pppd-pppoe
-{{< /prettify >}}
+```
 
 Assuming that the ADSL provider and modem both support IPv6, and you have been assigned an allocation you will see an IPv6 address attached to ppp0 once your session is active. This is from the PPP /64 and is not part of your /56 allocation.
 
@@ -53,13 +53,13 @@ For this, we will need radvd which will send the required RA Packets out to the 
 
 Unfortunately, Endian doesn't quite provide a complete environment, so we will need to force the install to ignore dependencies (specifically, chkconfig and /sbin/service are missing).
 
-{{< prettify shell >}}
+```shell
 rpm --nodeps -Uvh http://archives.fedoraproject.org/pub/archive/fedora/linux/core/3/i386/os/Fedora/RPMS/radvd-0.7.2-9.i386.rpm
-{{< /prettify >}}
+```
 
 We can now configure this to announce our prefix by editing /etc/radvd.conf to something like this:
 
-{{< prettify shell >}}
+```shell
 interface br0
 {
         AdvSendAdvert on;
@@ -73,25 +73,25 @@ interface br0
                 AdvRouterAddr off;
         };
 };
-{{< /prettify >}}
+```
 
 To trick radvd into starting, we also need to create a dummy file that exists in real RedHat-esque distros that Endian doesn't provide:
 
-{{< prettify shell >}}
+```shell
 echo "NETWORKING_IPV6=yes" >> /etc/sysconfig/network
-{{< /prettify >}}
+```
 
 We also need to enable IPv6 forwarding:
 
-{{< prettify shell >}}
+```shell
 sysctl net.ipv6.conf.all.forwarding=1
-{{< /prettify >}}
+```
 
 and we should now be able to start radvd:
 
-{{< prettify shell >}}
+```shell
 /etc/init.d/radvd start
-{{< /prettify >}}
+```
 
 Now, if we bring the ppp connection back up, you'll notice that the ppp0 interface no longer gets allocated a routable IPv6 address from the PPP /64. This is because with ipv6 forwarding turned on, this host is now acting as an ipv6 router, and ipv6 routers ignore RA packets.
 
@@ -101,57 +101,57 @@ At this point, your LAN boxes will have IPv6 addresses, but the LAN boxes won't 
 
 To fix this, we need to tell the Endian box how to route traffic, specifically to both our LAN, and the default route:
 
-{{< prettify shell >}}
+```shell
 route --inet6 add 2001:DB8:4D51:AAFF::/64 dev br0
 route --inet6 add default dev ppp0
-{{< /prettify >}}
+```
 
 With this however, the Endian box won't have IPv6 connectivity, if this is something that is required, we can do something like this instead:
 
-{{< prettify shell >}}
+```shell
 ip -6 addr add 2001:DB8:4D51:AAFF::/64 dev br0
 route --inet6 add default dev ppp0
-{{< /prettify >}}
+```
 
 But remember, that any time Endian makes any changes to the network configuration, this will be lost.
 
 Endian's version of iputils is missing ping6 and traceroute6, but we can install these as follows:
 
-{{< prettify shell >}}
+```shell
 cd /
 curl http://archives.fedoraproject.org/pub/archive/fedora/linux/core/3/i386/os/Fedora/RPMS/iputils-20020927-16.i386.rpm > iputils.rpm
 rpm2cpio iputils.rpm | cpio -ivd '*6'
 rm iputils.rpm
-{{< /prettify >}}
+```
 
 This will give you ping6 etc to allow you to verify everything so far.
 
 The next thing to do then is firewalling, this is done with ip6tables, which again Endian doesn't have, however we can install ip6tables using the iptables-ipv6 package available in the RPM repo above)
 
-{{< prettify shell >}}
+```shell
 rpm -Uvh http://archives.fedoraproject.org/pub/archive/fedora/linux/core/3/i386/os/Fedora/RPMS/iptables-ipv6-1.2.11-3.1.i386.rpm
-{{< /prettify >}}
+```
 
 Now you'll be able to create firewall rules for your IPv6 connectivity. Its worth noting though that this version of ip6tables doesn't support some modules (comment and state that I've seen so far). If you want these modules, then you'll need to compile a newer version of iptables. (I've got a follow up post with a guide for this.)
 
 To support this, I wrote a set of scripts for parsing "formatted-english" rules files into iptables rules, so lets install that and configure some rules.
 
-{{< prettify shell >}}
+```shell
 cd /root
 wget https://github.com/ShaneMcC/Firewall-Rules/zipball/master -O fwrules.zip
 unzip fwrules.zip
 mv ShaneMcC-Firewall-Rules-* fwrules
 cp fwrules/example.rules fwrules/rules.rules
 chmod a+x fwrules/run.sh
-{{< /prettify >}}
+```
 
 Looking at fwrules/rules.rules should give you a good guide on how the rules work, and you can edit these to your needs.
 
 Once you are happy, the rules can be installed by running:
 
-{{< prettify shell >}}
+```shell
 ./fwrules/run.sh
-{{< /prettify >}}
+```
 
 The last thing then is to make this all work automatically.
 
@@ -159,15 +159,15 @@ In theory we should be able to just drop some files into the subfolders of /etc/
 
 Firstly, the minor change and an empty file:
 
-{{< prettify >}}
+```shell
 sed -ri 's#^(.*log_done "Notify uplinks.*)$#\1\n    /sbin/uplinkchanged.sh "$@" >/dev/null 2>&1#' /usr/lib/uplinks/generic/hookery.sh
 touch /sbin/uplinkchanged.sh
 chmod a+x /sbin/uplinkchanged.sh
-{{< /prettify >}}
+```
 
 Now we can put the following into /sbin/uplinkchanged.sh:
 
-{{< prettify shell >}}
+```shell
 #!/bin/bash
 
 OURPREFIX="2001:DB8:4D51:AAFF::/64"
@@ -198,7 +198,7 @@ if [ "${UPLINK}" = "main" ]; then
 		ip6tables -P FORWARD ACCEPT
 	fi;
 fi;
-{{< /prettify >}}
+```
 
 Now when the state of the main uplink changes, the relevant ipv6-related commands will be run to ensure that connectivity remains.
 

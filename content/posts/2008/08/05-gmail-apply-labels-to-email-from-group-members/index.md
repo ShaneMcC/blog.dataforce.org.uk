@@ -24,7 +24,7 @@ I ran it initially to tag my entire inbox (set `checkAllIndex` to `True` change 
 
 Hopefully this will be useful to someone else, I'm not sure how well it works in general, it worked fine for me with ~700 messages at first, however after a few runs (due to regrouping some contacts) I was greeted by an `Account Lockdown: Unusual Activity Detected` message when trying to do anything - This went away after about 20 minutes, but don't say you wern't warned if it happens to you.
 
-{{< prettify python >}}
+```python
 #!/usr/bin/env python
 """
  This script will login to gmail, and add labels to messages for contact groups.
@@ -241,7 +241,7 @@ while loop:
 		time.sleep(loopTime)
 	else:
 		print "Done"
-{{< /prettify >}}
+```
 
 On a related note, I've also recently started to use the "[Better Gmail 2](https://addons.mozilla.org/en-US/firefox/addon/6076)" addon for firefox (Official page seems down atm, but more info [here](http://lifehacker.com/software/exclusive-lifehacker-download/better-gmail-2-firefox-extension-for-new-gmail-320618.php)) mostly for the grouping of labels feature.
 

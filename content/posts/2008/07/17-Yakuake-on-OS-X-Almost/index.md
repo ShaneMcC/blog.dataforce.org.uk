@@ -26,7 +26,7 @@ Then install the kde.mpkg package contained (this installs everything nicely)
 
 Now, back in the terminal:
 
-{{< prettify shell >}}
+```shell
 sudo /opt/kde4-deps/bin/update-kde-mac.sh
 /opt/kde4/bin/kbuildsycoca4
 cd ~
@@ -36,7 +36,7 @@ make
 sudo make install
 sudo /opt/kde4-deps/bin/update-kde-mac.sh
 /opt/kde4/bin/kbuildsycoca4
-{{< /prettify >}}
+```
 
 This installs yakuake to `/opt/kde4/bin/yakuake.app` next to the other kde apps.
 

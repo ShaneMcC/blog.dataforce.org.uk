@@ -20,22 +20,22 @@ So, I recently (Today and yesterday) started prodding my postfix config to help 
 
 Firstly I added some RBL checking, this was easy enough, 3 lines to my config in the smtpd\_recipient\_restrictions bit:
 
-{{< prettify >}}
+```
     reject_rbl_client list.dsbl.org
     reject_rbl_client zen.spamhaus.org
     reject_rbl_client dnsbl.sorbs.net
-{{< /prettify >}}
+```
 
 I also added:
 
-{{< prettify >}}
+```
     reject_non_fqdn_recipient
     reject_unknown_recipient_domain
-{{< /prettify >}}
+```
 
 I also added the following lines:
 
-{{< prettify >}}
+```
 smtpd_helo_required = yes
 
 smtpd_delay_reject = yes
@@ -52,27 +52,27 @@ smtpd_sender_restrictions =
     reject_non_fqdn_sender
     reject_unknown_sender_domain
     permit
-{{< /prettify >}}
+```
 
 /etc/postfix/helo_access looks like this (Its surprising how many mails this catches, 114/7500 - altho they would probably be caught later on):
 
-{{< prettify >}}
+```
 soren.co.uk            REJECT You are not me.
 207.150.170.50         REJECT You are not me.
-{{< /prettify >}}
+```
 
 Next step was SPF checking, this involved adding to smtpd\_recipient\_restrictions:
 
-{{< prettify >}}
+```
 check_policy_service unix:private/policy
-{{< /prettify >}}
+```
 
 and to master.cf
 
-{{< prettify >}}
+```
 policy  unix  -       n       n       -       -       spawn
         user=nobody argv=/usr/bin/perl /usr/lib/postfix/policyd-spf-perl
-{{< /prettify >}}
+```
 
 (One can apt-get install postfix-policyd-spf-perl or download it from http://www.openspf.org/Software)
 
@@ -80,26 +80,26 @@ Currently I use catch-all on all my domains (yes this is stupid I know) and as a
 
 To combat this, I added this line to smtpd\_recipient\_restrictions:
 
-{{< prettify >}}
+```
 check_recipient_access hash:/etc/postfix/recipient_access
-{{< /prettify >}}
+```
 
 /etc/postfix/recipient_access looks something like this:
 
-{{< prettify >}}
+```
 foo@example.com REJECT This account is no longer valid.
 bar@example.com REJECT This account is no longer valid.
 baz@example.net REJECT This account is no longer valid.
-{{< /prettify >}}
+```
 
 The result of all this can be seen by running the mailstats script [Chris](http://www.md87.co.uk) was kind enough to share with me:
 
-{{< prettify shell >}}
+```shell
 root@soren:/etc/postfix# ./mailstats.php
 
 Incoming --(7500)--> Valid HELO --(6707)--> Valid Sender --(6705)--> Passed by dsbl --(6136)--> Passed by spamhaus --(811)--> Passed by sorbs --(568)--> Passed by relay check --(565)--> Passed by SPF --(542)--> Forwarded to shinobu --(390)--> To a valid domain --(339)--> To a valid user --(306)--> Dropped Spam --(306)--> Delivered.
 Total Rejections: 7194 (Unknown Reason: 0 | Pretended to be me: 114)
-{{< /prettify >}}
+```
 
 The "Forwarded to shinobu" entry is a server for which I am the backup MX for, this accounts for 152 mails (about 2%)
 

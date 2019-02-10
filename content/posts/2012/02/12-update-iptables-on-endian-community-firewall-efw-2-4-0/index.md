@@ -16,14 +16,14 @@ Unfortunately the version of ip6tables available at the time of fedora core 3 do
 
 To do this, we'll need a build environment on the Endian box, we'll also install wget.
 
-{{< prettify shell >}}
+```shell
 cd /root
 rpm -Uvh --nodeps http://archives.fedoraproject.org/pub/archive/fedora/linux/core/3/i386/os/Fedora/RPMS/wget-1.9.1-17.i386.rpm
 wget http://sourceforge.net/projects/efw/files/Development/EFW-2.4-RESPIN/EFW-COMMUNITY-2.4-devel-srpms.tar.gz/download -O EFW-COMMUNITY-2.4-devel-srpms.tar.gz
 tar -xvf EFW-COMMUNITY-2.4-devel-srpms.tar.gz
 cd EFW-COMMUNITY-2.4-201006071652/RPMS/
 rpm -Uvh gcc-* binutils-* cpp-* glibc-extras-* glibc-*headers-* glibc-devel-* libgomp-* libstdc++-devel-* make-* rpm-build-* patch-*
-{{< /prettify >}}
+```
 
 Now, we can compile iptables.
 
@@ -57,16 +57,16 @@ rpm -Uvh /usr/src/endian/RPMS/i386/iptables-1.4.12.2-1.endian16.i386.rpm  /usr/s
 
 So firstly, lets download and install the sources we will need:
 
-{{< prettify shell >}}
+```shell
 wget http://download.fedora.redhat.com/pub/fedora/linux/releases/16/Fedora/source/SRPMS/iptables-1.4.12-2.fc16.src.rpm
 mkdir -p /usr/src/endian/{SOURCES,BUILD,RPMS}
 wget http://www.linuximq.net/patchs/iptables-1.4.12-IMQ-test4.diff -O /usr/src/endian/SOURCES/iptables-1.4.12-IMQ-test4.diff
 rpm --nomd5 -i iptables-1.4.12-2.fc16.src.rpm
-{{< /prettify >}}
+```
 
 And modify the spec file to make it compile on Endian:
 
-{{< prettify shell >}}
+```shell
 egrep -vi "(SOURCE[12]|ip6?tables-config|ip6?tables.init|ip6?tables.service)" /usr/src/endian/SPECS/iptables.spec > /usr/src/endian/SPECS/iptables.spec.temp
 mv /usr/src/endian/SPECS/iptables.spec.temp /usr/src/endian/SPECS/iptables.spec
 sed -i 's#CFLAGS=#export RPM_OPT_FLAGS=`echo $RPM_OPT_FLAGS | sed s/-mtune=generic//`\nCFLAGS=#g' /usr/src/endian/SPECS/iptables.spec
@@ -74,13 +74,13 @@ sed -i 's#rm -f include/linux/types.h##g' /usr/src/endian/SPECS/iptables.spec
 sed -ri 's#^(Patch5:.*)$#\1\nPatch502: iptables-1.4.12-IMQ-test4.diff#g' /usr/src/endian/SPECS/iptables.spec
 sed -ri 's#^(%patch5.*)$#\1\n%patch502 -p1#g' /usr/src/endian/SPECS/iptables.spec
 rpmbuild --nodeps -bb /usr/src/endian/SPECS/iptables.spec
-{{< /prettify >}}
+```
 
 And then install it:
 
-{{< prettify shell >}}
+```shell
 rpm --nodeps -Uvh /usr/src/endian/RPMS/i386/iptables-1.4.12.2-1.i386.rpm
-{{< /prettify >}}
+```
 
 now iptables and ip6tables will be version 1.4.12.2, and ip6tables will have the extra missing modules.
 

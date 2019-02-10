@@ -20,17 +20,17 @@ Now a few things:
 * All the network boot stuff is on my server not my desktop (obviously) </ul>
 So in order to allow this, virtualbox needed to be setup to bridge to my existing adapter, this was quite straight forward, pretty much exactly as the manual said.
 
-{{< prettify shell >}}
+```shell
 sudo apt-get install bridge-utils
-{{< /prettify >}}
+```
 
 Edit `/etc/network/interfaces`, and add
 
-{{< prettify shell >}}
+```shell
 auto br0
 iface br0 inet dhcp
     bridge_ports eth0
-{{< /prettify >}}
+```
 
 Now the next suggestion was to setup a `tap0` device and tell virtualbox to use that, or to use a dynamic configuration.
 
@@ -39,7 +39,7 @@ The dynamic configuration sounded better as it meant I didn't need to remember t
 The suggested dynamic configuration suggests using kdesu/gksudo and a script in the home dir of the user that will setup and cleaup the tap device (this means inputting your password every tiem you start/stop the VM and requiring a separate script for each user that wants to have a vm with bridging) this seemed rather annoying so I came up with an alternative.
 
 **/usr/bin/setuptap**
-{{< prettify bash >}}
+```bash
 #!/bin/bash
 
 # Make sure we are root
@@ -61,10 +61,10 @@ echo ${interface}
 /sbin/ifconfig ${interface} up
 # And add it to the bridge.
 /usr/sbin/brctl addif br0 ${interface}
-{{< /prettify >}}
+```
 
 **/usr/bin/cleanuptap**
-{{< prettify bash >}}
+```bash
 #!/bin/bash
 
 # Make sure we are root
@@ -77,7 +77,7 @@ fi;
 /usr/sbin/brctl delif br0 $2
 # And use VBoxTunctl to remove the interface.
 VBoxTunctl -d $2
-{{< /prettify >}}
+```
 
 Now these scripts run with sudo as any user will setup the tap device for that user (thats what ${SUDO_USER} is for)
 
@@ -91,10 +91,10 @@ or if you prefer nano
 
 and add
 
-{{< prettify shell >}}
+```shell
 # Allow virtualbox users to setup/cleanup tap devices
 %vboxusers        ALL=NOPASSWD:/usr/bin/setuptap,/usr/bin/cleanuptap
-{{< /prettify >}}
+```
 
 now:
 
@@ -107,9 +107,9 @@ And virtualbox will be able to create/destroy the tap device as needed.
 
 However. there is still one problem, DHCP will not work for these VMs without a little help, so we need to:
 
-{{< prettify shell >}}
+```shell
 sudo apt-get install dhcp3-relay
-{{< /prettify >}}
+```
 
 and answer the questions asked. (DHCP Server IP, and Interface to listen on (`br0`))
 

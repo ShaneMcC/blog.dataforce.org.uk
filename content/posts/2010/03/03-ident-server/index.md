@@ -22,7 +22,7 @@ I then quickly threw together an xinet.d-powered ident server with support for s
 
 First the xinet.d config:
 
-{{< prettify shell >}}
+```shell
 service ident
 {
 	disable = no
@@ -33,7 +33,7 @@ service ident
 	server = /root/identServer.php
 	nice = 10
 }
-{{< /prettify >}}
+```
 
 Unfortunately yes, this does need to run as root otherwise it is unable to see what process is listening on a socket. In future I plan to change it to allow it to run without needing to be root (by using sudo for the netstat part)
 

@@ -37,13 +37,13 @@ The basic steps on Ubuntu are:
 
 Instructions for Ubuntu (using a pre-compiled deb I've uploaded):
 
-{{< prettify shell >}}
+```shell
 sudo apt-add-repository ppa:pidgin-developers/ppa
 sudo apt-get update
 sudo apt-get install pidgin
 wget http://www.myfileservice.net/pidgin-sipe_1.13.1-2_i386.deb
 sudo dpkg -i pidgin-sipe_1.13.1-2_i386.deb
-{{< /prettify >}}
+```
 
 Once this is done you can then open pidgin, and add an "Office Communicator" account, using the following settings:
 

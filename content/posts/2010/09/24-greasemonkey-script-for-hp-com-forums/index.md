@@ -12,7 +12,7 @@ If you've ever visited the hp.com forums you'll know that any links in the post 
 
 This finally annoyed me enough today and as a result, I now use the following greasemonkey script:
 
-{{< prettify javascript >}}
+```js
 // ==UserScript==
 // @name           Stupid HP.COM Links
 // @namespace      http://shanemcc.co.uk/
@@ -26,6 +26,6 @@ for (var i = 0; i &lt; a.length; i++){
 
 	a[i].href = href;
 }
-{{< /prettify >}}
+```
 
 This will make the links no longer have the call to openExternal around them, and thus make them middle-click friendly.

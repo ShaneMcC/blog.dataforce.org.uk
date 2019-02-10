@@ -22,7 +22,7 @@ Before doing anything, boot the windows partition and connect to 3G from the HP 
 
 Now back in Ubuntu, lets make this work:
 
-{{< prettify shell >}}
+```shell
 # Install gobi-loader
 sudo apt-get install gobi-loader
 
@@ -46,37 +46,37 @@ sudo usermod -a -G dip `id -nu`
 
 # Find which images were push to the card so we can copy them
 sudo iconv --from-code UTF-16 --to-code UTF-8 "/mnt/windows/Documents and Settings/All Users/Application Data/QUALCOMM/QDLService2k/QDLService2kHP.txt" | grep -i "sending image"
-{{< /prettify >}}
+```
 
 This produces something like:
 
-{{< prettify shell >}}
+```shell
 08/04/2010 23:09:55.093 [01840] QDL sending image file: C:\Program Files\Qualcomm\Images\HP\UMTS\AMSS.mbn
 08/04/2010 23:10:00.281 [01840] Sending image file: C:\Program Files\Qualcomm\Images\HP\UMTS\Apps.mbn
 08/04/2010 23:10:02.046 [01840] Sending image file: C:\Program Files\Qualcomm\Images\HP\4\UQCN.mbn
-{{< /prettify >}}
+```
 
 Copy the images referenced in the log file:
 
-{{< prettify shell >}}
+```shell
 sudo cp /mnt/windows/Program\ Files/QUALCOMM/Images/HP/UMTS/amss.mbn /lib/firmware/gobi/
 sudo cp /mnt/windows/Program\ Files/QUALCOMM/Images/HP/UMTS/apps.mbn /lib/firmware/gobi/
 sudo cp /mnt/windows/Program\ Files/QUALCOMM/Images/HP/4/UQCN.mbn /lib/firmware/gobi/
-{{< /prettify >}}
+```
 
 Next you'll want to stop modemmanager corrupting the firmware whilst it is being uploaded by blacklisting the non-modem version of the device:
 
-{{< prettify shell >}}
+```shell
 echo 'ATTRS{idVendor}=="03f0", ATTRS{idProduct}=="241d", ENV{ID_MM_DEVICE_IGNORE}="1"' >> /lib/udev/rules.d/77-mm-usb-device-blacklist-custom.rules
-{{< /prettify >}}
+```
 
 Now restart the machine so that udev picks up the device and uploads the firmware to it.
 
 Once restarted you should be able to connect to the mobile broadband like so:
 
-{{< prettify shell >}}
+```shell
 pon hpcm
-{{< /prettify >}}
+```
 
 In maverick network-manager understands that this card is a mobile broadband card, so it should be possible to configure it rather than using the ppp/chat scripts from hpcm but using the scripts is a good way to test if it works, and they have in them the information required by network-manager.
 
@@ -90,11 +90,11 @@ Firstly install the Nvidia driver from jockey (also install the Broadcom STA dri
 
 Now:
 
-{{< prettify shell >}}
+```shell
 apt-get install vlc libva1 vdpau-va-driver nvidia-185-libvdpau pkg-config
 nvidia-xconfig
 shutdown -r now
-{{< /prettify >}}
+```
 
 <del datetime="2010-10-24T03:48:49+00:00">Now this should be all that's needed, but it doesn't appear to work right now, VLC video playback of h264 is still un-watchable, I shall keep trying.</del>
 
@@ -110,9 +110,9 @@ shutdown -r now
 
 As such, the following solution does fix the problem:
 
-{{< prettify shell >}}
+```shell
 echo 'ATTRS{idVendor}=="03f0", ATTRS{idProduct}=="241d", ENV{ID_MM_DEVICE_IGNORE}="1"' >> /lib/udev/rules.d/77-mm-usb-device-blacklist-custom.rules
-{{< /prettify >}}
+```
 
 
 followed by restarting. (In theory, killing modemmanager, loading the firmware and restarting modemmanager will also work)

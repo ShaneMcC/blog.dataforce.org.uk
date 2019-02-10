@@ -3,6 +3,8 @@ languageCode = "en-gb"
 title = "blog.dataforce.org.uk"
 theme = "material"
 disablePathToLower = true
+pygmentsUseClasses = true
+pygmentsCodeFences = true
 
 [params]
 	headerimg = "/wp-content/uploads/2016/05/header.png"

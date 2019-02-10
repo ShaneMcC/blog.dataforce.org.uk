@@ -16,7 +16,7 @@ After this, restarting udev (`restart udev`) and replugging the device makes it 
 
 Part of the testing I was doing, was to send text-messages using the device (as a way of sending status messages out-of-band if an internet connection isn't available.) and threw together this quick script that relies on `expect` and `kermit`:
 
-{{< prettify tcl >}}
+```tcl
 #!/usr/bin/expect -f
 ####################################################
 # Copyright (c) 2010 Shane Mc Cormack
@@ -52,11 +52,11 @@ expect -- "OK" {
 	send "${escape}";
 	send "c"
 }
-{{< /prettify >}}
+```
 
 Usage is simple:
 
-{{< prettify shell >}}
+```shell
 [09:51:22] [shane@ShanePc:~/3gsms]$ ./sendSMS.sh /dev/ttyUSB0 "+447XXXXXXXXX" "Test message from CLI"
 Spawning: /usr/bin/kermit -b 9600 -8 -l /dev/ttyUSB0 -C "set exit warning off,set carrier-watch off,connect,exit"
 spawn /usr/bin/kermit -b 9600 -8 -l /dev/ttyUSB0 -C set exit warning off,set carrier-watch off,connect,exit
@@ -75,6 +75,6 @@ AT+CMGS="+447XXXXXXXXX"
 OK
 
 [09:51:31] [shane@ShanePc:~/3gsms]$
-{{< /prettify >}}
+```
 
 Perfect.

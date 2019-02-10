@@ -21,7 +21,7 @@ After using `tcpdump` it became apparent quite quickly what was going on, and it
 
 I was however able to add a selection of `iptables` rules to the firewall at the first site (that was doing the forwarding) in order to limit the effectiveness of the attack, which should be self explanatory (along with the comments):
 
-{{< prettify shell >}}
+{{< highlight shell >}}
 # Create a chain to store block rules in
 iptables -N BADDNS
 
@@ -38,7 +38,7 @@ iptables -A BADDNS -m string --hex-string "|09 68 69 7a 62 75 6c 6c 61 68 02 6d 
 # Rate limit the rest.
 iptables -A BADDNS -m recent --set --name DNSQF --rsource
 iptables -A BADDNS -m recent --update --seconds 10 --hitcount 5 --name DNSQF --rsource -j DROP
-{{< /prettify >}}
+{{< /highlight >}}
 
 This flat-out blocks the DNS queries that were being used for domains that I am not authoritative for, but I didn't want to entirely block all "IN ANY" queries, so rate limits the rest of them. This was pretty effective at stopping the ongoing abuse.
 
@@ -46,7 +46,7 @@ It only works of course if the same set of IPs are repeatedly being targeted (re
 
 Here is my iptables output as of right now, considering the counters were cleared Friday morning:
 
-{{< prettify shell >}}
+```shell
 root@rakku:~ # iptables -vnx --list BADDNS
 Chain BADDNS (2 references)
     pkts      bytes target     prot opt in     out     source               destination
@@ -57,7 +57,7 @@ Chain BADDNS (2 references)
     5571   385042            all  --  *      *       0.0.0.0/0            0.0.0.0/0           recent: SET name: DNSQF side: source
     5542   374343 DROP       all  --  *      *       0.0.0.0/0            0.0.0.0/0           recent: UPDATE seconds: 10 hit_count: 5 name: DNSQF side: source
 root@rakku:~ #
-{{< /prettify >}}
+```
 
 Interestingly, the usual amplification target, isc.org, wasn't really used this time.
 

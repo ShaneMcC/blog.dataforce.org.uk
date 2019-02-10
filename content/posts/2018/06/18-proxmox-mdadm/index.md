@@ -14,7 +14,7 @@ category:
 
 I recently acquired a new server with 2 drives that I intended to use as RAID1 for a virtualisation host for various things.
 
-My hypervisor of choice is Proxmox (For a few reasons, Support for KVM and LXC primarily, but the fact it's debian based is a nice bonus, and I really dislike the occasionally-braindead networking implementation from vmware which rules out ESXi)
+My hypervisor of choice is [Proxmox](https://www.proxmox.com/en/) (For a few reasons, Support for KVM and LXC primarily, but the fact it's debian based is a nice bonus, and I really dislike the occasionally-braindead networking implementation from vmware which rules out ESXi)
 
 This particular server does not have a RAID card, so I needed to use a software raid implementation. Out of the box for RAID1 on Proxmox you need to use ZFS, however To keep this box similar to others I have I wanted to use ext4 and mdadm. So we're going have to do a bit of manual poking to get this how we need it.
 
