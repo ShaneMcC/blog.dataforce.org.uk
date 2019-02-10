@@ -16,7 +16,7 @@ cd public
 
 # Compress all the CSS files together
 rm css/allStyles*.css || true
-cat $(grep "rel=['\"]stylesheet['\"]" $(find . -name '*.html') | awk -F: '{print $2}' | sort -u | sed -r "s#.*href=['\"]/([^'\"]+)['\"].*#\1#g") > "css/allStyles-concat.css"
+cat $(grep "rel=['\"]stylesheet['\"]" $(find . -name '*.html') | awk -F: '{print $2}' | awk '!x[$0]++' | sed -r "s#.*href=['\"]/([^'\"]+)['\"].*#\1#g") > "css/allStyles-concat.css"
 STYLE="/css/allStyles-concat.css"
 
 if [ -e "${YUI}" ]; then
@@ -34,7 +34,7 @@ mv ".${STYLE}" "css/allStyles-${CSSHASH}.css"
 
 # Compress all the JS files together
 rm js/allScripts*.js || true
-cat $(grep "script.*type=['\"]text/javascript['\"]" $(find . -name '*.html') | awk -F: '{print $2}' | sort -u | sed -r "s#.*src=['\"]/([^'\"]+)['\"].*#\1#g") > "js/allScripts-concat.js"
+cat $(grep "script.*type=['\"]text/javascript['\"]" $(find . -name '*.html') | awk -F: '{print $2}' | awk '!x[$0]++' | sed -r "s#.*src=['\"]/([^'\"]+)['\"].*#\1#g") > "js/allScripts-concat.js"
 SCRIPT="/js/allScripts-concat.js"
 
 if [ -e "${YUI}" ]; then
