@@ -36,7 +36,7 @@
 	);
 
 	$afterCommands = array(
-		'hugo',
+		'build.sh',
 	);
 
 	// Run the commands for output
