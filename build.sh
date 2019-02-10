@@ -33,8 +33,8 @@ mv ".${STYLE}" "css/allStyles-${CSSHASH}.css"
 
 
 # Compress all the JS files together
-rm js/allScripts*.css || true
-cat $(grep "type=['\"]text/javascript['\"]" $(find . -name '*.html') | awk -F: '{print $2}' | sort -u | sed -r "s#.*src=['\"]/([^'\"]+)['\"].*#\1#g") > "js/allScripts-concat.js"
+rm js/allScripts*.js || true
+cat $(grep "script.*type=['\"]text/javascript['\"]" $(find . -name '*.html') | awk -F: '{print $2}' | sort -u | sed -r "s#.*src=['\"]/([^'\"]+)['\"].*#\1#g") > "js/allScripts-concat.js"
 SCRIPT="/js/allScripts-concat.js"
 
 if [ -e "${YUI}" ]; then
@@ -61,7 +61,7 @@ for FILE in $(find . -name '*.html'); do
 	# Remove JS from HTML.
 	sed -i "\#type=['\"]text/javascript['\"]#d" "${FILE}"
 	# Add new script.
-	sed -i 's#</body>#<script type="text/javascript" href="/js/allScripts-'${JSHASH}'.js"></script></body>#g' "${FILE}"
+	sed -i 's#</body>#<script type="text/javascript" src="/js/allScripts-'${JSHASH}'.js"></script></body>#g' "${FILE}"
 
 	if [ -e "${TIDY}" ]; then
 		${TIDY} --tidy-mark no -q -i -w 120 -m --vertical-space yes --drop-empty-elements no "${FILE}" || true
@@ -74,3 +74,4 @@ if [ -e "${CWEBP}" ]; then
 		${CWEBP} -m 6 -mt -o "${FILE}.webp" -- "${FILE}"
 	done
 fi;
+

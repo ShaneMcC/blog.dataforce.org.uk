@@ -36,7 +36,7 @@
 	);
 
 	$afterCommands = array(
-		'build.sh',
+		'./build.sh',
 	);
 
 	// Run the commands for output
