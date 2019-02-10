@@ -16,7 +16,7 @@ I've been wanting to play with Docker Swarm for a while now for hosting containe
 
 Something that has always stopped me before now was that I wanted to have some kind of cross-site storage but I don't have any kind of SAN storage available to me just standalone hosts. I've been able to work around this using ceph on the nodes.
 
-**Note:** I've never used ceph before, I don't really know what I'm doing with ceph, so this is all a bit of guesswork. I used [Funky Penguin's Geek Cookbook](https://geek-cookbook.funkypenguin.co.nz/ha-docker-swarm/shared-storage-ceph/) as a basis for some of this.
+**Note:** I've never used ceph before, I don't really know what I'm doing with ceph, so this is all a bit of guesswork. I used [Funky Penguin's Geek Cookbook](https://geek-cookbook.funkypenguin.co.nz/ha-docker-swarm/shared-storage-ceph/) as a basis for some of this, though some things have changed since then, and I'm using base-centOS not AtomicHost (I tried AtomicHost, but wanted a newer-version of docker so switched away).
 
 All my physical servers run [Proxmox](https://www.proxmox.com/en/), and this is no exception. On 3 of these host nodes I created a new VM (1 per node) to be part of the cluster. These all have 3 disks, 1 for the base OS, 1 for Ceph, 1 for cloud-init (The non-cloud-init disks are all SCSI with individual iothreads).
 
