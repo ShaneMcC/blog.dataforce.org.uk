@@ -31,6 +31,10 @@ curl https://download.docker.com/linux/centos/docker-ce.repo -o /etc/yum.repos.d
 mkdir /etc/docker
 echo '{"storage-driver": "overlay2"}' > /etc/docker/daemon.json
 yum install docker-ce
+systemctl start chronyd
+systemctl enable chronyd
+systemctl start docker
+systemctl enable docker
 ```
 
 And build our swarm cluster.
