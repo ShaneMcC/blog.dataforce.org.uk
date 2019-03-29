@@ -34,7 +34,7 @@ mv ".${STYLE}" "css/allStyles-${CSSHASH}.css"
 
 # Compress all the JS files together
 rm js/allScripts*.js || true
-cat $(grep "script.*type=['\"]text/javascript['\"]" $(find . -name '*.html') | awk -F: '{print $2}' | awk '!x[$0]++' | sed -r "s#.*src=['\"]/([^'\"]+)['\"].*#\1#g") > "js/allScripts-concat.js"
+cat $(grep "script.*type=['\"]text/javascript['\"]" $(find . -name '*.html') | grep -v "data-noconcat=['\"]true['\"]" | awk -F: '{print $2}' | awk '!x[$0]++' | sed -r "s#.*src=['\"]/([^'\"]+)['\"].*#\1#g") > "js/allScripts-concat.js"
 SCRIPT="/js/allScripts-concat.js"
 
 if [ -e "${YUI}" ]; then

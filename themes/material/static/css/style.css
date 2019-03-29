@@ -8726,13 +8726,18 @@ tr {
 
 .entry-image img {
   border-radius: 0.35em;
-  display: block;
 }
 
 .entry-image.left {
   float: left;
   margin: 0 1.5em 1em 0;
   top: 0.25em;
+}
+
+.entry-image.middle {
+  text-align: center;
+  margin: 1em auto;
+  width: 100%;
 }
 
 .entry-image.right {
@@ -8743,6 +8748,7 @@ tr {
 
 .entry-image.left, .entry-image.right {
   max-width: 40%;
+  display: block;
 }
 
 img.site-banner {

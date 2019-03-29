@@ -4,7 +4,7 @@
  * GPL3 Licensed
  */
 jQuery(document).ready(function (a) {
-    prettyPrint();
+//    prettyPrint();
 
     /*add responsive utilities for images */
     a("article img").addClass("img-responsive");
