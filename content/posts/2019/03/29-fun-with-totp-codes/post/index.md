@@ -10,7 +10,7 @@ category:
   - Code
 ---
 
-This all started with a comment I overheard at work from a colleague talking about a 2FA implementation on a product they were using.
+This all started with a comment I overheard at work from a colleague talking about a 2FA implementation on a service they were using.
 
 > "It works fine on everything except Google Authenticator on iPhone."
 
