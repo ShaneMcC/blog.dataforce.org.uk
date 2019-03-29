@@ -1,5 +1,5 @@
 ---
-title: "Fun with TOTP Codes :: Test"
+title: "Fun with TOTP Codes Demo"
 author: Dataforce
 url:  /2019/03/fun-with-totp-codes/demo/
 type: lowerpage
@@ -8,7 +8,7 @@ date: 2019-03-29T04:20:00Z
 
 [Back to post]({{< ref "post/index.md" >}})
 
-<div class="text-center" data-algo="SHA1" data-token="TESTSECRET">
+<div class="text-center" data-algo="SHA1" data-token="SECRETCODE">
 	<h3></h3>
 	<div class="qr"></div>
 	<br>
@@ -18,7 +18,7 @@ date: 2019-03-29T04:20:00Z
 </div>
 <br><br><br><br>
 
-<div class="text-center" data-algo="SHA256" data-token="TESTSECRET">
+<div class="text-center" data-algo="SHA256" data-token="SECRETCODE">
 	<h3></h3>
 	<div class="qr"></div>
 	<br>
@@ -28,7 +28,7 @@ date: 2019-03-29T04:20:00Z
 </div>
 <br><br><br><br>
 
-<div class="text-center" data-algo="SHA512" data-token="TESTSECRET">
+<div class="text-center" data-algo="SHA512" data-token="SECRETCODE">
 	<h3></h3>
 	<div class="qr"></div>
 	<br>

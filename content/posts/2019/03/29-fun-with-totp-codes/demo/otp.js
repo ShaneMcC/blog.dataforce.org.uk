@@ -24,11 +24,13 @@ function updateCodes() {
 
 		var qrDiv = $('div.qr', $(this));
 
-		if (qrDiv.attr('data-qr') === false || qrDiv.attr('data-qr') === undefined) {
+		if (qrDiv.attr('data-token') !== token) {
 			$('h3', $(this)).text(token + ' - ' + algo);
+			$('canvas', qrDiv).remove();
 			qrDiv.qrcode({width: 200, height: 200, text: totp.toString()});
 
 			qrDiv.attr('data-qr', totp.toString());
+			qrDiv.attr('data-token', token);
 		}
 
 		$('span.code', $(this)).text(totp.generate({'timestamp': time * 1000}));
