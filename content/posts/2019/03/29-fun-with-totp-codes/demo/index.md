@@ -8,41 +8,34 @@ date: 2019-03-29T04:20:00Z
 
 [Back to post]({{< ref "post/index.md" >}})
 
-{{< rawhtml >}}
-	<div class="text-center" data-algo="SHA1" data-token="TESTSECRET">
-		<h3></h3>
-		<div class="qr"></div>
-		<br>
-		<strong><span class="code"></span></strong>
-		<br>
-		<progress></progress> (<span class="seconds"></span>)
-	</div>
-	<br><br><br><br>
-{{< /rawhtml >}}
+<div class="text-center" data-algo="SHA1" data-token="TESTSECRET">
+	<h3></h3>
+	<div class="qr"></div>
+	<br>
+	<strong><span class="code"></span></strong>
+	<br>
+	<progress></progress> (<span class="seconds"></span>)
+</div>
+<br><br><br><br>
 
-{{< rawhtml >}}
-	<div class="text-center" data-algo="SHA256" data-token="TESTSECRET">
-		<h3></h3>
-		<div class="qr"></div>
-		<br>
-		<strong><span class="code"></span></strong>
-		<br>
-		<progress></progress> (<span class="seconds"></span>)
-	</div>
-	<br><br><br><br>
-{{< /rawhtml >}}
+<div class="text-center" data-algo="SHA256" data-token="TESTSECRET">
+	<h3></h3>
+	<div class="qr"></div>
+	<br>
+	<strong><span class="code"></span></strong>
+	<br>
+	<progress></progress> (<span class="seconds"></span>)
+</div>
+<br><br><br><br>
 
-{{< rawhtml >}}
-	<div class="text-center" data-algo="SHA512" data-token="TESTSECRET">
-		<h3></h3>
-		<div class="qr"></div>
-		<br>
-		<strong><span class="code"></span></strong>
-		<br>
-		<progress></progress> (<span class="seconds"></span>)
-	</div>
-{{< /rawhtml >}}
+<div class="text-center" data-algo="SHA512" data-token="TESTSECRET">
+	<h3></h3>
+	<div class="qr"></div>
+	<br>
+	<strong><span class="code"></span></strong>
+	<br>
+	<progress></progress> (<span class="seconds"></span>)
+</div>
 
-{{< rawhtml >}}
 <script type='text/javascript' src='./otp.js' data-noconcat='true'></script>
-{{< /rawhtml >}}
+

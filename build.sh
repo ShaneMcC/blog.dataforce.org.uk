@@ -16,7 +16,7 @@ cd public
 
 # Compress all the CSS files together
 rm css/allStyles*.css || true
-cat $(grep "rel=['\"]stylesheet['\"]" $(find . -name '*.html') | awk -F: '{print $2}' | awk '!x[$0]++' | sed -r "s#.*href=['\"]/([^'\"]+)['\"].*#\1#g") > "css/allStyles-concat.css"
+cat $(grep "rel=['\"]stylesheet['\"]" $(find . -name '*.html') | grep -v "data-noconcat=['\"]true['\"]" | awk -F: '{print $2}' | awk '!x[$0]++' | sed -r "s#.*href=['\"]/([^'\"]+)['\"].*#\1#g") > "css/allStyles-concat.css"
 STYLE="/css/allStyles-concat.css"
 
 if [ -e "${YUI}" ]; then
@@ -53,15 +53,18 @@ mv ".${SCRIPT}" "js/allScripts-${JSHASH}.js"
 
 # Tidy up each generated file.
 for FILE in $(find . -name '*.html'); do
+	NOCONCAT_JS=$(grep "script.*type=['\"]text/javascript['\"]" "${FILE}" | grep "data-noconcat=['\"]true['\"]" || true)
+	NOCONCAT_CSS=$(grep "rel=['\"]stylesheet['\"]" "${FILE}" | grep "data-noconcat=['\"]true['\"]" || true)
+
 	# Remove styles from HTML.
 	sed -i "\#rel=['\"]stylesheet['\"]#d" "${FILE}"
 	# Add new style.
-	sed -i 's#</head>#<link rel="stylesheet" href="/css/allStyles-'${CSSHASH}'.css" type="text/css" media="all" /></head>#g' "${FILE}"
+	sed -i 's#</head>#<link rel="stylesheet" href="/css/allStyles-'${CSSHASH}'.css" type="text/css" media="all" />'"${NOCONCAT_CSS}"'</head>#g' "${FILE}"
 
 	# Remove JS from HTML.
 	sed -i "\#type=['\"]text/javascript['\"]#d" "${FILE}"
 	# Add new script.
-	sed -i 's#</body>#<script type="text/javascript" src="/js/allScripts-'${JSHASH}'.js"></script></body>#g' "${FILE}"
+	sed -i 's#</body>#<script type="text/javascript" src="/js/allScripts-'${JSHASH}'.js"></script>'"${NOCONCAT_JS}"'</body>#g' "${FILE}"
 
 	if [ -e "${TIDY}" ]; then
 		${TIDY} --tidy-mark no -q -i -w 120 -m --vertical-space yes --drop-empty-elements no "${FILE}" || true
