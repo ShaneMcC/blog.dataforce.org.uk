@@ -26,7 +26,7 @@ I generated a Test QR Code, scanned it into Authy on my Android phone, and Googl
 
 We then copied the code from service we were using and pasted that to the generator and scanned the new QR code in... and it also worked fine. Interesting.
 
-So, the next thing to do was to to compare the difference between the URLs. QR Codes for TOTP are actually just text that looks somewhat like: `otpauth://totp/TestService?secret=TESTTEST`
+So, the next thing to do was to to compare the difference between the URLs. QR Codes for TOTP are actually just text that looks somewhat like: `otpauth://totp/TestService?secret=TESTTEST` ([Key URI Format](https://github.com/google/google-authenticator/wiki/Key-Uri-Format))
 
 So looking at the 2 QR Codes:
 
