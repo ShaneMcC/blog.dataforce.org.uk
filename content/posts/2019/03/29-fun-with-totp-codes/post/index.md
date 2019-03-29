@@ -92,6 +92,8 @@ I've also created a demo page [here]({{< ref "demo/index.md" >}}) that displays 
 
 So that's that[^4]. Looks like the reason it works on everything except Google Authenticator on iPhone... is because everything else is wrong.
 
+**Update 1**: Looks like there is a bug report for Google Authenticator on Android for this [here](https://github.com/google/google-authenticator-android/issues/29)
+
 [^1]: This TOTP code is not actually used live anywhere, and is for demonstration purposes only.
 [^2]: This was painful for me to admit out loud to my colleague...
 [^3]: For demonstration purposes this script uses a fixed timeslice to match up with the earlier picture.
