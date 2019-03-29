@@ -27,13 +27,13 @@ pygmentsCodeFences = true
 		description = "– My IRC Bouncer"
 
 	[[params.sidebar]]
-		link = "http://www.dmdirc.com/"
+		link = "https://www.dmdirc.com/"
 		name = "DMDirc"
 		description = "– The intelligent IRC Client"
 
 	[[params.sidebar]]
-		link = "http://www.melbourne.co.uk/"
-		name = "Melbourne Server Hosting"
+		link = "https://iomart.com/"
+		name = "iomart"
 		description = "– My current employer."
 
 [taxonomies]
