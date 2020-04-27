@@ -10,7 +10,7 @@ YUI=`which yui-compressor`
 CWEBP=`which cwebp`
 TIDY=`which tidy`
 
-hugo
+PATH=${PATH} hugo
 
 cd public
 
