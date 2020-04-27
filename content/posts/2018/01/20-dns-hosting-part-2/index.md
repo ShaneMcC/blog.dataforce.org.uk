@@ -36,7 +36,7 @@ I decided there was a few things that were needed:
 
 These were the basic criteria and what I started off with when I designed [MyDNSHost](https://mydnshost.co.uk).
 
-{{% postimage src="homepage_300.png" large="homepage.png" side="left" alt="MyDNSHost Homepage" %}}
+{{< postimage src="homepage_300.png" large="homepage.png" side="left" alt="MyDNSHost Homepage" >}}
 
 Now that I had the basic criteria, I started off by coming up with a basic database structure for storing the data that I thought would suit my plans, and a basic framework for the API backend so that I could start creating some initial API endpoints. With this in place I was able to create the database structure, and pre-seed it with some test data. This would allow me to test the API as I created it.
 
@@ -50,7 +50,7 @@ Before I could start properly coding the API I needed to think of what endpoints
 
 I decided pretty early on that I was going to version the API - that way if I messed it all up I could re do it and not need to worry about backwards compatability, so for the time being, everything would exist under the `/1.0/` directory. I came up with the following basic idea for endpoints:
 
-{{% postimage src="loggedin_300.png" large="loggedin.png" side="right" alt="MyDNSHost LoggedIn Homepage" %}}
+{{< postimage src="loggedin_300.png" large="loggedin.png" side="right" alt="MyDNSHost LoggedIn Homepage" >}}
 
  * **Domains**
    * `GET /domains` - List domains the current user has access to
@@ -82,7 +82,7 @@ The initial implementation of the API with domain/user editing functionality and
 
 Once I was happy with the basic API functionality and knew from my (manual) testing that it functioned as desired, I set about on the Web UI. I knew I was going to use [Bootstrap](https://getbootstrap.com) for this because I am very much not a UI person and bootstrap helps make my stuff look less awful.
 
-{{% postimage src="records_300.png" large="records.png" side="left" alt="MyDNSHost Records View" %}}
+{{< postimage src="records_300.png" large="records.png" side="left" alt="MyDNSHost Records View" >}}
 
 Now, I should point out here, I'm not a developer for my day job, most of what I write I write for myself to "scratch an itch" so to speak. I don't keep up with all the latest frameworks and best practices and all that. I only recently in the last year switched away from hand-managing project dependencies in Java to using gradle and letting it do it for me.
 

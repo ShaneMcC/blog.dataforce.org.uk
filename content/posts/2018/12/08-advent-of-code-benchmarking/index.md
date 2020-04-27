@@ -30,7 +30,7 @@ The idea was simple:
 
 And the [initial version][21] did exactly that. So I fired up an LXC container on one of my servers and set it off to start running benchmarks and things were good.
 
-{{% postimage src="AoCBench_300.png" large="AoCBench.png" side="left" alt="AoCBench Main Page" %}}
+{{< postimage src="AoCBench_300.png" large="AoCBench.png" side="left" alt="AoCBench Main Page" >}}
 
 Pretty quickly the first problem became obvious - it was running everything every time which as I added more people really slowed things down, so the next stage was to make it only run when [code changed][22].
 
@@ -42,7 +42,7 @@ It seemed like it was mostly the PHP solutions that had the variance, even after
 
 I was beginning to wonder if the host node was too busy. It didn't look too busy, but it seemed like the only explanation. Moving the benchmarking container to a different host node (that was otherwise empty) seemed to confirm this somewhat. After doing that (and moving it back) I looked some more at the host node. I found an errant `fail2ban` process sitting using 200% CPU, and killing this did make some improvement (Though the node has 24 cores, so this shouldn't really have mattered too much. If it wasn't for AoCBench I wouldn't even have noticed that!). But the variance remained, so I just let it be. Somewhat irked, but oh well.
 
-{{% postimage src="AoCBenchMatrix_300.png" large="AoCBenchMatrix.png" side="right" alt="AoCBench Matrix Page" %}}
+{{< postimage src="AoCBenchMatrix_300.png" large="AoCBenchMatrix.png" side="right" alt="AoCBench Matrix Page" >}}
 
 We spent the next few evenings all optimising our solutions some more, vying for the fastest code. To level the playing feed some more, I even started feeding everyone the [same input][28] to counter the fact that some inputs were just fundamentally quicker than others. After ensuring that everyone was using the same output, the next step was to ensure that everyone gave the [right answer][29] and removing them from the table if they didn't (This caught out a few "optimisations" that optimised away the right answer by mistake!). I also added support for running each solution against everyone else's input files and displaying this in a [grid][30] to ensure that everyone was working for all inputs not just their own (or the normalised input that was being fed to them all).
 
@@ -58,7 +58,7 @@ So now that I knew what the problem was (Presumably the memory on the busy host 
 
 Yes. It did. The extreme-variance went away entirely, without needing any changes to any code. I re-ran all the benchmarks for every person on every day and the levels of variance were within acceptable range for each one.
 
-{{% postimage src="PodiumMode_300.png" large="PodiumMode.png" side="left" alt="AoCBench Podium Mode" %}}
+{{< postimage src="PodiumMode_300.png" large="PodiumMode.png" side="left" alt="AoCBench Podium Mode" >}}
 
 The next major change came about after Chris got annoyed by python (even under pypy) being unable to compete with the speed improvements that PHP7 has made, and switched to using Nim. Suddenly most of the competition was gone. The compiled code wins every time. every. time. (Obviously). So [Podium Mode][32] was added to allow for competing for the top 3 spaces on each day.
 

@@ -37,7 +37,6 @@ function updateCodes() {
 	});
 }
 
-
 // We need to wait for jquery to load later in the page...
 function defer(method) {
 	if (window.jQuery) {
@@ -55,6 +54,8 @@ defer(function() {
 				$.getScript("jquery.qrcode.js").done(function() {
 					updateCodes();
 					setInterval(updateCodes, 1000);
+					$('#loading').hide();
+					$('#loaded').removeClass('hidden');
 				});
 			});
 		});

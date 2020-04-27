@@ -1,6 +1,6 @@
 {{ $image := .Page.Resources.GetMatch (.Get "src") }}
 {{ if $image }}
-	<figure class="entry-image {{ if .Get "side" }}{{ .Get "side" }}{{ else }}right{{ end }}">
+	<figure class="entry-image {{ if ne (.Get "side") "none" }}{{ .Get "side" }}{{ else if not (.Get "side") }}right{{ end }}">
 		{{ if .Get "large" }}
 			{{ $largeimage := .Page.Resources.GetMatch (.Get "large") }}
 			<a href="{{ ($largeimage).RelPermalink }}">

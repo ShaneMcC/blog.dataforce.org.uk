@@ -25,7 +25,7 @@ After I had the editor working I wanted redundancy. I made use of my other serve
 
 I even added an API of sorts for changing zone data. It wasn't good ( `GET` requests to crafted URLs such as `GET /api/userapi-key/dns/key=domain-api-key/type=A/setrecord=somerecord.domain.com/ttl=3600/data=1.1.1.1` or so) but it let me automate DNS changes which I used for automated website failover.
 
-{{% postimage src="sorencp.png" side="left" alt="DNS Control Panel" %}}
+{{< postimage src="sorencp.png" side="left" alt="DNS Control Panel" >}}
 
 This all kinda worked. There was a bunch of delays waiting for cronjobs to do things (Creating new zones needed a cronjob to run and this needed to run before zones could be edited (and before they existed on the secondary servers). Editing zones then needed to wait for a cronjob to make the changes live, etc) but ultimately it did what I needed, and the delays weren't really a problem. The cronjobs on the master server ran every minute, and the secondary servers ran every 6 hours. Things worked, DNS got served, I could edit the records, job done?
 

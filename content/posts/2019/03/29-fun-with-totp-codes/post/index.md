@@ -49,7 +49,7 @@ Looking back at the web-based generator website, it has an "advanced options" fi
 
 I then imported all 3 into Google Authenticator on both Android and a spare iPhone and took a look at the output:
 
-{{% postimage src="phones.png" large="phones.png" side="middle" alt="Phones showing TOTP Codes" %}}
+{{< postimage src="phones.png" large="phones.png" side="middle" alt="Phones showing TOTP Codes" >}}
 
 Ah... no, it does not look like it's the iPhone at fault here. Infact it very much appears like the opposite[^2], it appears that the Google Authenticator app on iPhone is the only one that correctly cares about the algorithm provided. Google Authenticator on Android and Authy on either Android or iPhone all appear to just ignore the Algorithm param and default to SHA1.
 
