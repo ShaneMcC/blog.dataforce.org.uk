@@ -30,7 +30,7 @@ Back at `$DayJob` we use a mixture of devices to do this depending on the age of
 
 In our case a number of these are provisioned between pairs of Cisco 7600 devices, although as we have been phasing these out we have been moving towards using ASR920s instead for newer connections. As we deploy these and phase out the 7600s, we normally provide customers with new XConnects on the new ASR920s, and then move them across to them and remove the old one, this results in most of these XConnects being between devices of the same family. We have some cross-family (920 to 7600) XConnects, but these are few and far between and we had never really noticed any issues with them.
 
-However, one day a few days after some emergency maintenance work to decommission a failing 7600 device and move the XConnect services on it onto an ASR920, I started to notice some of our transcontinental links had developed an unusual and unexpected traffic pattern. A link that was normally fairly quiet between in Asia started looking like this:
+However, one day a few days after some emergency maintenance work to decommission a failing 7600 device and move the XConnect services on it onto an ASR920, I started to notice some of our transcontinental links had developed an unusual and unexpected traffic pattern. A link that was normally fairly quiet in Asia started looking like this:
 
 {{< postimage src="xmas-tree.png" side="none" alt="Christmas Tree Network" >}}
 
