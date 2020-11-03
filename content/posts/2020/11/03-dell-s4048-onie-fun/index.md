@@ -29,7 +29,7 @@ At this point, I could have just reloaded the device into the ONIE installer env
 I found the [OpenSwitch OPX Configuration Guide](http://archive.openswitch.net/docs/3.0.0/openswitch_opx_300_config_guide.pdf) and started having a read.
 
 TL;DR: It's a Debian box, use `ip` and `/etc/network/interfaces` to configure it.
-7
+
 So I added an IP address to 1 of the interfaces (`e101-001-0` for the first 10G interface on the device) and some default routing and brought up the link, something like:
 
 ```bash
