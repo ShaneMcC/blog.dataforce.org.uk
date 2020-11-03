@@ -399,10 +399,10 @@ Oh wait - the networking on this is probably a bit weird, maybe the docker bridg
 
 ```bash
 root@OPX:~# docker run --rm --network host --name shaneblogtest shanemcc/blog.dataforce.org.uk
-192.0.2.253 - - [24/Sep/2020:20:09:49 +0000] "GET / HTTP/1.1" 200 32706 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.59 Safari/537.36" "-"
-192.0.2.253 - - [24/Sep/2020:20:09:49 +0000] "GET /css/allStyles-b2de97faf57b5af84d20b6bbcd1f47ab.css HTTP/1.1" 200 25159 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.59 Safari/537.36" "-"
-192.0.2.253 - - [24/Sep/2020:20:09:49 +0000] "GET /wp-content/uploads/2016/05/header.png HTTP/1.1" 200 7938 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.59 Safari/537.36" "-"
-192.0.2.253 - - [24/Sep/2020:20:09:49 +0000] "GET /wp-content/uploads/2016/05/ShaneNewColour.png HTTP/1.1" 200 5866 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.59 Safari/537.36" "-"
+192.0.2.253 - - [29/Oct/2020:20:09:49 +0000] "GET / HTTP/1.1" 200 32706 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.59 Safari/537.36" "-"
+192.0.2.253 - - [29/Oct/2020:20:09:49 +0000] "GET /css/allStyles-b2de97faf57b5af84d20b6bbcd1f47ab.css HTTP/1.1" 200 25159 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.59 Safari/537.36" "-"
+192.0.2.253 - - [29/Oct/2020:20:09:49 +0000] "GET /wp-content/uploads/2016/05/header.png HTTP/1.1" 200 7938 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.59 Safari/537.36" "-"
+192.0.2.253 - - [29/Oct/2020:20:09:49 +0000] "GET /wp-content/uploads/2016/05/ShaneNewColour.png HTTP/1.1" 200 5866 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.59 Safari/537.36" "-"
 ...
 ```
 
