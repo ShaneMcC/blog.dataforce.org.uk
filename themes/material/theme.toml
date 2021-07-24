@@ -12,5 +12,5 @@ min_version = "0.25.1"
 # If porting an existing theme
 [original]
   name = "Material"
-  homepage = ""
-  repo = ""
+  homepage = "https://github.com/klyment/wpthemematerial"
+  repo = "https://github.com/klyment/wpthemematerial"
