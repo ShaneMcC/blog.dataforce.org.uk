@@ -93,8 +93,8 @@ services:
          - CEPH_PUBLIC_NETWORK=<PUBLIC NETWORK>
 ```
 
-`<MON IP>` should be replaced with the output from `ip addr show dev eth0 | grep "inet " | head -n 1 | awk '{print $2}' | awk -F/ '{print $1}'`
-`<PUBLIC NETWORK>` should be replaced with the output from `ip route show dev eth0 | grep link | grep -v 169.254.0.0 | awk '{print $1}'`
+ - `<MON IP>` should be replaced with the output from `ip addr show dev eth0 | grep "inet " | head -n 1 | awk '{print $2}' | awk -F/ '{print $1}'`
+ - `<PUBLIC NETWORK>` should be replaced with the output from `ip route show dev eth0 | grep link | grep -v 169.254.0.0 | awk '{print $1}'`
 
 Then the ceph containers can be restarted using:
 
@@ -230,7 +230,7 @@ networks:
     external: true
 ```
 
-`<IPV4 IP>` and `<IPV6 IP>` are the VIPs we want to use.
+ - `<IPV4 IP>` and `<IPV6 IP>` are the VIPs we want to use.
 
 With `/var/data/composefiles/keepalived/fixPriority.sh` looking like:
 
