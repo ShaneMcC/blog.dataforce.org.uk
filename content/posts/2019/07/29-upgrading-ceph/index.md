@@ -12,10 +12,19 @@ category:
   - Ceph
 ---
 
+> This post is part of a series.
+>
+> 1. [Docker Swarm with Ceph for cross-server files](/2019/02/docker-swarm-with-ceph/)
+> 2. Upgrading Ceph in Docker Swarm **(This Post)**
+> 3. [Docker Swarm Cluster Improvements](/2021/08/docker-swarm-cluster-improvements/)
+
 This post is a followup to an [earlier blog bost](/2019/02/docker-swarm-with-ceph/) regarding setting up a docker-swarm cluster with ceph.
 
 I've been running this cluster for a while now quite happily however since setting it up, a new version of ceph has been released - nautilus - so now it's time for some upgrades.
 
+> **Note:** This post is out of date now.
+>
+> I would suggest looking at [this post](/2021/08/docker-swarm-cluster-improvements/) and using the docker-compose based upgrade workflow instead, up to the housekeeping part.
 
 I've mostly followed https://docs.ceph.com/docs/master/releases/nautilus/#upgrading-from-mimic-or-luminous but adapted it for the fact we're running everything in docker. I recommend that you have a read though this yourself first to have an idea of what we are doing and why.
 

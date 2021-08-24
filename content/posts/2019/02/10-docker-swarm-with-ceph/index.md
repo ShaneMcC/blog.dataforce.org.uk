@@ -12,6 +12,12 @@ category:
   - Ceph
 ---
 
+> This post is part of a series.
+>
+> 1. Docker Swarm with Ceph for cross-server files **(This Post)**
+> 2. [Upgrading Ceph in Docker Swarm](/2019/07/upgrading-ceph-in-docker-swarm/)
+> 3. [Docker Swarm Cluster Improvements](/2021/08/docker-swarm-cluster-improvements/)
+
 I've been wanting to play with Docker Swarm for a while now for hosting containers, and finally sat down this weekend to do it.
 
 Something that has always stopped me before now was that I wanted to have some kind of cross-site storage but I don't have any kind of SAN storage available to me just standalone hosts. I've been able to work around this using ceph on the nodes.
@@ -55,6 +61,15 @@ eexahtaiza1saibeishu8quie     ds-3.dev.shanemcc.net            Ready            
 [root@ds-2 ~]#
 ```
 
+And all 3 host nodes have SSH keys generated (`ssh-keygen -t ed25519`) and setup within /root/.ssh/authorized_keys on each node so that I can ssh between them.
+
+> **Note:** This section is out of date now.
+> I would suggest deploying a newer version of ceph, and I now recommend deploying ceph using docker-compose as per [this post](/2021/08/docker-swarm-cluster-improvements/)
+>
+> I've not tested this, but you *should* be able to deploy the docker-compose file from that post and start the containers from that instead of using the `docker run` commands below (with the exception of the one to zap the OSD)
+
+Now we can start setting up ceph.
+
 Even though we will be running ceph within docker containers, I've also installed the ceph tools on the host node for convenience:
 
 ```shell
@@ -62,11 +77,6 @@ rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 rpm -Uvh https://download.ceph.com/rpm-luminous/el7/noarch/ceph-release-1-1.el7.noarch.rpm
 yum install ceph
 ```
-
-And all 3 host nodes have SSH keys generated (`ssh-keygen -t ed25519`) and setup within /root/.ssh/authorized_keys on each node so that I can ssh between them.
-
-
-Now we can start setting up ceph.
 
 Remove any old ceph that may be lying around:
 ```shell
@@ -118,8 +128,8 @@ docker run -d --net=host --name ceph-mds --restart always -v /var/lib/ceph/:/var
 And then once these are created, lets tell ceph how many copies of things to keep:
 
 ```shell
-ceph osd pool set cephfs_data size 2
-ceph osd pool set cephfs_metadata size 2
+ceph osd pool set cephfs_data size 3
+ceph osd pool set cephfs_metadata size 3
 ```
 
 And there's no point scrubbing on VM disks:
@@ -136,6 +146,9 @@ ceph auth get-or-create client.dockerswarm osd 'allow rw' mon 'allow r' mds 'all
 echo "$(hostname -s):6789:/      /var/data/      ceph      name=dockerswarm,secret=$(ceph-authtool /etc/ceph/keyring.dockerswarm -p -n client.dockerswarm),noatime,_netdev,context=system_u:object_r:svirt_sandbox_file_t:s0 0 2" >> /etc/fstab
 mount -a
 ```
+
+> **Note:**
+> There are also some recommendations in [this post](/2019/07/upgrading-ceph-in-docker-swarm/) to mount ceph from multiple nodes not just the local node.
 
 All 3 hosts should now have a `/var/data` directory and files that are created on one should appear automatically on the others.
 
