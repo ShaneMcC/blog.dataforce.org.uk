@@ -1,0 +1,15 @@
+	<!-- Article content -->
+	<main class="content">
+		{{ if and (isset .Params "image") (ne nil .Params.image) (ne "" .Params.image) }}
+			{{ $image := .Resources.GetMatch (printf "%s*" ($.Param "image")) }}
+			<figure class="entry-image {{ if isset .Params "imageposition" }}{{ .Params.imageposition }}{{ else }}right{{ end }}">
+				<img alt="Post thumbnail" src="{{ $image.RelPermalink }}">
+			</figure>
+		{{ else if .Resources.GetMatch "postimg" }}
+			{{ $image := .Resources.GetMatch "postimg" }}
+			<figure class="entry-image {{ if isset .Params "imageposition" }}{{ .Params.imageposition }}{{ else }}right{{ end }}">
+				<img alt="Post thumbnail" src="{{ $image.RelPermalink }}">
+			</figure>
+		{{ end }}
+		{{ .Content }}
+	</main>

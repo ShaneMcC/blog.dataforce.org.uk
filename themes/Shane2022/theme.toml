@@ -1,0 +1,10 @@
+name = "Shane2022"
+license = "MIT"
+licenselink = "https://opensource.org/licenses/MIT"
+description = "Shane Blog Theme 2022"
+homepage = "https://dataforce.org.uk/"
+min_version = "0.92.1"
+
+[author]
+  name = "Shane Mc Cormack"
+  homepage = "https://dataforce.org.uk/"

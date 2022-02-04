@@ -14,6 +14,8 @@ PATH=${PATH} hugo
 
 cd public
 
+# Disable this for now.
+if [ 1 -eq 0 ]; then
 # Compress all the CSS files together
 rm css/allStyles*.css || true
 cat $(grep "rel=['\"]stylesheet['\"]" $(find . -name '*.html') | grep -v "data-noconcat=['\"]true['\"]" | awk -F: '{print $2}' | awk '!x[$0]++' | sed -r "s#.*href=['\"]/([^'\"]+)['\"].*#\1#g") > "css/allStyles-concat.css"
@@ -70,6 +72,7 @@ for FILE in $(find . -name '*.html'); do
 		${TIDY} --tidy-mark no -q -i -w 120 -m --vertical-space yes --drop-empty-elements no "${FILE}" || true
 	fi;
 done
+fi;
 
 # Convert all images to WebP
 if [ -e "${CWEBP}" ]; then

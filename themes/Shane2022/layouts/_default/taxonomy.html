@@ -1,0 +1,15 @@
+{{ partial "layout/header" . }}
+
+<header class="page-header">
+<h3>Category Archives for {{ .Data.Term }}</h3>
+<p>Posts in the {{ .Data.Term }} category</p>
+</header>
+
+{{ $paginator := .Paginate (where (where .Data.Pages "Type" "post") "Kind" "page") }}
+{{ range $paginator.Pages }}
+	{{ partial "post/post" . }}
+{{ end }}
+
+{{ partial "layout/pagination" . }}
+
+{{ partial "layout/footer" . }}

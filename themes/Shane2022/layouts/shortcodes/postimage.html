@@ -1,0 +1,11 @@
+{{ $image := .Page.Resources.GetMatch (.Get "src") }}
+{{ if $image }}
+	<figure class="post-image {{ if ne (.Get "side") "none" }}{{ .Get "side" }}{{ else if not (.Get "side") }}right{{ end }}">
+		{{ if .Get "large" }}
+			{{ $largeimage := .Page.Resources.GetMatch (.Get "large") }}
+			<a href="{{ ($largeimage).RelPermalink }}">
+		{{ end }}
+		<img alt="{{ if .Get "alt" }}{{ .Get "alt" }}{{ else }}Post thumbnail{{ end }}" src="{{ ($image).RelPermalink }}">
+		{{ if .Get "large" }}</a>{{ end }}
+	</figure>
+{{ end }}
