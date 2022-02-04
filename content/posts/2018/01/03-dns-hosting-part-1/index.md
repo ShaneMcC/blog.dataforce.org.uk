@@ -17,6 +17,8 @@ This was great for learning, and this worked well for a while but eventually I e
 
 There wasn't many free/cheap providers that did what I wanted (This was long before [Cloudflare](https://cloudflare.com/) or [Route 53](https://aws.amazon.com/route53/)), so around 2007 I did what any (_in_)sane person would do - I wrote a custom control panel for managing domains. and email. and it was multi-user. and it had billing support. and a half-baked ticket-system... ok, so I went a bit overboard with the plans for it. But mainly it controlled DNS and throughout it's lifetime that was the only bit that was "completed" and fully functional.
 
+<!--more-->
+
 The DNS editing was simple, it parsed BIND Zone files, presented them in a table of text input fields and let me make changes. (This is an ever-so-slight upgrade to "hand-edit zone files")
 
 For security reasons the webserver couldn't write to the bind zone file directory, so it made use of temporary files that the webserver could write to and then a cron script made these temporary files live by moving them into the bind zone file directory and reloading the zone with `rndc reload example.org`. Reading of zone data in the editor would look for the zone in the temporary directory first before falling back to the bind directory so that any pending edits didn't get lost before the cronjob ran.

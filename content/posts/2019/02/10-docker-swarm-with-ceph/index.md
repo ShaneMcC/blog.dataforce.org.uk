@@ -26,6 +26,8 @@ Something that has always stopped me before now was that I wanted to have some k
 
 All my physical servers run [Proxmox](https://www.proxmox.com/en/), and this is no exception. On 3 of these host nodes I created a new VM (1 per node) to be part of the cluster. These all have 3 disks, 1 for the base OS, 1 for Ceph, 1 for cloud-init (The non-cloud-init disks are all SCSI with individual iothreads).
 
+<!--more-->
+
 CentOS provide a cloud-image compatible disk [here](https://cloud.centos.org/centos/7/images/CentOS-7-x86_64-GenericCloud.qcow2) that I use as the base-os. I created a disk in proxmox, then detached it and overwrote it with the centos-provided image and re-attached it. I could have used an [Ubuntu](https://cloud-images.ubuntu.com/) cloud-image instead.
 
 I now had 3 empty CentOS VMs ready to go.

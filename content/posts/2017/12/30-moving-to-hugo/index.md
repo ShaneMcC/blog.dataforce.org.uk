@@ -22,6 +22,8 @@ I've seen [Chris](https://chameth.com/) successfully use [Hugo](https://gohugo.i
 
 Actually doing this was a multi-stage process.
 
+<!--more-->
+
 ### Stage 1 - Exporting the old content
 
 This was mostly achieved using the [wordpress-to-hugo-exporter](https://github.com/SchumacherFM/wordpress-to-hugo-exporter).

@@ -20,6 +20,8 @@ category:
 
 Since my [previous](/2019/02/docker-swarm-with-ceph/) [posts](/2019/07/upgrading-ceph-in-docker-swarm/) about running docker-swarm with ceph, I've been using this fairly extensively in production and made some changes to the setup that follows on from the previous posts.
 
+<!--more-->
+
 ### 1. Run ceph using docker-compose
 
 The first main change was to start running ceph with [docker-compose](https://docs.docker.com/compose/) on the host nodes.

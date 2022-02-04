@@ -29,6 +29,8 @@ There's a few things worth noting before we continue here.
 
 With this in mind, we continue to the actual important stuff!
 
+<!--more-->
+
 The way EntaNET do IPv6, with a default setup you will get an IP Address allocated over PPP that is in a /64, but you also get a /56 which is routed to you. We will use a /64 from the /56 as the address for the LAN.
 
 For the purposes of this, we are going to assume the following:

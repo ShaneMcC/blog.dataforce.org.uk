@@ -23,3 +23,5 @@ So, I created DFDesktopPane based on this code, with some extra changes:
 My modified JDesktopPane can be found as [here](http://code.google.com/p/dflibs/source/browse/trunk/java/uk/org/dataforce/swing/DFDesktopPane.java) part of my [dflibs](http://code.google.com/p/dflibs/) Google code project.
 
 Other useful things can be found [here](http://code.google.com/p/dflibs/source/browse/trunk/java/uk/org/dataforce/), take a look and leave any feedback either here or on the project issue tracker
+
+<!--more-->

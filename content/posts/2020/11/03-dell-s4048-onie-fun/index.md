@@ -24,7 +24,7 @@ At this point, I could have just reloaded the device into the ONIE installer env
 
 (After all this, I then re-imaged the device onto our standard deployment image of DNOS9 and completed the required config work that I was supposed to be doing.)
 
-
+<!--more-->
 
 I found the [OpenSwitch OPX Configuration Guide](http://archive.openswitch.net/docs/3.0.0/openswitch_opx_300_config_guide.pdf) and started having a read.
 

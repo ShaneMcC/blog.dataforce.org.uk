@@ -16,6 +16,8 @@ I tried to get yakuake working on OS X a while ago and failed (it wouldn't compi
 
 This is what I did, its probably not the best way of doing it (for example, the initial 3GB download could probably be reduced).
 
+<!--more-->
+
 First off, download the "everything" package from http://mac.kde.org/?id=download (its a torrent)
 
 Open a terminal, and cd to the directory you downloaded kde-mac to and run:

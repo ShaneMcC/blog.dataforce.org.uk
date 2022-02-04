@@ -17,3 +17,5 @@ Its coming along quite well :)
 You can track the progress, (and download the current release which is 0.1) at the [Google Code Project](http://code.google.com/p/dmdirc) or the [Project Website](http://www.dmdirc.com/)
 
 Lemme know what you think.
+
+<!--more-->

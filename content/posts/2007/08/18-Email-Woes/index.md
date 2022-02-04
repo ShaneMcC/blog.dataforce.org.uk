@@ -18,6 +18,8 @@ I've dealt with and accepted this for over a year now, before a discussion on IR
 
 So, I recently (Today and yesterday) started prodding my postfix config to help with the problem.
 
+<!--more-->
+
 Firstly I added some RBL checking, this was easy enough, 3 lines to my config in the smtpd\_recipient\_restrictions bit:
 
 ```

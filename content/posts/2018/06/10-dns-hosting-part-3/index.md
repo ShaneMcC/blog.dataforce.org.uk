@@ -19,6 +19,8 @@ Shortly before the whole rewrite I'd found myself playing around a bit with `Doc
 
 The system is split up into a number of containers (and could probably be split up into more).
 
+<!--more-->
+
 To start with, I had the following containers:
 
  - API Container - Deals with all the backend interactions

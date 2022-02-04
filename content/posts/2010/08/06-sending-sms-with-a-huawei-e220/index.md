@@ -14,6 +14,8 @@ After getting it setup and recognised in Linux by following the first 5 steps fr
 
 After this, restarting udev (`restart udev`) and replugging the device makes it ready to use.
 
+<!--more-->
+
 Part of the testing I was doing, was to send text-messages using the device (as a way of sending status messages out-of-band if an internet connection isn't available.) and threw together this quick script that relies on `expect` and `kermit`:
 
 ```tcl

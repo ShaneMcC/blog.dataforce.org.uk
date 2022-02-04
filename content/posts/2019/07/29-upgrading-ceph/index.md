@@ -30,6 +30,7 @@ I've mostly followed https://docs.ceph.com/docs/master/releases/nautilus/#upgrad
 
 (It's worth noting at this point that this guide was mostly written after the fact based on command history so I may have missed something. It's always a good idea to do this on a test cluster first, or in a maintenance window!)
 
+<!--more-->
 
 Before we begin the upgrade, we should run the following on each node in advance to save time later: `docker pull ceph/daemon:latest-nautilus`
 

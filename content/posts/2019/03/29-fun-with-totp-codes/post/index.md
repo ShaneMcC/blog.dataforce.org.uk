@@ -20,6 +20,8 @@ He explained that a service he was using provided 2FA support using TOTP codes. 
 
 This totally [nerd sniped](https://xkcd.com/356/) me, and I just had to take a look.
 
+<!--more-->
+
 The first thing I tried was to look at some "known-good" codes. I support RFC 6238 TOTP for [MyDNSHost](https://mydnshost.co.uk) so I started there, and looked to generate a new code on a test account. Alas, in the dev install I was using, I had broken TOTP 2FA Codes so couldn't use it test, so Googled for a site to generate the images for me, and came across: https://stefansundin.github.io/2fa-qr/
 
 I generated a Test QR Code, scanned it into Authy on my Android phone, and Google Authenticator on my colleagues iPhone - and they both agreed on the code, and the next one, and so on.

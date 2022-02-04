@@ -26,6 +26,8 @@ However, it turns out that it is possible to get basic Lync support working quit
 
 It’s done using "[sipe](http://sipe.sourceforge.net/)" – basically an open source implementation of the Extended SIP/SIMPLE protocol Lync uses for chat.
 
+<!--more-->
+
 The basic steps on Ubuntu are:
 
   * <del datetime="2013-05-18T13:22:42+00:00">Install the latest pidgin from pidgin devs ppa</del> apt-get install pidgin pidgin-sipe

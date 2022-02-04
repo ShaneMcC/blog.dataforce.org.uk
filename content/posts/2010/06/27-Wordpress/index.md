@@ -15,3 +15,5 @@ This will allow me to edit/post to the site using my phone, which will probably 
 I am working on migrating everything from the old site to the new site and trying to find a theme I like. Hopefully I will have everything working soon. Should anything be missing that you would like brought back leave a comment and let me know and I'll see what I can do.
 
 Unfortunately for anyone reading this using RSS, I'm afraid the recent posts will duplicate themselves as the IDs in the RSS feed will have changed.
+
+<!--more-->

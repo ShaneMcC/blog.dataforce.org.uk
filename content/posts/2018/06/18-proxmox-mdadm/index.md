@@ -20,6 +20,8 @@ This particular server does not have a RAID card, so I needed to use a software 
 
 This post is mostly an aide-memoire for myself for the future.
 
+<!--more-->
+
 ### Install Proxmox
 
 So, first thing to do - is get a fresh proxmox install, I'm using 5.2-1 at the time of writing.

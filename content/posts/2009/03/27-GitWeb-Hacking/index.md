@@ -13,6 +13,8 @@ Recently I setup gitweb on one of my servers to allow a web-based frontend to an
 
 After playing about with it, I noticed that it allowed for placing a README.html file in the git config directory to allow extra info to be shown on the summary view, managed to get it to pull the README.html file from the actual repository itself, and not the config directory, thus allowing the README.html to be versioned along with everything else, and not require the user to edit it on the server, but rather just edit it locally and push it.
 
+<!--more-->
+
 This is a simple change in `/usr/lib/cgi-bin/gitweb.cgi`:
 
 From (line 3916 or so):

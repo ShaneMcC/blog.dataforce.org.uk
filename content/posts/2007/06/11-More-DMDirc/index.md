@@ -10,3 +10,5 @@ category:
 
 ---
 DMDirc 0.4 has now [been released](http://blog.dmdirc.com/2007/06/11/04-is-a-go/trackback/) :)
+
+<!--more-->

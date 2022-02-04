@@ -15,6 +15,8 @@ This particular server was the main recursor for the site that it was located at
 
 The problem only came about when I needed to relocate the server to another site. In order to ensure continuity of service whilst the nameserver IP change propagated, I added some port-forwards at the old site that redirected DNS traffic to the new site. This however meant that all DNS traffic going towards the server came from an IP that was trusted for recursion. Oops.
 
+<!--more-->
+
 After adding the port-forwards, but before updating the nameservers, I got distracted and ended up forgetting about this little hack, until the other day when I suddenly noticed that both sites were suffering due to large numbers of packets. (It's worth noting, that in this case both sites were actually on standard ADSL connections, so not a whole lot of upload bandwidth available here!)
 
 After using `tcpdump` it became apparent quite quickly what was going on, and it reminded me that I hadn't actually made the nameserver change yet. This left me in a situation where the server was being abused, but I wasn't in a position to just remove the port forward without causing a loss of service.

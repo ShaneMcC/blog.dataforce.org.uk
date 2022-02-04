@@ -14,6 +14,8 @@ Compiling ip6tables on Endian Community Firewall (EFW) 2.4.0
 
 Unfortunately the version of ip6tables available at the time of fedora core 3 doesn't support the 'state' or 'comment' modules for use with firewall rules. So in order to get these, I decided to compile iptables 1.4.12.2 for Endian.
 
+<!--more-->
+
 To do this, we'll need a build environment on the Endian box, we'll also install wget.
 
 ```shell

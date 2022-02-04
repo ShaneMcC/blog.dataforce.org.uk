@@ -21,6 +21,8 @@ Without going into too much detail, this presented a major problem, the string i
 
 So, this sparked my curiosity a bit, the VB6 code I was using wasn't a built in, it was code I'd gotten elsewhere and used, so I assumed it was faulty code (not that this helped me much, as I needed to get the exact same output, but ignoring that).
 
+<!--more-->
+
 I edited the initial form of my application to return the MD5 String for `&pound;` on its own, and got: `d527ca074d412d9d0ffc844872c4603c`
 
 I did the same for my java code and got: `6465dad1d31752be3f3283e8f70feef7`

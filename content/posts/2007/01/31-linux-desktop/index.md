@@ -16,6 +16,8 @@ Imo, The best alternative is some derivative of Linux. (Although there is others
 
 As of Saturday 27/1/07 I have started using KUbuntu Linux as the main OS on my desktop, as a trial to see how well I can get by without my "trusty" windows installation.
 
+<!--more-->
+
 I chose KUbuntu due to its use of KDE, and the fact it was Ubuntu, which is one of the more well-established desktop-friendly distros of Linux available at this time. It also has one of the best communities and followings, as well as a solid base (Debian).
 
 (A distro (distribution) is the term used to refer to a specific version/flavor of Linux. Other distros include Fedora Core, Redhat, Slackware, Debian and Gentoo)

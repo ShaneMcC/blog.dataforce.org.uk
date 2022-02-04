@@ -15,3 +15,5 @@ The first 2 acts were funny and very rewatchable, there was gold bars that becam
 Act 3 on the other hand was a complete change in direction, the songs weren't as good, it wasn't really all that funny (Infact I think the only bit I laughed at was him stopping his song to correct the spelling of his name), it suddenly became all serious. All in all I found it a rather disappointing, and somewhat obvious, end and a let down to an otherwise awesome show.
 
 Despite this I'm still going to buy the DVD (and hopefully the OST if one comes out), as I approve of the idea of a web-streamed show (I think there was a push to get a firefly season 2 done in this way at one point) and would like to see more of them.
+
+<!--more-->

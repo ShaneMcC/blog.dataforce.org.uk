@@ -20,6 +20,8 @@ At the time it was mentioned this didn't affect me, however later when I got rou
 
 It checks messages, sees if the sender is in the contacts, then checks each group to see if there is a label with that group name that is not already set, then checks to see if the contact is in the group, and finally sets the label if everything matches up.
 
+<!--more-->
+
 I ran it initially to tag my entire inbox (set `checkAllIndex` to `True` change `ga.getMessagesByFolder(folderName)` to `ga.getMessagesByFolder(folderName, True)`) and now have it running on a 15 minute cron (not using loopMode) to tag new messages for me.
 
 Hopefully this will be useful to someone else, I'm not sure how well it works in general, it worked fine for me with ~700 messages at first, however after a few runs (due to regrouping some contacts) I was greeted by an `Account Lockdown: Unusual Activity Detected` message when trying to do anything - This went away after about 20 minutes, but don't say you wern't warned if it happens to you.

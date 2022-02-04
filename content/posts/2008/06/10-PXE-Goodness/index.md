@@ -19,6 +19,8 @@ Now this is all well and good except for 2 problems:
 
 Now, the first one isn't so much of a problem, but the second one was.
 
+<!--more-->
+
 So for some reason known only to him, my dad a while ago decided to invest in an External CD Writer rather than an internal one, so I do have a USB cd drive.
 
 First port of call was to attach the CD Drive, pop in the CD, reboot the machine, tell it to boot from usb... oh, it doesn't recognise the drive. bugger.

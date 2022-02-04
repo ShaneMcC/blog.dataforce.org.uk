@@ -9,3 +9,5 @@ category:
 
 ---
 &lt;Obligatory happy new year post goes here&gt;
+
+<!--more-->

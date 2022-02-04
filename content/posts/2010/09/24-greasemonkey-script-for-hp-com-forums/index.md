@@ -29,3 +29,5 @@ for (var i = 0; i &lt; a.length; i++){
 ```
 
 This will make the links no longer have the call to openExternal around them, and thus make them middle-click friendly.
+
+<!--more-->

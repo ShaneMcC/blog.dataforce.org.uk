@@ -15,3 +15,5 @@ At the moment all non-existent pages on http://home.dataforce.org.uk/, http://da
 After this http://home.dataforce.org.uk/ will be primarily for private things and http://dataforce.org.uk/ and http://shanemcc.co.uk/ will simply redirect here. Eventually I may look to transition this blog over to one of the raw domains (probably dataforce.org.uk). Ultimately I'm trying to do this without breaking any links that may exist to files/etc on these domains.
 
 So if stuff breaks over the next few weeks, that's why. Feel free to leave a comment if you notice anything or something goes missing.
+
+<!--more-->

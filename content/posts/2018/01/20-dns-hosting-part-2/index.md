@@ -36,6 +36,8 @@ I decided there was a few things that were needed:
 
 These were the basic criteria and what I started off with when I designed [MyDNSHost](https://mydnshost.co.uk).
 
+<!--more-->
+
 {{< postimage src="homepage_300.png" large="homepage.png" side="left" alt="MyDNSHost Homepage" >}}
 
 Now that I had the basic criteria, I started off by coming up with a basic database structure for storing the data that I thought would suit my plans, and a basic framework for the API backend so that I could start creating some initial API endpoints. With this in place I was able to create the database structure, and pre-seed it with some test data. This would allow me to test the API as I created it.

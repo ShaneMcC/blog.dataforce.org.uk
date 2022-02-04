@@ -14,6 +14,8 @@ In `$DayJob` we make fairly extensive use of MPLS ATOM Pseudowires (XConnects) b
 
 The way I describe this to customers is that in essence these act as a "long cable" from Point-A to Point-B. The customer gets a cable at each side to connect to their kit, but in the middle of it there is magic that routes the packets over our network rather than an actual long-cable. Packets that enter 1 side will be pushed out the other side, and vice-versa. We don't need to know or care what these packets are, we are just transparently transporting them.
 
+<!--more-->
+
 As a quick primer, imagine the following network:
 
 {{< postimage src="sample1.png" side="none" alt="Sample Base Network" >}}

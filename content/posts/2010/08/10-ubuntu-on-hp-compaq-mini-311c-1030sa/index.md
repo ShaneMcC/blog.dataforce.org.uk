@@ -16,6 +16,8 @@ This post is mostly notes for myself on getting the UN2400 3G card inside it wor
 
 This post assumes that the netbook is running Ubuntu maverick <del datetime="2010-12-13T13:18:39+00:00">(which is currently in alpha but seems to work just fine)</del> as it has gobi_loader as a package and a kernel which supports it.
 
+<!--more-->
+
 When I installed Ubuntu on here, I kept the original windows partition in case it was needed. I'm glad I did otherwise this would have been more awkward as some files from the windows installation are needed to get this working.
 
 Before doing anything, boot the windows partition and connect to 3G from the HP Connection manager (This generates some log files which we need). Also change the settings on the 3G card not to turn off on shutdown. (Not sure if the last bit is needed but I did it anyway from reading other posts online about this card.)

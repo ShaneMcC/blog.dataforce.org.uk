@@ -20,6 +20,8 @@ After switching back, and a bit of debugging later it appeared that the problem 
 
 I then quickly threw together an xinet.d-powered ident server with support for spoofing.
 
+<!--more-->
+
 First the xinet.d config:
 
 ```shell

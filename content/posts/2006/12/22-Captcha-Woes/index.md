@@ -19,3 +19,5 @@ Then I tried in a different window, open 2 tabs to the same comment, submit the 
 Turns out I had forgot to make "" an invalid captcha when testing if the values were correct, seeing as when you submit the captcha, it clears the captcha session, a blank value WAS indeed the same value that was stored in the session! The spam bots were just not accepting the session, and thus had a blank captcha - and by them not filling in the captcha, and not accepting the session, they were able to submit comments. This has now been fixed, and a blank captcha will now give an error of "Captcha Timeout".
 
 Fortunately, 3 Simple SQL Queries pruned the lot :) 1 of which pruned 7900+. Silly bots being so similar!
+
+<!--more-->

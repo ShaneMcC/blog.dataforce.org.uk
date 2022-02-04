@@ -16,6 +16,8 @@ A while back they both developed a problem, as evident in the video below:
 
 So, as they were still under warranty I contacted Hyundai/RepairTech and arranged for these to be repaired. Hyundai sent the parts to RepairTech, who collected the units, repaired them and sent them back.
 
+<!--more-->
+
 And this was the result:
 
 {{< youtube qD3WiSdV3qk >}}

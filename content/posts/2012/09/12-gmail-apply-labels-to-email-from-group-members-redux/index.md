@@ -24,3 +24,5 @@ Modify `scheduledProcessInbox` and `processInboxAll` to include a label prefix i
 The code can now be found [here on github](http://github.com/ShaneMcC/GMailGroupLabeller)
 
 Any questions/comments/bugs please leave them here or on github.
+
+<!--more-->

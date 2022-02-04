@@ -17,3 +17,5 @@ Downloads can be found here: [http://blog.dataforce.org.uk/viewcvs/misc/MySQL/]
 Any queries/questions should be left in the comments.
 
 (This has been tested, and compiled on Freepascal on Linux (1.9.8) and windows (2.0.0) and in Delphi (6/7/Turbo) on windows.)
+
+<!--more-->

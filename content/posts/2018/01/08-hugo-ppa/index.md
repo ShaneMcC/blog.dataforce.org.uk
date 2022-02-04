@@ -24,3 +24,5 @@ sudo apt-get install hugo
 ```
 
 This repo tracks the latest hugo debs in all 4 of the architectures supported: `amd64`, `i386`, `armhf` and `arm64` and should stay automatically up to date with the latest version.
+
+<!--more-->

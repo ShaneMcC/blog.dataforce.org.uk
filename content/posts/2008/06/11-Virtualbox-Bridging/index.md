@@ -18,7 +18,10 @@ Now a few things:
 * My Desktop is a lot more powerful than my server, so I run the virtual machines on it.
 * I use virtualbox rather than vmware.
 * All the network boot stuff is on my server not my desktop (obviously) </ul>
+
 So in order to allow this, virtualbox needed to be setup to bridge to my existing adapter, this was quite straight forward, pretty much exactly as the manual said.
+
+<!--more-->
 
 ```shell
 sudo apt-get install bridge-utils
