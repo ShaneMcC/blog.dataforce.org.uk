@@ -2,10 +2,4 @@
 		<h2>
 			<a href="{{ .RelPermalink }}" rel="bookmark">{{ .Title }}</a>
 		</h2>
-		<small>
-			Posted on {{ .Date.Format "January 2, 2006" }}
-			{{ if .Params.Author }}
-				by {{ .Params.Author }}
-			{{ end }}
-		</small>
 	</header>

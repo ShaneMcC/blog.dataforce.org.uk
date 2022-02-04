@@ -1,3 +1,9 @@
+$highlightColor: #4cc7b0;
+
+:root {
+    --highlightColor: #{$highlightColor};
+}
+
 body {
     background-color: #eee;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -32,19 +38,22 @@ article.post {
 
     header,
     footer {
-        padding: 5px 10px 0px 5px;
+        padding: 10px 20px 10px 20px;
     }
 
     header {
-        background-color: rgba(0, 0, 0, 0.03);
-        border-bottom: 1px solid rgba(0, 0, 0, 0.125);
-        a {
-            color: #626262;
-            text-decoration: none;
+        border-bottom: 4px solid $highlightColor;
+        background-color: rgba($highlightColor, 0.1);
 
-            &:hover {
-                color: #3c3c3c;
-            }
+
+        h2 {
+            margin: 0;
+        }
+
+        // border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+        a {
+            color: #212529;
+            text-decoration: none;
         }
 
         p {
@@ -57,11 +66,17 @@ article.post {
     }
 
     footer {
-        padding: 5px 10px 5px 5px;
         border-top: 1px solid rgba(0, 0, 0, 0.125);
         display: flex;
         flex-direction: row;
         clear: both;
+
+        small {
+            .badge {
+                vertical-align: middle;
+                display: block-inline;
+            }
+        }
     }
 
     .post-image {
@@ -110,7 +125,7 @@ footer.site-footer {
         color: white;
 
         &:hover {
-            color: gold;
+            color: $highlightColor;
         }
     }
 }
@@ -119,7 +134,8 @@ blockquote {
     padding: 10px 20px;
     margin: 0 0 20px;
     font-size: 17.5px;
-    border-left: 5px solid #eee;
+    border-left: 5px solid $highlightColor;
+    background-color: rgba($highlightColor, 0.1);
 }
 
 pre {

@@ -1,19 +1,23 @@
 	<!-- Article footer -->
-	<footer class="bg-dark text-white">
+	<footer class="bg-dark text-white d-flex flex-row">
+		<small>
+			Posted on {{ .Date.Format "January 2, 2006" }}
+		</small>
+
+		{{ if eq .Params.comments true }}
+			<small class="ms-auto">
+				<i class="fa fa-comments"></i> <a href="{{ .RelPermalink }}#comments">Comments</a>
+			</small>
+		{{ end }}
+
 		{{ if isset .Params "category" }}
-			<small>
+			<small class="ms-auto">
 				{{ with .Params.category }}
 					{{ $sort := sort . }}
 					{{ $links := apply $sort "partial" "post/categories" "." }}
 					{{ $clean := apply $links "chomp" "." }}
 					{{ delimit $clean " " }}
 				{{ end }}
-			</small>
-		{{ end }}
-		
-		{{ if eq .Params.comments true }}
-			<small class="ms-auto">
-				<i class="fa fa-comments"></i> <a href="{{ .RelPermalink }}#comments">Comments</a>
 			</small>
 		{{ end }}
 	</footer> <!-- end entry-footer -->
