@@ -42,53 +42,49 @@
 
 <body>
 	<header class="site-header">
-		<div class="row">
-			<div class="banner container-fluid">
-				<h1><a class="text" href="/" rel="home">{{ .Site.Title }}</a></h1>
-				<div class="text tagline">{{ .Site.Params.subtitle }}</div>
-			</div>
+		<div class="banner container-fluid">
+			<h1><a class="text" href="/" rel="home">{{ .Site.Title }}</a></h1>
+			<div class="text tagline">{{ .Site.Params.subtitle }}</div>
 		</div>
 	
-		<div class="row">
-			<nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
-				<ul class="navbar-nav mr-auto">
-					<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-					{{ range (where .Site.Pages "Type" "page") }}
-						{{ if ne .RelPermalink "/" }}
-							<li class="nav-item"><a class="nav-link" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-						{{ end }}
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+				{{ range (where .Site.Pages "Type" "page") }}
+					{{ if ne .RelPermalink "/" }}
+						<li class="nav-item"><a class="nav-link" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
 					{{ end }}
-				</ul>
+				{{ end }}
+			</ul>
 
-				<div class="contact-icons ms-auto">
-					{{ if isset .Site.Params.profile "email" }}
-						<a href="mailto:{{ .Site.Params.profile.email }}" target="_blank" class="mx-2">
-							<i class="fas fa-envelope"></i>
-						</a>
-					{{ end }}
-					{{ if isset .Site.Params.profile "github" }}
-						<a href="https://www.github.com/{{ .Site.Params.profile.github }}" target="_blank" class="mx-2">
-							<i class="fab fa-github"></i>
-						</a>
-					{{ end }}
-					{{ if isset .Site.Params.profile "twitter" }}
-						<a href="https://www.twitter.com/{{ .Site.Params.profile.twitter }}" target="_blank" class="mx-2">
-							<i class="fab fa-twitter"></i>
-						</a>
-					{{ end }}
-					{{ if isset .Site.Params.profile "facebook" }}
-						<a href="https://www.facebook.com/{{ .Site.Params.profile.facebook }}" target="_blank" class="mx-2">
-							<i class="fab fa-facebook"></i>
-						</a>
-					{{ end }}
-					{{ if isset .Site.Params.profile "linkedin" }}
-						<a href="https://www.linkedin.com/in/{{ .Site.Params.profile.linkedin }}" target="_blank" class="mx-2">
-							<i class="fab fa-linkedin"></i>
-						</a>
-					{{ end }}
-				</div>
-			</nav>
-		</div>
+			<div class="contact-icons ms-auto">
+				{{ if isset .Site.Params.profile "email" }}
+					<a href="mailto:{{ .Site.Params.profile.email }}" target="_blank" class="mx-2">
+						<i class="fas fa-envelope"></i>
+					</a>
+				{{ end }}
+				{{ if isset .Site.Params.profile "github" }}
+					<a href="https://www.github.com/{{ .Site.Params.profile.github }}" target="_blank" class="mx-2">
+						<i class="fab fa-github"></i>
+					</a>
+				{{ end }}
+				{{ if isset .Site.Params.profile "twitter" }}
+					<a href="https://www.twitter.com/{{ .Site.Params.profile.twitter }}" target="_blank" class="mx-2">
+						<i class="fab fa-twitter"></i>
+					</a>
+				{{ end }}
+				{{ if isset .Site.Params.profile "facebook" }}
+					<a href="https://www.facebook.com/{{ .Site.Params.profile.facebook }}" target="_blank" class="mx-2">
+						<i class="fab fa-facebook"></i>
+					</a>
+				{{ end }}
+				{{ if isset .Site.Params.profile "linkedin" }}
+					<a href="https://www.linkedin.com/in/{{ .Site.Params.profile.linkedin }}" target="_blank" class="mx-2">
+						<i class="fab fa-linkedin"></i>
+					</a>
+				{{ end }}
+			</div>
+		</nav>
 	</header>
 
 	<main>
