@@ -47,15 +47,22 @@
 			<div class="text tagline">{{ .Site.Params.subtitle }}</div>
 		</div>
 	
-		<nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
-			<ul class="navbar-nav mr-auto">
-				<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-				{{ range (where .Site.Pages "Type" "page") }}
-					{{ if ne .RelPermalink "/" }}
-						<li class="nav-item"><a class="nav-link" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-					{{ end }}
-				{{ end }}
-			</ul>
+		<nav class="navbar navbar-expand-sm navbar-dark bg-dark px-3">
+			<div>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarLinks" aria-controls="navbarLinks" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarLinks">
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+						{{ range (where .Site.Pages "Type" "page") }}
+							{{ if ne .RelPermalink "/" }}
+								<li class="nav-item"><a class="nav-link" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+							{{ end }}
+						{{ end }}
+					</ul>
+				</div>
+			</div>
 
 			<div class="contact-icons ms-auto">
 				{{ if isset .Site.Params.profile "email" }}
