@@ -11,5 +11,17 @@
 				<img alt="Post thumbnail" src="{{ $image.RelPermalink }}">
 			</figure>
 		{{ end }}
-		{{ .Content }}
+		{{ if .Scratch.Get "showFullContent" }}
+			{{ .Content }}
+		{{ else }}
+			{{ .Summary }}
+
+			{{ if .Truncated }}
+			<div class="continue-reading">
+				<p>
+					<a href="{{ .RelPermalink }}" rel="bookmark">Continue reading "<strong>{{ .Title }}</strong>" »</a>
+				</p>
+			</div>
+			{{ end}}
+		{{ end }}
 	</main>

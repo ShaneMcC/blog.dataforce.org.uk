@@ -1,5 +1,6 @@
 {{ $paginator := .Paginate (where (where .Site.Pages "Type" "post") "Kind" "page") }}
 {{ range $paginator.Pages }}
+	{{ .Scratch.Set "showFullContent" false }}
 	{{ partial "post/post" . }}
 {{ end }}
 
