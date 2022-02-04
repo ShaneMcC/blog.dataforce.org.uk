@@ -151,6 +151,10 @@ pre {
     border: 1px solid #ccc;
     border-radius: 0;
 
+    border: 1px solid $highlightColor;
+    border-left: 5px solid $highlightColor;
+    background-color: rgba($highlightColor, 0.1) !important;
+
     code {
       padding: 0;
       font-size: inherit;
