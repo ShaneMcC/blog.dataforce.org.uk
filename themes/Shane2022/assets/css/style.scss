@@ -1,4 +1,5 @@
 $highlightColor: #4cc7b0;
+$highlightColorDark: #00a385;
 
 :root {
     --highlightColor: #{$highlightColor};
@@ -8,6 +9,30 @@ body {
     background-color: #eee;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: $highlightColorDark;
+
+    &:hover {
+        color: $highlightColorDark;
+        text-decoration: underline;
+    }
+}
+
+.pagination {
+    .page-item {
+        .page-link {
+            color: $highlightColorDark;
+
+            &:hover {
+                color: $highlightColorDark;
+                text-decoration: none;
+                border-color: $highlightColor !important;
+            }
+        }
+    }
 }
 
 header.site-header {
@@ -28,6 +53,15 @@ header.site-header {
             text-decoration: none;
         }
     }
+
+    nav {
+        a {
+            &:hover {
+                color: $highlightColor !important;
+                text-decoration: none;
+            }
+        }
+    }
 }
 
 article.post {
@@ -44,7 +78,6 @@ article.post {
     header {
         border-bottom: 4px solid $highlightColor;
         background-color: rgba($highlightColor, 0.1);
-
 
         h2 {
             margin: 0;
@@ -117,6 +150,12 @@ article.post {
 
 footer.site-footer {
     color: white;
+    a {
+        color: white;
+        &:hover {
+            color: $highlightColor !important;
+        }
+    }
 }
 
 .contact-icons {
@@ -156,11 +195,11 @@ pre {
     background-color: rgba($highlightColor, 0.1) !important;
 
     code {
-      padding: 0;
-      font-size: inherit;
-      color: inherit;
-      white-space: pre-wrap;
-      background-color: transparent;
-      border-radius: 0;
+        padding: 0;
+        font-size: inherit;
+        color: inherit;
+        white-space: pre-wrap;
+        background-color: transparent;
+        border-radius: 0;
     }
 }
