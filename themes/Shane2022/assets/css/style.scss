@@ -9,6 +9,8 @@ body {
     background-color: #eee;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #333;
+
+    word-break: break-all;
 }
 
 a {
@@ -146,6 +148,11 @@ article.post {
             max-width: 40%;
             display: block;
         }
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
     }
 }
 
