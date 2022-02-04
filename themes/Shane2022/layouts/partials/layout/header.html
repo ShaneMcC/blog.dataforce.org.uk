@@ -43,54 +43,58 @@
 
 <body>
 	<header class="site-header">
-		<div class="banner container-fluid">
-			<h1><a class="text" href="/" rel="home">{{ .Site.Title }}</a></h1>
-			<div class="text tagline">{{ .Site.Params.subtitle }}</div>
+		<div class="banner">
+			<div class="container">
+				<h1><a class="text" href="/" rel="home">{{ .Site.Title }}</a></h1>
+				<div class="text tagline">{{ .Site.Params.subtitle }}</div>
+			</div>
 		</div>
 	
 		<nav class="navbar navbar-expand-sm navbar-dark bg-dark px-3">
-			<div>
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarLinks" aria-controls="navbarLinks" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="navbarLinks">
-					<ul class="navbar-nav mr-auto">
-						<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-						{{ range (where .Site.Pages "Type" "page") }}
-							{{ if ne .RelPermalink "/" }}
-								<li class="nav-item"><a class="nav-link" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+			<div class="container">
+				<div class="navlinks">
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarLinks" aria-controls="navbarLinks" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarLinks">
+						<ul class="navbar-nav mr-auto">
+							<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+							{{ range (where .Site.Pages "Type" "page") }}
+								{{ if ne .RelPermalink "/" }}
+									<li class="nav-item"><a class="nav-link" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+								{{ end }}
 							{{ end }}
-						{{ end }}
-					</ul>
+						</ul>
+					</div>
 				</div>
-			</div>
 
-			<div class="contact-icons ms-auto">
-				{{ if isset .Site.Params.profile "email" }}
-					<a href="mailto:{{ .Site.Params.profile.email }}" target="_blank" class="mx-2">
-						<i class="fas fa-envelope"></i>
-					</a>
-				{{ end }}
-				{{ if isset .Site.Params.profile "github" }}
-					<a href="https://www.github.com/{{ .Site.Params.profile.github }}" target="_blank" class="mx-2">
-						<i class="fab fa-github"></i>
-					</a>
-				{{ end }}
-				{{ if isset .Site.Params.profile "twitter" }}
-					<a href="https://www.twitter.com/{{ .Site.Params.profile.twitter }}" target="_blank" class="mx-2">
-						<i class="fab fa-twitter"></i>
-					</a>
-				{{ end }}
-				{{ if isset .Site.Params.profile "facebook" }}
-					<a href="https://www.facebook.com/{{ .Site.Params.profile.facebook }}" target="_blank" class="mx-2">
-						<i class="fab fa-facebook"></i>
-					</a>
-				{{ end }}
-				{{ if isset .Site.Params.profile "linkedin" }}
-					<a href="https://www.linkedin.com/in/{{ .Site.Params.profile.linkedin }}" target="_blank" class="mx-2">
-						<i class="fab fa-linkedin"></i>
-					</a>
-				{{ end }}
+				<div class="contact-icons ms-auto">
+					{{ if isset .Site.Params.profile "email" }}
+						<a href="mailto:{{ .Site.Params.profile.email }}" target="_blank" class="mx-2">
+							<i class="fas fa-envelope"></i>
+						</a>
+					{{ end }}
+					{{ if isset .Site.Params.profile "github" }}
+						<a href="https://www.github.com/{{ .Site.Params.profile.github }}" target="_blank" class="mx-2">
+							<i class="fab fa-github"></i>
+						</a>
+					{{ end }}
+					{{ if isset .Site.Params.profile "twitter" }}
+						<a href="https://www.twitter.com/{{ .Site.Params.profile.twitter }}" target="_blank" class="mx-2">
+							<i class="fab fa-twitter"></i>
+						</a>
+					{{ end }}
+					{{ if isset .Site.Params.profile "facebook" }}
+						<a href="https://www.facebook.com/{{ .Site.Params.profile.facebook }}" target="_blank" class="mx-2">
+							<i class="fab fa-facebook"></i>
+						</a>
+					{{ end }}
+					{{ if isset .Site.Params.profile "linkedin" }}
+						<a href="https://www.linkedin.com/in/{{ .Site.Params.profile.linkedin }}" target="_blank" class="mx-2">
+							<i class="fab fa-linkedin"></i>
+						</a>
+					{{ end }}
+				</div>
 			</div>
 		</nav>
 	</header>
