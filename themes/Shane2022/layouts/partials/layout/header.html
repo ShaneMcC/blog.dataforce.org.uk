@@ -34,7 +34,7 @@
 		<meta property="og:description" content="{{ .Site.Params.subtitle }}" />
 	{{ end }}
 
-	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:card" content="summary">
 	{{ if and ($.Param "image") (ne nil ($.Param "image")) (ne "" ($.Param "image")) }}
 		{{ $image := .Resources.GetMatch (printf "%s*" ($.Param "image")) }}
 		<meta property="og:image" itemprop="image" content="{{ $image.RelPermalink | absURL }}" />
