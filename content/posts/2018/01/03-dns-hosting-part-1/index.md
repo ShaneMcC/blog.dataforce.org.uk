@@ -11,6 +11,12 @@ category:
   - DNS
 ---
 
+> This post is part of a series.
+>
+> 1. DNS Hosting - Part 1: History **(This Post)**
+> 2. [DNS Hosting - Part 2: The rewrite](/2018/01/dns-hosting-part-2/)
+> 3. [DNS Hosting - Part 3: Putting it all together](/2018/06/dns-hosting-part-3/)
+
 For as long as I can remember I've hosted my own DNS. Originally this was via cpanel on a single server that I owned and then after a while I moved to a new server away from cpanel and moved to doing everything myself (web, email, dns) - hand-editing zone files and serving them via BIND.
 
 This was great for learning, and this worked well for a while but eventually I ended up with more servers, and a lot more domains. Manually editing DNS Zone files and reloading BIND was somewhat of a chore any time I was developing things or spinning up new services or moving things between servers - I wanted something web-based.

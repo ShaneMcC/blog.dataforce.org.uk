@@ -13,6 +13,12 @@ category:
   - Docker
 ---
 
+> This post is part of a series.
+>
+> 1. [DNS Hosting - Part 1: History](/2018/01/dns-hosting-part-1/)
+> 2. [DNS Hosting - Part 2: The rewrite](/2018/01/dns-hosting-part-2/)
+> 3. DNS Hosting - Part 3: Putting it all together **(This Post)**
+
 In my [previous](/2018/01/dns-hosting-part-1/) [posts](/2018/01/dns-hosting-part-2/) I discussed the history leading up to, and the eventual rewrite of my DNS hosting solution. So this post will (finally) talk briefly about how it all runs in production on [MyDNSHost](https://mydnshost.co.uk/).
 
 Shortly before the whole rewrite I'd found myself playing around a bit with `Docker` for another project, so I decided early on that I was going to make use of Docker for the main bulk of the setup to allow me to not need to worry about incompatibilities between different parts of the stack that needed different versions of things, and to update different bits at different times.
