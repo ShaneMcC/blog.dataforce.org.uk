@@ -41,7 +41,7 @@ header.site-header {
     .banner {
         padding: 40px;
 
-        background-image: url("{{ .Site.Params.headerimg }}");
+        background-image: url("../{{ .Site.Params.headerimg }}");
         background-position: center;
         background-size: cover;
         min-height: 150px;

@@ -16,29 +16,41 @@
 	{{ $chroma := resources.Get "css/chroma-vs.css" }}
 	{{ $style := resources.Get "css/style.scss" | resources.ExecuteAsTemplate "style.scss" . | resources.ToCSS }}
 
-	{{ $styleBundle := slice $bootstrap $fontawesome $chroma $style | resources.Concat "style.css" | minify | fingerprint }}
-	<link href="{{ $styleBundle.Permalink }}" rel="stylesheet">
+	{{ $styleBundle := slice $bootstrap $fontawesome $chroma $style | resources.Concat "css/style.css" | minify | fingerprint }}
+	<link href="{{ $styleBundle.RelPermalink }}" rel="stylesheet">
 
-	{{ if $.IsPage }}
-		{{ if isset .Site.Params.profile "twitter" }}
-			<meta name="twitter:card" content="summary" />
-			<meta name="twitter:site" content="@{{ .Site.Params.profile.twitter }}" />
-			<meta name="twitter:creator" content="@{{ .Site.Params.profile.twitter }}" />
-		{{ end }}
-			<meta property="og:url" content="{{ .Permalink }}" />
-			<meta property="og:title" content="{{ .Title }}" />
-		{{ if $.Param "description" }}
-			<meta property="og:description" content="{{ $.Param "description" | htmlEscape }}" />
-		{{ end }}
-
-		{{ if and ($.Param "image") (ne nil ($.Param "image")) (ne "" ($.Param "image")) }}
-			{{ $image := .Resources.GetMatch (printf "%s*" ($.Param "image")) }}
-			<meta property="og:image" content="{{ $image.RelPermalink | absURL }}" />
-		{{ else if .Resources.GetMatch "postimg" }}
-			{{ $image := .Resources.GetMatch "postimg" }}
-			<meta property="og:image" content="{{ $image.RelPermalink | absURL }}" />
-		{{ end }}
+	{{ if isset .Site.Params.profile "twitter" }}
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:site" content="@{{ .Site.Params.profile.twitter }}" />
+		<meta name="twitter:creator" content="@{{ .Site.Params.profile.twitter }}" />
 	{{ end }}
+		<meta property="og:url" content="{{ .Permalink }}" />
+		<meta property="og:site_name" content="{{ .Site.Title }}" />
+		<meta property="og:type" content="website">
+		<meta property="og:title" content="{{ .Title }}" />
+	{{ if $.Param "description" }}
+		<meta property="og:description" content="{{ $.Param "description" | htmlEscape }}" />
+	{{ else }}
+		<meta property="og:description" content="{{ .Site.Params.subtitle }}" />
+	{{ end }}
+
+	<meta property="twitter:card" content="summary_large_image">
+	{{ if and ($.Param "image") (ne nil ($.Param "image")) (ne "" ($.Param "image")) }}
+		{{ $image := .Resources.GetMatch (printf "%s*" ($.Param "image")) }}
+		<meta property="og:image" itemprop="image" content="{{ $image.RelPermalink | absURL }}" />
+		<meta property="og:image:secure_url" itemprop="image" content="{{ $image.RelPermalink | absURL }}" />
+		<meta property="twitter:image" content="{{ $image.RelPermalink | absURL }}" />
+	{{ else if .Resources.GetMatch "postimg" }}
+		{{ $image := .Resources.GetMatch "postimg" }}
+		<meta property="og:image" itemprop="image" content="{{ $image.RelPermalink | absURL }}" />
+		<meta property="og:image:secure_url" itemprop="image" content="{{ $image.RelPermalink | absURL }}" />
+		<meta property="twitter:image" content="{{ $image.RelPermalink | absURL }}" />
+	{{ else }}
+		<meta property="og:image" itemprop="image" content="/screenshot.png" />
+		<meta property="og:image:secure_url" itemprop="image" content="/screenshot.png">
+		<meta property="twitter:image" content="/screenshot.png" />
+	{{ end }}
+	<meta property="og:image:type" content="image/png">
 </head>
 
 <body>

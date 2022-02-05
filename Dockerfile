@@ -19,9 +19,30 @@ ADD . /tmp/build
 RUN /tmp/build/build.sh
 
 ##
-## Step 3 - host!
+## Step 2 - screenshot!
+##
+
+FROM alekzonder/puppeteer:latest AS screenshot
+
+COPY --from=build /tmp/build/public /app
+COPY screenshot.js /tools/screenshot.js
+
+RUN /tools/screenshot 'file:///app/index.html'
+
+##
+## Step 3 - Tidy
+##
+
+FROM build as tidy
+
+COPY --from=screenshot /screenshots/screenshot_1280_1024.png /tmp/build/public/screenshot.png
+
+RUN /tmp/build/tidy.sh
+
+##
+## Step 4 - host!
 ##
 
 FROM nginx:mainline-alpine AS nginx
-COPY --from=build /tmp/build/public /usr/share/nginx/html
+COPY --from=tidy /tmp/build/public /usr/share/nginx/html
 ADD nginx.conf /etc/nginx/nginx.conf

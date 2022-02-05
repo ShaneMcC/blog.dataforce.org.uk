@@ -50,6 +50,6 @@
 
 	
 	{{ $scriptBundle := slice $fontawesome $popper $jquery $bootstrap | resources.Concat "script.js" | minify | fingerprint }}
-	<script src="{{ $scriptBundle.Permalink }}"></script>
+	<script src="{{ $scriptBundle.RelPermalink }}"></script>
 </body>
 </html>
