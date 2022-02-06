@@ -37,6 +37,15 @@ $postOutline: rgba(0, 0, 0, 0.125);
     --highlightTextColor: #{$highlightTextColor};
 }
 
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bodyTextColor: #{invert($bodyTextColor)};
+        --highlightTextColor: #{invert($highlightTextColor)};
+        --bodyColor: #{invert($bodyColor)};
+        --postBackground: #{invert($postBackground)};
+    }
+}
+
 body {
     background-color: var(--bodyColor);
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
