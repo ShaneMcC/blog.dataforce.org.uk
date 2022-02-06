@@ -1,0 +1,18 @@
+{{ $lastYear := "0" }}
+{{ range where (where .Site.Pages "Type" "post") "Kind" "page" }}
+    {{ $thisYear := .Date.Format "2006" }}
+    {{ if ne $lastYear $thisYear }}
+        {{ if ne $lastYear "0" }}</ul>{{ end }}
+
+        <h3>{{ $thisYear }}</h3>
+        <ul>
+    {{ end }}
+
+    <li>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a> - {{ .Date.Format "Jan 2, 2006" }}
+    </li>
+
+    {{ $lastYear = $thisYear }}
+{{ end }}
+
+{{ if ne $lastYear "0" }}</ul>{{ end }}

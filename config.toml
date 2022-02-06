@@ -46,6 +46,11 @@ disableKinds = ['taxonomyTerm', 'section']
 		name = "iomart"
 		description = "– My current employer."
 
+	[[params.sidebar]]
+		link = "/index/"
+		name = "All posts"
+		description = "– All posts on this site"
+
 [taxonomies]
 	category = "category"
 	series = "series"
