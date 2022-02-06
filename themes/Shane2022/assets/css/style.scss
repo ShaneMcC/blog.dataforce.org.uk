@@ -35,10 +35,8 @@ $postOutline: rgba(0, 0, 0, 0.125);
     --postBackground: #{$postBackground};
     --postOutline: #{$postOutline};
     --highlightTextColor: #{$highlightTextColor};
-}
 
-@media (prefers-color-scheme: dark) {
-    :root {
+    @media (prefers-color-scheme: dark) {
         --bodyTextColor: #{invert($bodyTextColor)};
         --highlightTextColor: #{invert($highlightTextColor)};
         --bodyColor: #{invert($bodyColor)};
