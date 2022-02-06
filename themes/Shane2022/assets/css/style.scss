@@ -19,6 +19,13 @@ $bodyTextColor: #333;
 $postBackground: white;
 $postOutline: rgba(0, 0, 0, 0.125);
 
+@mixin darkmode {
+    --bodyTextColor: #{invert($bodyTextColor)};
+    --highlightTextColor: #{invert($highlightTextColor)};
+    --bodyColor: #{invert($bodyColor)};
+    --postBackground: #{invert($postBackground)};
+}
+
 :root {
     --highlightColor: #{$highlightColor};
     --highlightColorDark: #{$highlightColorDark};
@@ -37,10 +44,7 @@ $postOutline: rgba(0, 0, 0, 0.125);
     --highlightTextColor: #{$highlightTextColor};
 
     @media (prefers-color-scheme: dark) {
-        --bodyTextColor: #{invert($bodyTextColor)};
-        --highlightTextColor: #{invert($highlightTextColor)};
-        --bodyColor: #{invert($bodyColor)};
-        --postBackground: #{invert($postBackground)};
+        @include darkmode;
     }
 }
 
@@ -50,6 +54,10 @@ body {
     color: var(--bodyTextColor);
 
     word-break: break-word;
+
+    &.darkmode {
+        @include darkmode;
+    }
 }
 
 a {
