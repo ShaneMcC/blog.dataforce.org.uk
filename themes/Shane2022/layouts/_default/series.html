@@ -1,0 +1,15 @@
+{{ partial "layout/header" . }}
+
+<header class="page-header">
+<h3>{{ .Name }}</h3>
+<p>All posts in the "<strong>{{ .Name }}</strong>" series</p>
+</header>
+
+{{ $paginator := .Paginate (where (where .Data.Pages "Type" "post") "Kind" "page") }}
+{{ range $paginator.Pages }}
+	{{ partial "post/post" . }}
+{{ end }}
+
+{{ partial "layout/pagination" . }}
+
+{{ partial "layout/footer" . }}

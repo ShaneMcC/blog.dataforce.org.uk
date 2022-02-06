@@ -46,3 +46,4 @@ disableKinds = ['taxonomyTerm', 'section']
 
 [taxonomies]
 	category = "category"
+	series = "series"

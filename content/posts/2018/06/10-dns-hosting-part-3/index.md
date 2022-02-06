@@ -11,13 +11,9 @@ category:
   - DNS
   - Code
   - Docker
+series:
+  - DNS Hosting
 ---
-
-> This post is part of a series.
->
-> 1. [DNS Hosting - Part 1: History](/2018/01/dns-hosting-part-1/)
-> 2. [DNS Hosting - Part 2: The rewrite](/2018/01/dns-hosting-part-2/)
-> 3. DNS Hosting - Part 3: Putting it all together **(This Post)**
 
 In my [previous](/2018/01/dns-hosting-part-1/) [posts](/2018/01/dns-hosting-part-2/) I discussed the history leading up to, and the eventual rewrite of my DNS hosting solution. So this post will (finally) talk briefly about how it all runs in production on [MyDNSHost](https://mydnshost.co.uk/).
 

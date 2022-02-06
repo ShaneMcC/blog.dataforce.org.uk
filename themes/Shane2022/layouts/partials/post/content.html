@@ -11,6 +11,26 @@
 				<img alt="Post thumbnail" src="{{ $image.RelPermalink }}">
 			</figure>
 		{{ end }}
+
+		{{ if .Params.series }}
+			{{ $name := index .Params.series 0 }}
+			{{ $name := $name | urlize }}
+			{{ $series := index .Site.Taxonomies.series $name }}
+
+			<blockquote>
+				<p>This post is part of a <a href="/series/{{ index .Params.series 0 | lower | urlize }}/">series</a>.</p>
+				<ol>
+					{{ range $series.Pages.Reverse }}
+						{{ if eq .RelPermalink $.RelPermalink }}
+							<li>{{ .LinkTitle }} <strong>(This Post)</strong></li>
+						{{ else }}
+							<li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+						{{ end }}
+					{{end}}
+				</ol>
+			</blockquote>
+		{{end}} 
+
 		{{ if .Scratch.Get "showFullContent" }}
 			{{ .Content }}
 		{{ else }}

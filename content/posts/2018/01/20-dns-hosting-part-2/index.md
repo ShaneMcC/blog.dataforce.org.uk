@@ -10,13 +10,9 @@ category:
   - General
   - DNS
   - Code
+series:
+  - DNS Hosting
 ---
-
-> This post is part of a series.
->
-> 1. [DNS Hosting - Part 1: History](/2018/01/dns-hosting-part-1/)
-> 2. DNS Hosting - Part 2: The rewrite **(This Post)**
-> 3. [DNS Hosting - Part 3: Putting it all together](/2018/06/dns-hosting-part-3/)
 
 In my [previous post about DNS Hosting](/2018/01/dns-hosting-part-1/) I discussed the history leading up to when I decided I needed a better personal DNS hosting solution. I decided to code one myself to replace what I had been using previously.
 

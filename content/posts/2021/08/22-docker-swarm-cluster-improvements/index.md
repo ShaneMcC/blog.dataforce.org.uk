@@ -10,13 +10,9 @@ category:
   - Code
   - Docker
   - Ceph
+series:
+  - Docker Swarm
 ---
-
-> This post is part of a series.
->
-> 1. [Docker Swarm with Ceph for cross-server files](/2019/02/docker-swarm-with-ceph/)
-> 2. [Upgrading Ceph in Docker Swarm](/2019/07/upgrading-ceph-in-docker-swarm/)
-> 3. Docker Swarm Cluster Improvements **(This Post)**
 
 Since my [previous](/2019/02/docker-swarm-with-ceph/) [posts](/2019/07/upgrading-ceph-in-docker-swarm/) about running docker-swarm with ceph, I've been using this fairly extensively in production and made some changes to the setup that follows on from the previous posts.
 
