@@ -1,9 +1,11 @@
 {{ partial "layout/header" . }}
 
+<section class="page-details">
 <header class="page-header">
 <h3>Category Archives for {{ .Data.Term }}</h3>
 <p>Posts in the {{ .Data.Term }} category</p>
 </header>
+</section>
 
 {{ $paginator := .Paginate (where (where .Data.Pages "Type" "post") "Kind" "page") }}
 {{ range $paginator.Pages }}

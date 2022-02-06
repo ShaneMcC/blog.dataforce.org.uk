@@ -33,7 +33,7 @@ $postOutline: rgba(0, 0, 0, 0.125);
     --bodyTextColor: #{$bodyTextColor};
     --headerText: #{$headerText};
     --headerTextShadow: #{$headerTextShadow};
-    --navText:  #{rgba($navText, 0.55)};
+    --navText: #{rgba($navText, 0.55)};
     --navBackground: #{$navBackground};
     --navIconColor: #{$navIconColor};
     --footerText: #{$footerText};
@@ -95,7 +95,9 @@ header.site-header {
 
         .text {
             color: var(--headerText);
-            text-shadow: 3px 3px 0 var(--headerTextShadow), -1px -1px 0 var(--headerTextShadow), 1px -1px 0 var(--headerTextShadow), -1px 1px 0 var(--headerTextShadow), 1px 1px 0 var(--headerTextShadow);
+            text-shadow: 3px 3px 0 var(--headerTextShadow), -1px -1px 0 var(--headerTextShadow),
+                1px -1px 0 var(--headerTextShadow), -1px 1px 0 var(--headerTextShadow),
+                1px 1px 0 var(--headerTextShadow);
         }
 
         a {
@@ -109,7 +111,9 @@ header.site-header {
         a {
             color: var(--navText);
 
-            &:hover {
+            &:hover,
+            &:focus,
+            &:active {
                 color: var(--highlightColor);
                 text-decoration: none;
             }
@@ -125,6 +129,23 @@ header.site-header {
                 }
             }
         }
+    }
+}
+
+section.page-details {
+    background-color: var(--postBackground);
+
+    header {
+        border: 1px solid var(--postOutline);
+        border-radius: 0.3rem;
+        margin-top: 40px;
+        padding: 10px 20px 0px 20px;
+
+        // border-left: 4px solid var(--highlightColor);
+        // border-right: 4px solid var(--highlightColor);
+        // border-top: 4px solid var(--highlightColor);
+        border-bottom: 4px solid var(--highlightColor);
+        // background-color: var(--paleHighlight);
     }
 }
 
@@ -144,7 +165,8 @@ article.post {
         border-bottom: 4px solid var(--highlightColor);
         background-color: var(--paleHighlight);
 
-        h1, h2 {
+        h1,
+        h2 {
             margin: 0;
         }
 
@@ -170,7 +192,7 @@ article.post {
     footer {
         background-color: var(--footerBackground);
         color: var(--footerText);
-        border-top: 1px solid  var(--postOutline);
+        border-top: 1px solid var(--postOutline);
         display: flex;
         flex-direction: row;
         clear: both;
@@ -224,18 +246,20 @@ article.post {
     }
 }
 
-.miscbits {
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
 footer.site-footer {
     background-color: var(--footerBackground);
     color: var(--footerText);
+    
     a {
-        color: var(--footerText);
-        &:hover {
-            color: var(--highlightColor) !important;
+        color: var(--highlightColor);
+    }
+
+    .copyright {
+        a {
+            color: var(--footerText);
+            &:hover {
+                color: var(--highlightColor) !important;
+            }
         }
     }
 }

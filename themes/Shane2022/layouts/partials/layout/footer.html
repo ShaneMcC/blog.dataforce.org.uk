@@ -1,43 +1,43 @@
 	</main>
 
-	<section class="miscbits container text-center">
-		<div class="d-flex flex-row justify-content-around">
-			<div class="links">
-				<h5>Links</h5>
-				<ul class="nav d-flex flex-column">
-						{{ range .Site.Params.sidebar }}
-						<li>
-							<a href="{{ .link }}" rel="me" title="{{ .description }}" target="_blank">{{ .name }}</a>
-							{{ .description }}
-						</li>
+	<footer class="site-footer mt-4 p-2 d-flex flex-column">
+		<section class="py-4 miscbits container text-center">
+			<div class="d-flex flex-row justify-content-around">
+				<div class="links">
+					<h5>Links</h5>
+					<ul class="nav d-flex flex-column">
+							{{ range .Site.Params.sidebar }}
+							<li>
+								<a href="{{ .link }}" rel="me" title="{{ .description }}" target="_blank">{{ .name }}</a>
+								{{ .description }}
+							</li>
+						{{ end }}
+					</ul>
+				</div>
+		
+				<div class="posts">
+					<h5>Recent Posts</h5>
+					<ul class="nav d-flex flex-column">
+						{{ range first 5 (where .Site.Pages "Type" "post") }}
+							<li>
+								<a href="{{ .RelPermalink }}">{{ .Title }}</a>
+							</li>
+						{{ end }}
+					</ul>
+				</div>
+			</div>
+			<div class="d-flex flex-row justify-content-around">
+				<div class="categories">
+					<h5>Categories</h5>
+					{{ range .Site.Taxonomies.category.ByCount }}
+						<a rel="nofollow" href="{{ .Page.Permalink }}" title="{{ .Page.Title }}"><span class="badge bg-secondary">{{ .Page.Title }}</span></a>
 					{{ end }}
-				</ul>
+				</div>
 			</div>
-	
-			<div class="posts">
-				<h5>Recent Posts</h5>
-				<ul class="nav d-flex flex-column">
-					{{ range first 5 (where .Site.Pages "Type" "post") }}
-						<li>
-							<a href="{{ .RelPermalink }}">{{ .Title }}</a>
-						</li>
-					{{ end }}
-				</ul>
-			</div>
-		</div>
-		<div class="d-flex flex-row justify-content-around">
-			<div class="categories">
-				<h5>Categories</h5>
-				{{ range .Site.Taxonomies.category.ByCount }}
-					<a rel="nofollow" href="{{ .Page.Permalink }}" title="{{ .Page.Title }}"><span class="badge bg-secondary">{{ .Page.Title }}</span></a>
-				{{ end }}
-			</div>
-		</div>
-	</section>
+		</section>
 
-	<!-- FOOTER -->
-	<footer class="site-footer p-2 d-flex flex-row">
-		<small class="mx-auto">
+
+		<small class="copyright mx-auto">
 			&copy; {{ dateFormat "2006" now }} <a href="/">{{ .Site.Title }}</a>
 		</small>
 	</footer>
