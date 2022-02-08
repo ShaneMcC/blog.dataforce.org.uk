@@ -11,7 +11,8 @@ disableKinds = ['taxonomyTerm', 'section']
 [markup]
 	[markup.highlight]
 		codeFences = true
-		style = "vs"
+		# style = "vs"
+		noClasses = false
 	[markup.goldmark.renderer]
 		unsafe = true
 

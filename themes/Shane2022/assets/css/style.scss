@@ -306,3 +306,13 @@ pre {
         border-radius: 0;
     }
 }
+
+@media (prefers-color-scheme: dark) { 
+    {{ $style := resources.Get "css/chroma-dracula.css" }}
+    {{ $style.Content | safeCSS }}
+}
+  
+@media (prefers-color-scheme: light) { 
+    {{ $style := resources.Get "css/chroma-colorful.css" }}
+    {{ $style.Content | safeCSS }}
+}
