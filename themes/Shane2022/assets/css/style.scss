@@ -19,12 +19,8 @@ $bodyTextColor: #333;
 $postBackground: white;
 $postOutline: rgba(0, 0, 0, 0.125);
 
-@mixin darkmode {
-    --bodyTextColor: #{invert($bodyTextColor)};
-    --highlightTextColor: #{invert($highlightTextColor)};
-    --bodyColor: #{invert($bodyColor)};
-    --postBackground: #{invert($postBackground)};
-}
+{{ $darkCodeStyle := resources.Get "css/chroma-dracula.css" }}
+{{ $lightCodeStyle := resources.Get "css/chroma-colorful.css" }}
 
 :root {
     --highlightColor: #{$highlightColor};
@@ -44,7 +40,16 @@ $postOutline: rgba(0, 0, 0, 0.125);
     --highlightTextColor: #{$highlightTextColor};
 
     @media (prefers-color-scheme: dark) {
-        @include darkmode;
+        --bodyTextColor: #{invert($bodyTextColor)};
+        --highlightTextColor: #{invert($highlightTextColor)};
+        --bodyColor: #{invert($bodyColor)};
+        --postBackground: #{invert($postBackground)};
+
+        {{ $darkCodeStyle.Content | safeCSS }}
+    }
+
+    @media (prefers-color-scheme: light) {
+        {{ $lightCodeStyle.Content | safeCSS }}
     }
 }
 
@@ -54,10 +59,6 @@ body {
     color: var(--bodyTextColor);
 
     word-break: break-word;
-
-    &.darkmode {
-        @include darkmode;
-    }
 }
 
 a {
@@ -305,14 +306,4 @@ pre {
         background-color: transparent;
         border-radius: 0;
     }
-}
-
-@media (prefers-color-scheme: dark) { 
-    {{ $style := resources.Get "css/chroma-dracula.css" }}
-    {{ $style.Content | safeCSS }}
-}
-  
-@media (prefers-color-scheme: light) { 
-    {{ $style := resources.Get "css/chroma-colorful.css" }}
-    {{ $style.Content | safeCSS }}
 }
