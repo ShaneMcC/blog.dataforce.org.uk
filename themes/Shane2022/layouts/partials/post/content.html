@@ -3,12 +3,12 @@
 		{{ if and (isset .Params "image") (ne nil .Params.image) (ne "" .Params.image) }}
 			{{ $image := .Resources.GetMatch (printf "%s*" ($.Param "image")) }}
 			<figure class="post-image {{ if isset .Params "imageposition" }}{{ .Params.imageposition }}{{ else }}right{{ end }}">
-				<img alt="Post thumbnail" src="{{ $image.RelPermalink }}">
+				<img alt="Post thumbnail" src="{{ $image.RelPermalink }}" width="{{ ($image).Width }}" height="{{ ($image).Height }}" loading="lazy">
 			</figure>
 		{{ else if .Resources.GetMatch "postimg" }}
 			{{ $image := .Resources.GetMatch "postimg" }}
 			<figure class="post-image {{ if isset .Params "imageposition" }}{{ .Params.imageposition }}{{ else }}right{{ end }}">
-				<img alt="Post thumbnail" src="{{ $image.RelPermalink }}">
+				<img alt="Post thumbnail" src="{{ $image.RelPermalink }}" width="{{ ($image).Width }}" height="{{ ($image).Height }}" loading="lazy">
 			</figure>
 		{{ end }}
 

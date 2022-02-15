@@ -5,7 +5,7 @@
 			{{ $largeimage := .Page.Resources.GetMatch (.Get "large") }}
 			<a href="{{ ($largeimage).RelPermalink }}">
 		{{ end }}
-		<img alt="{{ if .Get "alt" }}{{ .Get "alt" }}{{ else }}Post thumbnail{{ end }}" src="{{ ($image).RelPermalink }}">
+		<img alt="{{ if .Get "alt" }}{{ .Get "alt" }}{{ else }}Post thumbnail{{ end }}" src="{{ ($image).RelPermalink }}" width="{{ ($image).Width }}" height="{{ ($image).Height }}" loading="lazy">
 		{{ if .Get "large" }}</a>{{ end }}
 	</figure>
 {{ end }}

@@ -89,6 +89,7 @@ header.site-header {
     .banner {
         padding: 40px;
 
+        background-color: var(--navBackground);
         background-image: url("../{{ .Site.Params.headerimg }}");
         background-position: center;
         background-size: cover;
