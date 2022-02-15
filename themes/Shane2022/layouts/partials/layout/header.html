@@ -15,7 +15,10 @@
 	{{ $fontawesome := resources.GetRemote "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.css" }}
 	{{ $style := resources.Get "css/style.scss" | resources.ExecuteAsTemplate "style.scss" . | resources.ToCSS }}
 
-	{{ $styleBundle := slice $bootstrap $fontawesome $style | resources.Concat "css/style.css" | minify | fingerprint }}
+	{{ $styleBundle := slice $bootstrap $fontawesome $style | resources.Concat "css/style.css" }}
+	{{ if hugo.IsProduction }}
+		{{ $styleBundle := $styleBundle | minify | fingerprint }}
+	{{ end }}
 	<link href="{{ $styleBundle.RelPermalink }}" rel="stylesheet">
 
 	{{ if isset .Site.Params.profile "twitter" }}
