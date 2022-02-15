@@ -49,7 +49,10 @@
 	{{ $script := resources.Get "js/main.js" }}
 
 	
-	{{ $scriptBundle := slice $fontawesome $popper $jquery $bootstrap | resources.Concat "script.js" | minify | fingerprint }}
+	{{ $scriptBundle := slice $fontawesome $popper $jquery $bootstrap | resources.Concat "script.js" }}
+	{{ if hugo.IsProduction }}
+		{{ $scriptBundle := $scriptBundle | minify | fingerprint }}
+	{{ end }}
 	<script src="{{ $scriptBundle.RelPermalink }}"></script>
 </body>
 </html>
