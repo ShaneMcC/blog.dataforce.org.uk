@@ -51,7 +51,7 @@
 	
 	{{ $scriptBundle := slice $fontawesome $popper $jquery $bootstrap | resources.Concat "script.js" }}
 	{{ if hugo.IsProduction }}
-		{{ $scriptBundle := $scriptBundle | minify | fingerprint }}
+		{{ $scriptBundle = $scriptBundle | minify | fingerprint }}
 	{{ end }}
 	<script src="{{ $scriptBundle.RelPermalink }}"></script>
 </body>

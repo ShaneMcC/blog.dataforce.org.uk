@@ -17,7 +17,7 @@
 
 	{{ $styleBundle := slice $bootstrap $fontawesome $style | resources.Concat "css/style.css" }}
 	{{ if hugo.IsProduction }}
-		{{ $styleBundle := $styleBundle | minify | fingerprint }}
+		{{ $styleBundle = $styleBundle | minify | fingerprint }}
 	{{ end }}
 	<link href="{{ $styleBundle.RelPermalink }}" rel="stylesheet">
 
