@@ -6,8 +6,9 @@ DIR="$(dirname "$(readlink -f "$0")")"
 
 cd ${DIR}/public
 
-CWEBP=`which cwebp`
-TIDY=`which tidy`
+CWEBP=`which cwebp || true`
+TIDY=`which tidy || true`
+PURGECSS=`which purgecss || true`
 
 # Tidy up each generated file.
 if [ -e "${TIDY}" ]; then
@@ -23,3 +24,8 @@ if [ -e "${CWEBP}" ]; then
 	done
 fi;
 
+# Remove unused CSS
+if [ -e "${PURGECSS}" ]; then
+	${PURGECSS} --output css/ --css css/style.min.*.css --content '**.html'
+	ls css/
+fi;

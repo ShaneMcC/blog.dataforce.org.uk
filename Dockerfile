@@ -2,19 +2,23 @@
 ## Step 1 - add content and build
 ##
 
-FROM debian:stretch as build
+FROM node:bullseye as build
 RUN apt-get -qq update \
-	&& DEBIAN_FRONTEND=noninteractive apt-get -qq install -y --no-install-recommends python-pygments git ca-certificates asciidoc yui-compressor tidy webp \
+	&& DEBIAN_FRONTEND=noninteractive apt-get -qq install -y --no-install-recommends tidy webp \
 	&& rm -rf /var/lib/apt/lists/*
 
 ENV HUGO_VERSION 0.92.1
 ENV HUGO_BINARY hugo_extended_${HUGO_VERSION}_Linux-64bit.deb
 
-ADD https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/${HUGO_BINARY} /tmp/hugo.deb
-RUN dpkg -i /tmp/hugo.deb \
+RUN wget https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/${HUGO_BINARY} -O /tmp/hugo.deb \
+    && dpkg -i /tmp/hugo.deb \
 	&& rm /tmp/hugo.deb
 
 ADD . /tmp/build
+
+WORKDIR /tmp/build
+
+RUN npm install -g postcss-cli autoprefixer purgecss
 
 RUN /tmp/build/build.sh
 
