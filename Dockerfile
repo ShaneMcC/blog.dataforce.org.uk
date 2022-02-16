@@ -49,4 +49,5 @@ RUN /tmp/build/tidy.sh
 
 FROM nginx:mainline-alpine AS nginx
 COPY --from=tidy /tmp/build/public /usr/share/nginx/html
-ADD nginx.conf /etc/nginx/nginx.conf
+ADD docker/nginx.conf /etc/nginx/nginx.conf
+ADD docker/ramdisk.sh /docker-entrypoint.d/99-ramdisk.sh
