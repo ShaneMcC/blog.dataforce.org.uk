@@ -1,7 +1,5 @@
 #!/bin/sh
 
-mkdir /usr/share/nginx/tmp-html
-
 # Crazy/Stupid but fun idea of optionally running the site in a ramdisk...
 if [ -e /usr/share/nginx/tmp-html ]; then
 	rm -Rfv /usr/share/nginx/tmp-html/*
