@@ -14,11 +14,17 @@ RUN wget https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/${H
     && dpkg -i /tmp/hugo.deb \
 	&& rm /tmp/hugo.deb
 
-ADD . /tmp/build
-
 WORKDIR /tmp/build
 
 RUN npm install -g postcss-cli autoprefixer purgecss
+
+ADD assets /tmp/build/assets
+ADD assets /tmp/build/assets
+ADD content /tmp/build/content
+ADD layouts /tmp/build/layouts
+ADD static /tmp/build/static
+ADD themes /tmp/build/themes
+ADD build.sh config.toml /tmp/build/
 
 RUN /tmp/build/build.sh
 
@@ -40,6 +46,8 @@ RUN /tools/screenshot 'file:///app/index.html'
 FROM build as tidy
 
 COPY --from=screenshot /screenshots/screenshot_1280_1024.png /tmp/build/public/screenshot.png
+
+ADD tidy.sh /tmp/build/
 
 RUN /tmp/build/tidy.sh
 
