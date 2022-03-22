@@ -32,4 +32,4 @@ if [ -e "${PURGECSS}" ]; then
 	ls css/
 fi;
 
-rm __postcss-dummy.html
+rm __postcss-dummy*.html
