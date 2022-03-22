@@ -19,7 +19,6 @@ WORKDIR /tmp/build
 RUN npm install -g postcss-cli autoprefixer purgecss
 
 ADD assets /tmp/build/assets
-ADD assets /tmp/build/assets
 ADD content /tmp/build/content
 ADD layouts /tmp/build/layouts
 ADD static /tmp/build/static
