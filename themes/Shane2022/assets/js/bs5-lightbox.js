@@ -191,4 +191,3 @@ Lightbox.initialize = function (e) {
     lightbox.show();
 };
 document.querySelectorAll(Lightbox.defaultSelector).forEach((el) => el.addEventListener('click', Lightbox.initialize));
-exports.default = Lightbox;
