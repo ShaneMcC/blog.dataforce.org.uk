@@ -18,12 +18,13 @@ WORKDIR /tmp/build
 
 RUN npm install -g postcss-cli autoprefixer purgecss
 
+ADD config.toml /tmp/build/
 ADD assets /tmp/build/assets
-ADD content /tmp/build/content
 ADD layouts /tmp/build/layouts
 ADD static /tmp/build/static
 ADD themes /tmp/build/themes
-ADD build.sh config.toml /tmp/build/
+ADD content /tmp/build/content
+ADD build.sh /tmp/build/
 
 RUN /tmp/build/build.sh
 
