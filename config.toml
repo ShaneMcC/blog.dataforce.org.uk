@@ -16,6 +16,12 @@ disableKinds = ['taxonomyTerm', 'section']
 	[markup.goldmark.renderer]
 		unsafe = true
 
+# See: https://github.com/tdewolff/minify/issues/469
+[minify]
+  [minify.tdewolff]
+    [minify.tdewolff.js]
+      keepVarNames = true
+
 [params]
 	# headerimg = "/wp-content/uploads/2016/05/header.png"
 	headerimg = "/header.png"
