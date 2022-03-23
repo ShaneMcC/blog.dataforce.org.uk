@@ -1,7 +1,7 @@
 /**
  * Lightbox for Bootstrap 5
  * This is https://github.com/trvswgnr/bs5-lightbox from
- * https://cdn.jsdelivr.net/npm/bs5-lightbox@1.7.8/dist/index.js
+ * https://cdn.jsdelivr.net/npm/bs5-lightbox@1.7.10/dist/index.js
  *
  * @file Creates a modal with a lightbox carousel.
  * @module bs5-lightbox
@@ -76,9 +76,9 @@ class Lightbox {
         }
     }
     isEmbed(src) {
-        const regex = new RegExp(Lightbox.allowedEmbedTypes.join('|'));
+        const regex = new RegExp('(' + Lightbox.allowedEmbedTypes.join('|') + ')');
         const isEmbed = regex.test(src);
-        const isImg = /\.(png|jpe?g|gif|svg|webp)/.test(src);
+        const isImg = /\.(png|jpe?g|gif|svg|webp)/.test(src) || this.el.dataset.type === 'image';
         return isEmbed || !isImg;
     }
     createCarousel() {
@@ -86,8 +86,6 @@ class Lightbox {
         const slidesHtml = this.sources
             .map((src, i) => {
             src = src.replace(/\/$/, '');
-            let onload = '';
-            onload += /\.png/.test(src) ? `this.add.previousSibling.remove()` : '';
             let inner = `<img src="${src}" class="d-block w-100 h-100 img-fluid" style="z-index: 1; object-fit: contain;" />`;
             let attributes = '';
             const instagramEmbed = this.getInstagramEmbed(src);
