@@ -41,19 +41,5 @@
 			&copy; {{ dateFormat "2006" now }} <a href="/">{{ .Site.Title }}</a>
 		</small>
 	</footer>
-
-	{{ $fontawesome := resources.GetRemote "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/js/fontawesome.js" }}
-	{{ $popper := resources.GetRemote "https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.js" }}
-	{{ $jquery := resources.GetRemote "https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.js" }}
-	{{ $bootstrap := resources.GetRemote "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.js" }}
-	{{ $lightbox := resources.GetRemote "https://cdn.jsdelivr.net/npm/bs5-lightbox@1.7.10/dist/index.bundle.min.js" }}
-	{{ $script := resources.Get "js/main.js" }}
-
-	
-	{{ $scriptBundle := slice $fontawesome $popper $jquery $bootstrap $lightbox | resources.Concat "script.js" }}
-	{{ if hugo.IsProduction }}
-		{{ $scriptBundle = $scriptBundle | minify | fingerprint }}
-	{{ end }}
-	<script src="{{ $scriptBundle.RelPermalink }}"></script>
 </body>
 </html>
