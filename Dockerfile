@@ -8,7 +8,8 @@ RUN apt-get -qq update \
 	&& rm -rf /var/lib/apt/lists/*
 
 ENV HUGO_VERSION 0.110.0
-ENV HUGO_BINARY hugo_extended_${HUGO_VERSION}_Linux-64bit.deb
+ENV HUGO_BINARY hugo_extended_${HUGO_VERSION}_linux-amd64.deb
+
 
 RUN wget https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/${HUGO_BINARY} -O /tmp/hugo.deb \
     && dpkg -i /tmp/hugo.deb \
