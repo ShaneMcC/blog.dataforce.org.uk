@@ -16,7 +16,7 @@ RUN wget https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/${H
 
 WORKDIR /tmp/build
 
-RUN npm install -g postcss-cli autoprefixer purgecss
+RUN npm install -g postcss-cli autoprefixer purgecss @divriots/jampack
 
 ADD config.toml /tmp/build/
 ADD assets /tmp/build/assets

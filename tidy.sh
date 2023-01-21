@@ -9,6 +9,7 @@ cd ${DIR}/public
 CWEBP=`which cwebp || true`
 TIDY=`which tidy || true`
 PURGECSS=`which purgecss || true`
+JAMPACK=`which jampack || true`
 
 # Tidy up each generated file.
 if [ -e "${TIDY}" ]; then
@@ -18,13 +19,13 @@ if [ -e "${TIDY}" ]; then
 fi;
 
 # Convert all images to WebP
-if [ -e "${CWEBP}" ]; then
-	for FILE in $(find . -name '*.jpg' -o -name '*.png' -o -name '*.jpeg'); do
-		if [ ! -e "${FILE}.webp" ]; then
-			${CWEBP} -m 6 -mt -o "${FILE}.webp" -- "${FILE}" || true
-		fi;
-	done
-fi;
+# if [ -e "${CWEBP}" ]; then
+# 	for FILE in $(find . -name '*.jpg' -o -name '*.png' -o -name '*.jpeg'); do
+# 		if [ ! -e "${FILE}.webp" ]; then
+# 			${CWEBP} -m 6 -mt -o "${FILE}.webp" -- "${FILE}" || true
+# 		fi;
+# 	done
+# fi;
 
 # Remove unused CSS
 if [ -e "${PURGECSS}" ]; then
@@ -32,3 +33,9 @@ if [ -e "${PURGECSS}" ]; then
 fi;
 
 rm __postcss-dummy*.html
+
+# Run Jampack to compress images/files etc
+# https://jampack.divriots.com/
+if [ -e "${JAMPACK}" ]; then
+	${JAMPACK} --nocache .
+fi;
