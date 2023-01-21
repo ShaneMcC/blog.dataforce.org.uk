@@ -56,7 +56,8 @@ RUN /tmp/build/tidy.sh
 ## Step 4 - host!
 ##
 
-FROM nginx:mainline-alpine AS nginx
+FROM georgjung/nginx-brotli:mainline-alpine AS nginx
+
 COPY --from=tidy /tmp/build/public /usr/share/nginx/html
 ADD docker/nginx.conf /etc/nginx/nginx.conf
 ADD docker/ramdisk.sh /docker-entrypoint.d/99-ramdisk.sh
