@@ -4,7 +4,7 @@
 
 FROM node:bullseye as build
 RUN apt-get -qq update \
-	&& DEBIAN_FRONTEND=noninteractive apt-get -qq install -y --no-install-recommends tidy webp \
+	&& DEBIAN_FRONTEND=noninteractive apt-get -qq install -y --no-install-recommends tidy webp gzip brotli \
 	&& rm -rf /var/lib/apt/lists/*
 
 ENV HUGO_VERSION 0.110.0
