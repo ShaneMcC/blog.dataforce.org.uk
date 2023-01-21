@@ -5,14 +5,14 @@
 	<meta charset="UTF-8">
 	<title>{{ if $.IsPage }}{{ .Title }} | {{ .Site.Title }}{{ else }}{{ .Title }}{{ if not $.IsHome }} | {{ .Site.Title }}{{ end }}{{ end }}</title>
 	<meta name="description" content="{{ .Site.Title }}">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	{{ if .OutputFormats.Get "RSS" }}
 		<link href="{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
 	{{ end }}
 
-	{{ $bootstrap := resources.GetRemote "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.css" }}
-	{{ $fontawesome := resources.GetRemote "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.css" }}
+	{{ $bootstrap := resources.GetRemote "https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.css" }}
+	{{ $fontawesome := resources.GetRemote "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.css" }}
 	{{ $style := resources.Get "css/style.scss" | resources.ExecuteAsTemplate "style.scss" . | resources.ToCSS }}
 
 	{{ $styleBundle := slice $bootstrap $fontawesome $style | resources.Concat "css/style.css" }}
@@ -21,11 +21,11 @@
 	{{ end }}
 	<link href="{{ $styleBundle.RelPermalink }}" rel="stylesheet">
 
-	{{ $fontawesome := resources.GetRemote "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/js/fontawesome.js" }}
-	{{ $popper := resources.GetRemote "https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.js" }}
-	{{ $jquery := resources.GetRemote "https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.js" }}
-	{{ $bootstrap := resources.GetRemote "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.js" }}
-	{{ $lightbox := resources.GetRemote "https://cdn.jsdelivr.net/npm/bs5-lightbox@1.7.10/dist/index.bundle.min.js" }}
+	{{ $fontawesome := resources.GetRemote "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/js/fontawesome.js" }}
+	{{ $popper := resources.GetRemote "https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.js" }}
+	{{ $jquery := resources.GetRemote "https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.js" }}
+	{{ $bootstrap := resources.GetRemote "https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.js" }}
+	{{ $lightbox := resources.GetRemote "https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.2/dist/index.bundle.min.js" }}
 	{{ $script := resources.Get "js/main.js" }}
 
 
@@ -98,27 +98,27 @@
 
 				<div class="contact-icons ms-auto">
 					{{ if isset .Site.Params.profile "email" }}
-						<a href="mailto:{{ .Site.Params.profile.email }}" target="_blank" class="mx-2">
+						<a href="mailto:{{ .Site.Params.profile.email }}" target="_blank" class="mx-2" aria-label="email">
 							<i class="fas fa-envelope"></i>
 						</a>
 					{{ end }}
 					{{ if isset .Site.Params.profile "github" }}
-						<a href="https://www.github.com/{{ .Site.Params.profile.github }}" target="_blank" class="mx-2">
+						<a href="https://www.github.com/{{ .Site.Params.profile.github }}" target="_blank" class="mx-2" aria-label="github">
 							<i class="fab fa-github"></i>
 						</a>
 					{{ end }}
 					{{ if isset .Site.Params.profile "twitter" }}
-						<a href="https://www.twitter.com/{{ .Site.Params.profile.twitter }}" target="_blank" class="mx-2">
+						<a href="https://www.twitter.com/{{ .Site.Params.profile.twitter }}" target="_blank" class="mx-2" aria-label="twitter">
 							<i class="fab fa-twitter"></i>
 						</a>
 					{{ end }}
 					{{ if isset .Site.Params.profile "facebook" }}
-						<a href="https://www.facebook.com/{{ .Site.Params.profile.facebook }}" target="_blank" class="mx-2">
+						<a href="https://www.facebook.com/{{ .Site.Params.profile.facebook }}" target="_blank" class="mx-2" aria-label="facebook">
 							<i class="fab fa-facebook"></i>
 						</a>
 					{{ end }}
 					{{ if isset .Site.Params.profile "linkedin" }}
-						<a href="https://www.linkedin.com/in/{{ .Site.Params.profile.linkedin }}" target="_blank" class="mx-2">
+						<a href="https://www.linkedin.com/in/{{ .Site.Params.profile.linkedin }}" target="_blank" class="mx-2" aria-label="linkedin">
 							<i class="fab fa-linkedin"></i>
 						</a>
 					{{ end }}
