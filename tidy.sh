@@ -32,10 +32,10 @@ if [ -e "${PURGECSS}" ]; then
 	${PURGECSS} --variables --font-face --keyframes --output css/ --css css/style.min.*.css --content '**.html' '**/*.html'
 fi;
 
-rm __postcss-dummy*.html
-
 # Run Jampack to compress images/files etc
 # https://jampack.divriots.com/
 if [ -e "${JAMPACK}" ]; then
 	${JAMPACK} --nocache .
 fi;
+
+rm __postcss-dummy*.html
