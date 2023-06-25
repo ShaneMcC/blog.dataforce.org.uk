@@ -1,0 +1,5 @@
+---
+title: Categories
+aliases:
+    /categories/
+---
