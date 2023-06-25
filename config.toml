@@ -49,8 +49,8 @@ disableKinds = ['taxonomy', 'section']
 		description = "– The intelligent IRC Client"
 
 	[[params.sidebar]]
-		link = "https://iomart.com/"
-		name = "iomart"
+		link = "https://cadence.net.uk/"
+		name = "Cadence"
 		description = "– My current employer."
 
 	[[params.sidebar]]
