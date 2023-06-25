@@ -31,7 +31,7 @@
 			</blockquote>
 		{{end}} 
 
-		{{ if .Store.Get "showFullContent" }}
+		{{ if page.Store.Get "showFullContent" }}
 			{{ .Content }}
 		{{ else }}
 			{{ .Summary }}

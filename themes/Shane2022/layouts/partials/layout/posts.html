@@ -1,6 +1,7 @@
+{{ page.Store.Set "showFullContent" false }}
+
 {{ $paginator := .Paginate (where (where .Site.Pages "Type" "post") "Kind" "page") }}
 {{ range $paginator.Pages }}
-	{{ .Store.Set "showFullContent" false }}
 	{{ partial "post/post" . }}
 {{ end }}
 

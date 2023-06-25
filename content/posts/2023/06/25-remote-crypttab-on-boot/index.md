@@ -8,6 +8,7 @@ type: post
 date: 2023-06-25T15:45:24Z
 category:
   - General
+  - Proxmox
 ---
 
 I have recently added some iscsi-backed storage to my [proxmox](https://www.proxmox.com/en/)-based server environment, primarily as an off-server location to store backup data.
