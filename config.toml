@@ -50,7 +50,7 @@ enableRobotsTXT = true
 	[[params.sidebar]]
 		link = "https://cadence.net.uk/"
 		name = "Cadence"
-		description = "– My current employer."
+		description = "– My current employer"
 
 	[[params.sidebar]]
 		link = "/index/"
