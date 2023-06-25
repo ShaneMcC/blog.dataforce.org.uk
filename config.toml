@@ -3,10 +3,10 @@ languageCode = "en-gb"
 title = "blog.dataforce.org.uk"
 # theme = "material"
 theme = "Shane2022"
-disablePathToLower = true
+# disablePathToLower = true
 # enableGitInfo = true
 enableRobotsTXT = true
-disableKinds = ['taxonomyTerm', 'section']
+disableKinds = ['taxonomy', 'section']
 
 [markup]
 	[markup.highlight]

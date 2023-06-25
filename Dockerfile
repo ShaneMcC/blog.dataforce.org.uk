@@ -7,7 +7,7 @@ RUN apt-get -qq update \
 	&& DEBIAN_FRONTEND=noninteractive apt-get -qq install -y --no-install-recommends tidy webp gzip brotli \
 	&& rm -rf /var/lib/apt/lists/*
 
-ENV HUGO_VERSION 0.114.1
+ENV HUGO_VERSION 0.111.1
 ENV HUGO_BINARY hugo_extended_${HUGO_VERSION}_linux-amd64.deb
 
 
