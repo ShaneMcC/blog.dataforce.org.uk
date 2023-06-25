@@ -1,0 +1,18 @@
+{{ partial "layout/header" . }}
+
+<article class="page">
+	<header class="page-header">
+		<h1>{{ .Title }} List</h1>
+    </header>
+    <main class="post-content">
+        <ul>
+            {{ range .Pages }}
+                <li>
+                    <a rel="nofollow" href="{{ .Permalink }}">{{ .Title }}</a>
+                </li>
+            {{ end }}
+        </ul> 
+    </main>
+</article>
+
+{{ partial "layout/footer" . }}

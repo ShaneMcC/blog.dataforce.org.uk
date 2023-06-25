@@ -6,8 +6,8 @@ theme = "Shane2022"
 # disablePathToLower = true
 # enableGitInfo = true
 enableRobotsTXT = true
-disableKinds = ['taxonomy', 'section']
-ignoreErrors = ["error-disable-taxonomy"]
+# This makes a /posts/ url, I don't need that.
+disableKinds = ['section']
 
 [markup]
 	[markup.highlight]
