@@ -1,9 +1,9 @@
 ---
-title: "Remote LVM-on-LUKs (via ISCSI) with automatic decrypt on boot"
+title: "Remote LVM-on-LUKS (via ISCSI) with automatic decrypt on boot"
 author: Dataforce
 url:  /2023/06/remote-crypttab-on-boot/
 image: luks-encryption.png
-description: Ensuring remote encrypted LVM-on-LUKs filesystems are correctly enabled at boot time
+description: Ensuring remote encrypted LVM-on-LUKS filesystems are correctly enabled at boot time
 type: post
 date: 2023-06-25T15:45:24Z
 category:
