@@ -49,15 +49,9 @@ function defer(method) {
 // Horrible code to load our js files..
 defer(function() {
 	$(function() {
-		$.getScript("otpauth.min.js").done(function() {
-			$.getScript("qrcode.js").done(function() {
-				$.getScript("jquery.qrcode.js").done(function() {
-					updateCodes();
-					setInterval(updateCodes, 1000);
-					$('#loading').hide();
-					$('#loaded').removeClass('hidden');
-				});
-			});
-		});
+		updateCodes();
+		setInterval(updateCodes, 1000);
+		$('#loading').hide();
+		$('#loaded').removeClass('hidden');
 	});
 });
