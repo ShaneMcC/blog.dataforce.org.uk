@@ -14,7 +14,7 @@
 
 		{{ if .Params.series }}
 			{{ $name := index .Params.series 0 }}
-			{{ $name := $name | urlize }}
+			{{ $name := $name | lower }}
 			{{ $series := index .Site.Taxonomies.series $name }}
 
 			<blockquote>
@@ -29,7 +29,7 @@
 					{{end}}
 				</ol>
 			</blockquote>
-		{{end}} 
+		{{end}}
 
 		{{ if page.Store.Get "showFullContent" }}
 			{{ .Content }}

@@ -16,7 +16,7 @@
 					{{ $sort := sort . }}
 					{{ $links := apply $sort "partial" "post/categories" "." }}
 					{{ $clean := apply $links "chomp" "." }}
-					{{ delimit $clean " " }}
+					{{ delimit $links " " | safeHTML }}
 				{{ end }}
 			</small>
 		{{ end }}
