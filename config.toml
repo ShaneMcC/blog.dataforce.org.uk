@@ -38,14 +38,9 @@ enableRobotsTXT = true
 		linkedin = "shanemccormack"
 
 	[[params.sidebar]]
-		link = "http://www.dfbnc.com/"
-		name = "DFBnc"
-		description = "– My IRC Bouncer"
-
-	[[params.sidebar]]
-		link = "https://www.dmdirc.com/"
-		name = "DMDirc"
-		description = "– The intelligent IRC Client"
+		link = "http://www.shanemcc.ltd.uk/"
+		name = "ShaneMcC Ltd"
+		description = "– Consultancy services"
 
 	[[params.sidebar]]
 		link = "https://cadence.net.uk/"
