@@ -43,8 +43,8 @@ date: 2019-03-29T04:20:00Z
 	</div>
 </div>
 
-<script type='text/javascript' src='./otpauth.min.js' data-noconcat='true'></script>
-<script type='text/javascript' src='./qrcode.js' data-noconcat='true'></script>
-<script type='text/javascript' src='./jquery.qrcode.js' data-noconcat='true'></script>
-<script type='text/javascript' src='./otp.js' data-noconcat='true'></script>
+<script defer type='text/javascript' src='./otpauth.min.js'></script>
+<script defer type='text/javascript' src='./qrcode.js'></script>
+<script defer type='text/javascript' src='./jquery.qrcode.js'></script>
+<script defer type='text/javascript' src='./otp.js'></script>
 {{< /rawhtml >}}
