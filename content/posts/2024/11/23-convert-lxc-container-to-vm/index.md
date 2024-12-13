@@ -74,7 +74,8 @@ To get started, we need to create a fresh VM that we will use for the converted 
 
   - Create a new VM of the desired spec, with no disks attached.
     - I am assuming you are using VirtIO SCSI for the disk controller.
-  - Add (a copy of) the old disk image as `scsi0` (This is an exercise left to the reader, there are too many different ways to do this)
+  - Add (a copy of) the old disk image as `scsi0` (This is generally an exercise left to the reader, there are too many different ways to do this)
+    - Something like `rbd -p data_data mv vm-1234-disk-0 vm-5678-disk-0; echo "scsi0: ceph:vm-5678-disk-0" >> /etc/pve/qemu-server/5678.conf` may work.
   - Add a new blank drive for your swap partition and bootloader as `scsi1`
       - If you want to have no swap, then create as small a disk as possible - you just need somewhere to put a grub bootloader which is ~1mb
   - Set the boot order in proxmox to `scsi1` then `scsi0`
@@ -87,12 +88,11 @@ To get started, we need to create a fresh VM that we will use for the converted 
 
 #### Live-Boot environment
 
-  - Do a 1-time boot of the ubuntu live-server CD
-    - I have only tested using a 24.04 live CD for this. Even when converting older versions this is fine as we really just need a bootable linux environment that we can chroot from.
-  - Step through the installer until the "configure networking" step and configure some working networking (Assuming no DHCP), don't progress past this page.
-    - TODO: Figure out how to convince the installer CD to setup the network itself
-  - Once network has been configured you can ssh to the server as the user specified in the cloud-init disk to get to the installer remotely
-  - Choose the keyboard language, then tab up to the "help" button and go to "enter shell"
+Originally this guide suggested using an ubuntu live-server installer ISO, but this didn't bring up netowrking correctly and required a bunch of extra steps, however I have since discovered that SolusVM provide instructions on creating a [solusvm rescue image](https://support.solusvm.com/hc/en-us/articles/21335522896919-How-to-create-custom-bootable-rescue-ISO-image-with-Ubuntu-22-for-SolusVM-2) iso that works exactly as we need.
+
+Download the ISO from [https://images.prod.solus.io/rescue/rescue-latest.iso](https://images.prod.solus.io/rescue/rescue-latest.iso) and use that as a cd image on the VM to do a one-time-boot.
+
+Once it has booted, you can SSH into the VM using the IP/User details from the cloud-init image.
 
 Once in a shell, you can run the following commands to jump into a working chroot of the disk image:
 ```bash
@@ -108,7 +108,7 @@ Once inside the chroot, you can now do the following to install and configure th
 ```shell
 # Install Required Packages
 apt-get update
-apt-get -y install grub-pc linux-image-generic arch-install-scripts parted
+apt-get -y install grub-pc linux-image-generic arch-install-scripts parted qemu-guest-agent
 
 # Configure the secondary disk - grub partition at the start, swap for the rest.
 parted /dev/sdb --script mktable gpt
@@ -137,6 +137,7 @@ grub-install --target=i386-pc --boot-directory=/boot --disk-module=biosdisk /dev
 update-grub
 exit
 ```
+(This is available as a [script](convert_script.sh) that I take no responsibility for, if your vm setup is not correct this may blat all your data.)
 
 This is everything done, so now you can unmount everything and reboot:
 ```shell
@@ -145,6 +146,7 @@ for F in /dev /sys /proc; do umount /mnt${F}; done
 umount /mnt
 reboot
 ```
+(This whole process is also available as a [script](outer_script.sh) that I take no responsibility for, if your vm setup is not correct this may blat all your data.)
 
 You will need to go back to the console of the VM and press enter to *actually* reboot as it waits for you to confirm that you have ejected the CD.
 
