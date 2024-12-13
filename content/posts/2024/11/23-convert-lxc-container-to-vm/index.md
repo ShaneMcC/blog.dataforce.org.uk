@@ -141,7 +141,7 @@ exit
 
 This is everything done, so now you can unmount everything and reboot:
 ```shell
-for F in /dev/pts; do umount /mnt${F}; sleep 1; done
+for F in /dev/pts; do umount /mnt${F}; sleep 5; done
 for F in /dev /sys /proc; do umount /mnt${F}; done
 umount /mnt
 reboot
