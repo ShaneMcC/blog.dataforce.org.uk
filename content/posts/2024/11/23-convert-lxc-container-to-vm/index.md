@@ -88,7 +88,7 @@ To get started, we need to create a fresh VM that we will use for the converted 
 
 #### Live-Boot environment
 
-Originally this guide suggested using an ubuntu live-server installer ISO, but this didn't bring up netowrking correctly and required a bunch of extra steps, however I have since discovered that SolusVM provide instructions on creating a [solusvm rescue image](https://support.solusvm.com/hc/en-us/articles/21335522896919-How-to-create-custom-bootable-rescue-ISO-image-with-Ubuntu-22-for-SolusVM-2) iso that works exactly as we need.
+Originally this guide suggested using an ubuntu live-server installer ISO, but this didn't bring up networking correctly and required a bunch of extra steps, however I have since discovered that SolusVM provide instructions on creating a [solusvm rescue image](https://support.solusvm.com/hc/en-us/articles/21335522896919-How-to-create-custom-bootable-rescue-ISO-image-with-Ubuntu-22-for-SolusVM-2) iso that works exactly as we need.
 
 Download the ISO from [https://images.prod.solus.io/rescue/rescue-latest.iso](https://images.prod.solus.io/rescue/rescue-latest.iso) and use that as a cd image on the VM to do a one-time-boot.
 
