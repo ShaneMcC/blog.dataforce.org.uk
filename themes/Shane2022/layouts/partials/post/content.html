@@ -34,7 +34,7 @@
 		{{ if page.Store.Get "showFullContent" }}
 			{{ .Content }}
 		{{ else }}
-			{{ .Summary }}
+			{{ .Summary | replaceRE `<sup id="fnref:.*">.*<\/sup>` "" | safe.HTML }}
 
 			{{ if .Truncated }}
 			<div class="continue-reading">
