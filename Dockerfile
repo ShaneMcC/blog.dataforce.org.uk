@@ -2,13 +2,13 @@
 ## Step 1 - add content and build
 ##
 
-FROM node:lts as build
+FROM node:lts AS build
 RUN apt-get -qq update \
 	&& DEBIAN_FRONTEND=noninteractive apt-get -qq install -y --no-install-recommends tidy webp gzip brotli \
 	&& rm -rf /var/lib/apt/lists/*
 
-ENV HUGO_VERSION 0.139.0
-ENV HUGO_BINARY hugo_extended_${HUGO_VERSION}_linux-amd64.deb
+ENV HUGO_VERSION=0.147.8
+ENV HUGO_BINARY=hugo_extended_${HUGO_VERSION}_linux-amd64.deb
 
 
 RUN wget https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/${HUGO_BINARY} -O /tmp/hugo.deb \
@@ -44,7 +44,7 @@ RUN /tools/screenshot 'file:///app/index.html'
 ## Step 3 - Tidy
 ##
 
-FROM build as tidy
+FROM build AS tidy
 
 COPY --from=screenshot /screenshots/screenshot_1280_1024.png /tmp/build/public/screenshot.png
 
