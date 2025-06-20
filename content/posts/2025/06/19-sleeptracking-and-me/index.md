@@ -76,7 +76,7 @@ And this has been happily chugging away now for the last year and a half collect
 
 So here I am, 14 years later, still using the same dead app, but now with working cloud sync to keeping the data safe. And as I've been sitting on this data for a while now, maybe it's about time I did something more interesting with it than just... collecting it and occasionally holding a graph at people and going "look! a fun graph!"
 
-In my next post, I'll go into some details about what I've done and how I did it, and talk about how it might even be time for me to retire the sleepbot app at last.
+In a later post, I'll go into some details about what I've done and how I did it, and talk about how it might even be time for me to retire the sleepbot app at last.
 
 
 [^1]: I just like things to be the way I like them! It's fine!
