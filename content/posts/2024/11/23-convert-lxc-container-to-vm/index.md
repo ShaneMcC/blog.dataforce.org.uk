@@ -92,6 +92,8 @@ Originally this guide suggested using an ubuntu live-server installer ISO, but t
 
 Download the ISO from [https://images.prod.solus.io/rescue/rescue-latest.iso](https://images.prod.solus.io/rescue/rescue-latest.iso) and use that as a cd image on the VM to do a one-time-boot.
 
+I have a modified version of this ISO at [https://files.shanemcc.co.uk/rescue-latest.iso](https://files.shanemcc.co.uk/rescue-latest.iso) which will also automatically create a `rescue-user` user with a random password on boot (and display this password in `/etc/issue`) for use in times where cloud-init is not working correctly (or not setting the user details to known-good values etc)
+
 Once it has booted, you can SSH into the VM using the IP/User details from the cloud-init image.
 
 Once in a shell, you can run the following commands to jump into a working chroot of the disk image:
