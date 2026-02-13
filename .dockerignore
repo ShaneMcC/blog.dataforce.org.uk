@@ -1,1 +1,11 @@
+public
+resources
+report.functions.php
+.hugo_build.lock
+.git
+.github
 .gitignore
+.gitmodules
+.dockerignore
+*.md
+LICENSE
