@@ -26,7 +26,7 @@ As mentioned in that post, I had a new-and-fresh claude-code subscription[^3]. I
 
 It's crazy how fast the state of this has all changed, and how much my use and experience has changed...
 
-The TL;DR here is that I am no longer sitting close to "Hype" and a now sit much closer to "Incredibly useful Tool", but read on for a more fleshed out version of this!
+The TL;DR here is that I am no longer sitting close to "Hype" and I now sit much closer to "Incredibly useful Tool", but read on for a more fleshed out version of this!
 
 <!--more-->
 
@@ -42,9 +42,9 @@ and this:
 
 And these days, neither of those is quite correct.
 
-I now use claude code **almost every day**. It's very unlikely for me to have a VSCode window[^4] open without it also having a few claude code tabs[^5] open as well.
+I now use claude code **almost every day**[^4]. It's very unlikely for me to have a VSCode window[^5] open without it also having a few claude code tabs[^6] open as well.
 
-And the modern models[^6] are *really good*. So I actively use it for actual "real" personal projects and work projects.
+And the modern models[^7] are *really good*. So I actively use it for actual "real" personal projects and work projects.
 
 Claude writes most of my code these days. The difference between project types is more about my level of prompting and plan-review than anything else.
 
@@ -65,7 +65,7 @@ That's not to say I don't still look at some of the code, but less and less. Som
 
 As I've progressed down this list, I've updated a lot of our work tooling for monitoring and automation and written new tools for automating some internal processes that were previously very manual. Things that were "it would be nice to have this automated" but not always worth the time investment to actually do that by hand - because that investment time is now reduced.
 
-For my own projects: In [MyDNSHost](https://mydnshost.co.uk/) I've used it to add some additional admin-related 2FA security, analyse some failures, used it to handle a BIND upgrade I was dreading (because it completely changed how DNSSEC Auto-Signing worked), rewrote a lot of my task-management UI, rewrote all of my graphs (Moved from google charts to d3) among other things. In other applications I've even added MCP support and "talk to an agent" code (that uses the MCP for the available tools), and AI-Assisted image-processing. I'm sure I'll talk more about some of these in a future post[^7].
+For my own projects: In [MyDNSHost](https://mydnshost.co.uk/) I've used it to add some additional admin-related 2FA security, analyse some failures, used it to handle a BIND upgrade I was dreading (because it completely changed how DNSSEC Auto-Signing worked), rewrote a lot of my task-management UI, rewrote all of my graphs (Moved from google charts to d3) among other things. In other applications I've even added MCP support and "talk to an agent" code (that uses the MCP for the available tools), and AI-Assisted image-processing. I'm sure I'll talk more about some of these in a future post[^8].
 
 This is all a far cry from "It generates Proof-of-concepts", it now generates real, day-to-day useful "mission-critical" code.
 
@@ -83,23 +83,24 @@ I generally dislike entirely-AI-generated PR descriptions for projects. I make a
 
 I also dislike that almost everything I read now is obviously written by AI. I like reading human-written text. I think blog posts (like this one) should be written by a person (like this one!), with their own voice, not an AI. I think having an AI fact-check it, proof-read it, etc is fine. (I did that here. Claude gave me a table of "what models were available in June last year", and pointed out some minor corrections. I wrote all the text.)
 
-While I find Google Gemini can be useful for helping me cook[^8] - I don't end up enjoying the AI-Search results in Google. They still have too many "wrong" bits. Since the last post, I've not really used Gemini for any more code-related tasks as Claude is just much better suited to it.
+While I find Google Gemini can be useful for helping me cook[^9] - I don't end up enjoying the AI-Search results in Google. They still have too many "wrong" bits. Since the last post, I've not really used Gemini for any more code-related tasks as Claude is just much better suited to it.
 
-So yeah... my overal stance has changed. This isn't just hype. LLMs are absolutely a force-multiplier for development. How good that force is probably depends on who is prompting and supervising. The Slop-Canon is real if not managed correctly.
+So yeah... my overall stance has changed. This isn't just hype. LLMs are absolutely a force-multiplier for development. How good that force is probably depends on who is prompting and supervising. The Slop-Cannon is real if not managed correctly.
 
 In my last post I said I still found prompting-claude to be as fun as writing code myself, that bit hasn't changed and is still true - So much so that I've had to add custom hooks into claude-code to make it refuse to do anything for me after 2am otherwise I easily find myself still awake at 5am doing things - I'm definitely getting my money's worth now.
 
 Some of the ethical concerns I raised previously haven't changed. And Humans will still make things worse by being bad. I still worry for junior engineers, who won't end up with the same intrinsic knowledge of things and be able to debug things on their own, or they won't have the domain-knowledge to be able to prompt the AIs effectively to get the same quality of results that I am getting. I weep for the price and availability of RAM and Storage as all the supply is used up by AI demand.
 
-Overall, I think this is here to stay[^9].
+Overall, I think this is here to stay[^10].
 
 
 [^1]: Maybe a bit more than slightly...
 [^2]: I keep *wanting* to... I just... don't.
 [^3]: Looks like I've been a Max 5x subscriber since May 2025, So I've been along for the whole ride.
-[^4]: I still at least use an IDE!
-[^5]: I *really* like using claude code inside VSCode, I find it a really nice and pleasant experience. I probably don't need to do it inside an IDE anymore, but I like it.
-[^6]: As of this post, GPT-6 and Opus 5.5 etc. Opus 5.5 is my main "daily-driver"
-[^7]: At least I'll try to. I'll add it to the post backlog that I never get through!
-[^8]: I started cooking this year! Gemini helps me decide what to cook based on what I have in, and what I don't want (Onions. No Onions. Ever.)
-[^9]: For Now. Until the AI-Overlords (OpenAI, Anthropic) pull the plug and leave us all completely screwed.
+[^4]: I originally said "every day" here, but during proof-reading, claude pulled up my actual usage stats and told me off because this wasn't quite true. Sometimes I have days where I am travelling and don't use it... (Apparently 182 active days out of 246 if you care)
+[^5]: I still at least use an IDE!
+[^6]: I *really* like using claude code inside VSCode, I find it a really nice and pleasant experience. I probably don't need to do it inside an IDE anymore, but I like it.
+[^7]: As of this post, GPT-6 and Opus 5.5 etc. Opus 5.5 is my main "daily-driver"
+[^8]: At least I'll try to. I'll add it to the post backlog that I never get through!
+[^9]: I started cooking this year! Gemini helps me decide what to cook based on what I have in, and what I don't want (Onions. No Onions. Ever.)
+[^10]: For Now. Until the AI-Overlords (OpenAI, Anthropic) pull the plug and leave us all completely screwed.
